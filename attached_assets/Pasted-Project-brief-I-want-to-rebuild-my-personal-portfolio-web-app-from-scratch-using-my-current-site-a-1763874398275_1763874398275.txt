@@ -1,0 +1,187 @@
+Project brief
+
+I want to rebuild my personal portfolio web app from scratch, using my current site as inspiration but not as a pixel-perfect template.
+
+Current live site (for reference & inspiration):
+https://portfolio-delta-one-k5vucu2gy1.vercel.app/
+
+Please open that URL, study the structure, tone, and content, and then reimagine the UI/UX as if you are a senior design engineer building a polished, modern portfolio for a technical product & platform leader.
+
+Goals
+
+Reimagine the overall layout & visual design
+
+Keep the spirit of the current app (AI, platforms, governance, GTM, experience timeline) but feel free to dramatically change the layout, spacing, navigation, and visual hierarchy.
+
+Create something that feels like:
+
+modern, premium SaaS / dev tools marketing site
+
+but also a personal “executive portfolio” for a Principal/Director-level PM.
+
+Keep the core concepts and content
+
+Hero: governance, velocity, platform scale.
+
+Sections: leadership principles, impact/experience timeline, interactive “Platform Value Multiplier,” AI Twin chat/assistant, contact / value-prop generator.
+
+You can tighten copy and headings, but don’t remove the core ideas or achievements.
+
+Make the UI feel more alive and interactive
+
+Thoughtful motion: smooth entrance animations, subtle hover states, micro-interactions.
+
+Strong typography, excellent spacing, clear breakpoint behavior from mobile → desktop.
+
+Everything should feel intentional and cohesive, not just a pile of Tailwind classes.
+
+Technical constraints
+
+Use React + Tailwind CSS (Vite is fine as the build tool).
+
+Keep the architecture simple: a single-page app with clearly separated components.
+
+Preserve or re-create hooks/logic for:
+
+The Platform Value Multiplier (sliders + calculated metrics).
+
+The AI Twin chat widget (stubbed Gemini API calls are fine).
+
+The Pitch / value prop generator (form → response section).
+
+Use clean, idiomatic React with functional components and hooks.
+
+Specific design asks
+1. Hero section
+
+Include a portrait area for me (placeholder image + alt text), ideally integrated into the hero:
+
+Think: circular or rounded-corner portrait overlapping a gradient card, or a tasteful side column.
+
+Portrait should support the executive/leader vibe without overpowering the headline.
+
+Keep the core hero message:
+
+Governance, velocity, platform scale.
+
+Tagline about AI, platform engineering, and GTM enablement.
+
+Add obvious primary CTAs:
+
+“View Impact” (scroll to experience).
+
+“Ask my AI Twin” or similar (opens chat or jumps to widget).
+
+2. Platform Value Multiplier (PVM)
+
+Treat this as a flagship interactive module, like a mini product inside the page.
+
+Requirements:
+
+Sliders for friction, fragmentation, and frontline users.
+
+Real-time calculations for velocity, savings, and GTM impact.
+
+Animated graphs/charts that update smoothly as sliders move:
+
+Use simple visuals (animated bars, radial charts, or cards with number count-up).
+
+Numbers should transition rather than jump.
+
+Explain the math and earn trust:
+
+Add a clear “How is this calculated?” affordance (icon/button).
+
+This should open a modal or side panel explaining:
+
+What each slider represents.
+
+Formulas and assumptions behind each metric.
+
+That numbers are directional, not forecasts.
+
+Security & compliance:
+
+Add a small, visually connected sub-panel or callout that shows:
+
+Icons for shields/locks/compliance.
+
+Short copy tying platform work to TCPA/CPRA, SOC 2, Responsible AI, etc.
+
+It should visually say: “Yes, we care about speed, and about doing it safely.”
+
+3. Experience / Impact timeline
+
+Keep the content (Zillow, T-Mobile, AWS, etc.) but improve:
+
+Timeline visuals (vertical line, milestones, badges).
+
+Readability of “Key Outcome” bullets.
+
+Make it feel like a polished case study timeline rather than plain cards.
+
+4. AI Twin & contact
+
+Keep the chat widget concept, but:
+
+Refine the styling so it matches the rest of the site branding.
+
+Ensure it’s unobtrusive on mobile (e.g., collapsible bubble).
+
+Keep a contact / “talk to Steven” path:
+
+Either via the chat (“I’d like to talk”) or a dedicated section with a simple contact form and clear reassurance copy.
+
+5. Additional imagery
+
+Create one or two intentional spots for optional supporting images:
+
+For example:
+
+A “systems thinking” visual near PVM.
+
+A contextual image near the experience timeline.
+
+These should be optional: when no image is provided, the layout should still look balanced.
+
+UX & style direction
+
+Visual style:
+
+Dark theme is fine (inspired by the current site), but polish it:
+
+Fewer colors, more consistency.
+
+Thoughtful use of accent color(s) for CTAs and data.
+
+Feels like a modern infra / AI platform site, not a generic portfolio.
+
+UX priorities:
+
+Clear reading flow for hiring managers and execs.
+
+Easy scanning of impact metrics and roles.
+
+Engaging but not overwhelming – animations should be subtle and purposeful.
+
+Make sure it looks great on:
+
+Small mobile screens (single column, tappable, no cramped sliders).
+
+Large desktop monitors (good use of white/negative space).
+
+Deliverables
+
+A working React + Tailwind project with:
+
+Clean component structure.
+
+All sections wired up and responsive.
+
+Placeholder portrait and image slots, with easy swap-out instructions in comments.
+
+Please include brief comments where I should:
+
+Insert my actual images.
+
+Connect a real LLM / API key, if I choose to.
