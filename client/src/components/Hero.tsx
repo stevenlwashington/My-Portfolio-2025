@@ -11,8 +11,8 @@ export default function Hero({ onViewImpact, onAskAI }: HeroProps) {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background gradient mesh */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,189,248,0.05),rgba(0,0,0,0))]" />
       
       <div className="relative w-full max-w-7xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-[1fr,280px] gap-12 items-center">
