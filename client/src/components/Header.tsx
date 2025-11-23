@@ -38,7 +38,7 @@ export default function Header({ onNavigate }: HeaderProps) {
             className="text-xl font-bold hover-elevate rounded-md px-2 py-1"
             data-testid="button-logo"
           >
-            Steven P.
+            Steven Washington
           </button>
         </div>
 

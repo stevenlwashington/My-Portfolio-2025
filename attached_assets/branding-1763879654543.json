@@ -1,0 +1,135 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "SFMono-Regular",
+      "role": "monospace"
+    },
+    {
+      "family": "Menlo",
+      "role": "monospace"
+    },
+    {
+      "family": "Segoe UI Symbol",
+      "role": "body"
+    },
+    {
+      "family": "Segoe UI Emoji",
+      "role": "body"
+    },
+    {
+      "family": "Noto Color Emoji",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#060B1D",
+    "accent": "#0284C7",
+    "background": "#FFFFFF",
+    "textPrimary": "#020617",
+    "link": "#020617"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Segoe UI Symbol",
+      "heading": "Segoe UI Symbol"
+    },
+    "fontStacks": {
+      "heading": [
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji"
+      ],
+      "body": [
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji"
+      ],
+      "paragraph": [
+        "ui-sans-serif",
+        "system-ui",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji"
+      ]
+    },
+    "fontSizes": {
+      "h1": "72px",
+      "h2": "30px",
+      "body": "24px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "0px"
+  },
+  "components": {
+    "input": {
+      "borderColor": "#CCCCCC",
+      "borderRadius": "0px"
+    },
+    "buttonPrimary": {
+      "background": "#0284C7",
+      "textColor": "#FFFFFF",
+      "borderRadius": "8px",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(12, 74, 110, 0.2) 0px 10px 15px -3px, rgba(12, 74, 110, 0.2) 0px 4px 6px -4px"
+    },
+    "buttonSecondary": {
+      "background": "#0F172A",
+      "textColor": "#FFFFFF",
+      "borderColor": "#334155",
+      "borderRadius": "8px",
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "File saved at: attached_assets/logo.svg",
+    "favicon": null,
+    "ogImage": null
+  },
+  "__framework_hints": [
+    "tailwind"
+  ],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Logo #0 visually represents the brand name 'Steven L. Washington' and is located in the header, making it the most suitable choice.",
+    "confidence": 0.9
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Generate Value Prop",
+      "reasoning": "Button #0 has a vibrant blue background (#0284C7) and action-oriented text 'Generate Value Prop', making it the primary CTA."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "View Track Record",
+      "reasoning": "Button #1 has a dark background (#0F172A) which is different from the primary button's color, making it a suitable secondary option."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "business professionals and clients seeking consulting services."
+  },
+  "designSystem": {
+    "framework": "tailwind",
+    "componentLibrary": null
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  }
+}

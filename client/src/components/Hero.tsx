@@ -21,7 +21,7 @@ export default function Hero({ onViewImpact, onAskAI }: HeroProps) {
             <div className="space-y-6">
               <div className="space-y-2">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                  Steven P.
+                  Steven Washington
                 </h1>
                 <p className="text-2xl md:text-3xl font-semibold text-primary">
                   Principal Product & Platform Leader
@@ -29,22 +29,21 @@ export default function Hero({ onViewImpact, onAskAI }: HeroProps) {
               </div>
               
               <p className="text-lg md:text-xl text-foreground max-w-2xl leading-relaxed font-medium">
-                I architect enterprise platforms that accelerate AI development, unify fragmented systems, 
-                and enable go-to-market teams to move faster with confidence and compliance.
+                I build secure, compliant enterprise platforms that power responsible AI, accelerate engineering velocity, improve seller productivity, and deliver measurable business outcomes.
               </p>
               
               <div className="flex flex-wrap gap-6 text-base text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>$1.6B+ revenue platforms</span>
+                  <span>$11B+ cumulative revenue supported across platform estate</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>80% velocity improvement</span>
+                  <span>80% acceleration in engineering deployment velocity</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>$450K+ annual savings</span>
+                  <span>$450K+ annual savings in storage and compute</span>
                 </div>
               </div>
             </div>
