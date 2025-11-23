@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Steven P.</h3>
+            <h3 className="font-bold text-lg mb-4">Steven Washington</h3>
             <p className="text-sm text-muted-foreground">
               Platform & AI leadership for governance, velocity, and scale.
             </p>
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Steven P. All rights reserved.</p>
+          <p>© 2025 Steven Washington. All rights reserved.</p>
         </div>
       </div>
     </footer>
