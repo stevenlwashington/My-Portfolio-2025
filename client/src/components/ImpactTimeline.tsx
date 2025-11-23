@@ -43,7 +43,7 @@ const experiences = [
     ]
   },
   {
-    company: "LivingSocial, Microsoft (Merkle), San Diego Padres",
+    company: "Microsoft (Merkle), LivingSocial, San Diego Padres",
     role: "Career Foundations",
     period: "2008–2015",
     outcomes: [
