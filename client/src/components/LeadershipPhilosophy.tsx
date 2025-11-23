@@ -1,8 +1,14 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
+import { Package, ShieldCheck, Zap, X } from "lucide-react";
 
-const essays = [
+const principles = [
   {
+    icon: Package,
     title: "Platform as a Product",
+    tagline: "Engineers choose platforms that make them faster and happier.",
     content: [
       "Too many platforms fail because they're built as infrastructure projects, not as products. Engineers are asked to adopt tools that slow them down, increase cognitive load, or duplicate work they're already doing. The result? Shadow IT, workarounds, and platform teams wondering why adoption is low.",
       "I treat platform engineering like product management. That means understanding the user (the engineer), measuring their pain points, building clear roadmaps, and obsessing over developer experience. A great platform isn't just technically sound—it's the obvious choice. It removes friction, automates repetitive work, and makes engineers faster and happier.",
@@ -10,7 +16,9 @@ const essays = [
     ]
   },
   {
-    title: "Responsible AI at Scale",
+    icon: ShieldCheck,
+    title: "Responsible AI & Governance",
+    tagline: "Governance as infrastructure: ship AI features quickly while staying compliant.",
     content: [
       "AI is transformative, but without governance, it's also risky. Teams are eager to ship AI features, but concerns around data privacy, model bias, audit trails, and regulatory compliance often create bottlenecks. The temptation is to either lock down everything (killing innovation) or move fast and hope for the best (creating risk).",
       "My approach is to build governance into the platform itself. Instead of making compliance a manual checklist, I design systems where the right thing is the easy thing. Clean data pipelines, automated audit trails, and policy-as-code frameworks allow teams to ship AI features quickly while staying compliant with TCPA, CPRA, and emerging AI regulations.",
@@ -18,40 +26,148 @@ const essays = [
     ]
   },
   {
+    icon: Zap,
     title: "GTM Velocity Through Data & Automation",
+    tagline: "Unified platforms eliminate friction and accelerate GTM execution.",
     content: [
       "Sales and service teams are only as fast as the systems behind them. Fragmented data, manual workflows, and slow release cycles compound into massive operational drag. A rep spends 30 seconds searching for information. Multiply that by 10,000 reps per day, and you've lost weeks of productivity—or deals.",
       "I focus on building unified platforms that eliminate this friction. By consolidating Salesforce orgs, integrating telemetry, and automating common workflows, I turn scattered systems into a single source of truth. Reps get faster answers, managers get better insights, and the business moves quicker.",
-      "But velocity isn't just about speed—it's about confidence. When platforms are reliable, tested, and compliant, GTM teams can execute faster without worrying about breaking something. That's the multiplier effect of great platform work: teams don't just move fast, they move fast with trust."
+      "But velocity isn't just speed—it's about confidence. When platforms are reliable, tested, and compliant, GTM teams can execute faster without worrying about breaking something. That's the multiplier effect of great platform work: teams don't just move fast, they move fast with trust."
     ]
   }
 ];
 
+interface FlippableCardProps {
+  principle: typeof principles[0];
+  index: number;
+  isFlipped: boolean;
+  onFlip: () => void;
+  onClose: () => void;
+}
+
+function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: FlippableCardProps) {
+  const Icon = principle.icon;
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (isFlipped) {
+        onClose();
+      } else {
+        onFlip();
+      }
+    } else if (e.key === "Escape" && isFlipped) {
+      onClose();
+    }
+  };
+
+  return (
+    <div 
+      className="relative h-[320px] perspective-1000"
+      style={{ perspective: "1000px" }}
+    >
+      <motion.div
+        className="relative w-full h-full"
+        initial={false}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Front of card */}
+        <div
+          className="absolute inset-0 backface-hidden"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <Card
+            className="h-full flex flex-col justify-center p-8 cursor-pointer hover-elevate active-elevate-2 transition-all"
+            onClick={onFlip}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role="button"
+            aria-expanded={isFlipped}
+            aria-label={`${principle.title}. Click to read more.`}
+            data-testid={`card-principle-${index}`}
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="p-4 rounded-lg bg-primary/10">
+                <Icon className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold">
+                {principle.title}
+              </h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                {principle.tagline}
+              </p>
+            </div>
+          </Card>
+        </div>
+
+        {/* Back of card */}
+        <div
+          className="absolute inset-0 backface-hidden"
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          <Card className="h-full flex flex-col p-6 overflow-hidden">
+            <div className="flex items-start justify-between mb-4">
+              <h3 className="text-xl font-bold pr-2">
+                {principle.title}
+              </h3>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onClose}
+                onKeyDown={handleKeyDown}
+                aria-label="Close details"
+                data-testid={`button-close-principle-${index}`}
+              >
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
+            <div className="flex-1 overflow-y-auto space-y-3">
+              {principle.content.map((paragraph, pIndex) => (
+                <p key={pIndex} className="text-sm text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 export default function LeadershipPhilosophy() {
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+
+  const handleFlip = (index: number) => {
+    setFlippedIndex(index);
+  };
+
+  const handleClose = () => {
+    setFlippedIndex(null);
+  };
+
   return (
     <section className="py-20 md:py-24 bg-card/30" id="philosophy">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Leadership Philosophy</h2>
-          <p className="text-lg text-muted-foreground">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Leadership Principles</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             How I think about platform engineering, AI governance, and enabling teams to move faster.
           </p>
         </div>
 
-        <div className="space-y-8">
-          {essays.map((essay, index) => (
-            <Card key={index} data-testid={`card-essay-${index}`}>
-              <CardHeader>
-                <CardTitle className="text-2xl">{essay.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {essay.content.map((paragraph, pIndex) => (
-                  <p key={pIndex} className="text-muted-foreground leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-              </CardContent>
-            </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {principles.map((principle, index) => (
+            <FlippableCard
+              key={index}
+              principle={principle}
+              index={index}
+              isFlipped={flippedIndex === index}
+              onFlip={() => handleFlip(index)}
+              onClose={handleClose}
+            />
           ))}
         </div>
       </div>

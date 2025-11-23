@@ -1,0 +1,86 @@
+User Story: Clickable, Flippable Leadership Principle Cards
+
+As a recruiter or hiring manager visiting Steven’s portfolio
+I want the “Leadership Principles” cards (Responsible AI & Governance, Platform as a Product, Data as a Strategic Asset) to be concise by default and expandable on click
+So that I can quickly scan his philosophy at a high level, and then dive deeper into details only for the cards that interest me.
+
+Acceptance Criteria
+
+Default (front) card state
+
+Each card shows only:
+
+Icon
+
+Title (e.g., “Responsible AI & Governance”)
+
+1 short supporting line (max ~15 words).
+
+No long paragraphs are visible in the default state.
+
+Cards are still arranged in the existing 3-column layout on desktop and stack cleanly on mobile.
+
+Interactive “flip” behavior
+
+Clicking (or tapping) a card flips it around to reveal the full text description.
+
+The flip should feel smooth and intentional (e.g., 3D flip, rotateY, or tasteful fade/slide), not jarring.
+
+Only one card can be “flipped”/expanded at a time; opening another card closes the previous one.
+
+Back-of-card content (details view)
+
+Back of the card shows:
+
+The same title
+
+The full current paragraph text (the long description you already wrote).
+
+Include a clear “Back” / “↩ Close” affordance (button or icon) that flips the card back to the front.
+
+Text remains readable with appropriate line height and contrast.
+
+Usability & UX polish
+
+Entire card is clickable, not just the text (with a clear hover state: subtle lift, border or shadow change).
+
+On desktop:
+
+Cards have a visible hover effect.
+
+On mobile:
+
+Taps work reliably without requiring precision.
+
+Flip animation or transition is performant.
+
+Accessibility
+
+Cards are keyboard-focusable.
+
+Pressing Enter or Space when a card is focused flips it.
+
+Pressing Esc when a back side is visible flips it back to the front.
+
+Use appropriate ARIA attributes (e.g., role="button", aria-expanded, aria-label or aria-describedby) so assistive tech understands the interactive nature.
+
+Layout & responsiveness
+
+Flipped state must preserve the card’s footprint so the layout doesn’t “jump” or push other content unpredictably.
+
+On small screens, if a full flip is awkward, a graceful alternative is acceptable (e.g., card expands or fades into a “back” panel) as long as:
+
+It’s consistent across all three cards.
+
+It’s clear how to go “back”.
+
+Implementation notes for Replit
+
+Use React state per card to track isFlipped.
+
+Use Tailwind for styling; a motion library (e.g., Framer Motion) is acceptable for the flip animation if available.
+
+Keep the content (titles + long paragraphs) exactly the same; only change the interaction and layout.
+
+You can paste this directly into Replit and say:
+“Apply this user story to the three Leadership Principles cards on my portfolio page.”
