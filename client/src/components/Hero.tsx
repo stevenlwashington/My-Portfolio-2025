@@ -19,18 +19,34 @@ export default function Hero({ onViewImpact, onAskAI }: HeroProps) {
           {/* Main content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                <span className="block">Governance,</span>
-                <span className="block">Velocity, &</span>
-                <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                  Platform Scale.
-                </span>
-              </h1>
+              <div className="space-y-2">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                  Steven P.
+                </h1>
+                <p className="text-2xl md:text-3xl font-semibold text-primary">
+                  Principal Product & Platform Leader
+                </p>
+              </div>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Accelerating AI, engineering, and go-to-market velocity through 
-                scalable internal platforms.
+              <p className="text-lg md:text-xl text-foreground max-w-2xl leading-relaxed font-medium">
+                I architect enterprise platforms that accelerate AI development, unify fragmented systems, 
+                and enable go-to-market teams to move faster with confidence and compliance.
               </p>
+              
+              <div className="flex flex-wrap gap-6 text-base text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  <span>$1.6B+ revenue platforms</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  <span>80% velocity improvement</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  <span>$450K+ annual savings</span>
+                </div>
+              </div>
             </div>
 
             {/* CTAs */}

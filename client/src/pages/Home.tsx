@@ -1,9 +1,13 @@
 import { useRef } from "react";
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
+import ExecutiveSummary from "@/components/ExecutiveSummary";
 import LeadershipPrinciples from "@/components/LeadershipPrinciples";
+import SystemsThinking from "@/components/SystemsThinking";
 import PlatformValueMultiplier from "@/components/PlatformValueMultiplier";
 import ImpactTimeline from "@/components/ImpactTimeline";
+import LeadershipPhilosophy from "@/components/LeadershipPhilosophy";
+import WhyHireSteven from "@/components/WhyHireSteven";
 import ValuePropGenerator from "@/components/ValuePropGenerator";
 import AITwinChat from "@/components/AITwinChat";
 import Footer from "@/components/Footer";
@@ -26,9 +30,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero onViewImpact={scrollToImpact} onAskAI={openChat} />
+        <ExecutiveSummary />
         <LeadershipPrinciples />
+        <SystemsThinking />
         <PlatformValueMultiplier />
         <ImpactTimeline />
+        <LeadershipPhilosophy />
+        <WhyHireSteven />
         <ValuePropGenerator />
       </main>
       <Footer />

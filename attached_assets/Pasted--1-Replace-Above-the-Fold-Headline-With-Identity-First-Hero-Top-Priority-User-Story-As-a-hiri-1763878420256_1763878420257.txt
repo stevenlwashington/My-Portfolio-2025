@@ -1,0 +1,169 @@
+✅ #1 — Replace Above-the-Fold Headline With Identity-First Hero (Top Priority)
+User Story
+
+As a hiring manager or recruiter, I want the hero section to immediately communicate who Steven is, his seniority, and his unique value, so I can understand his fit within seconds without scanning the full page.
+
+Acceptance Criteria
+
+The hero’s primary headline is Steven’s name, not conceptual buzzwords.
+
+Directly under the name, show a clear title, e.g., Principal Product & Platform Leader.
+
+Include a 1–2 sentence value statement summarizing what Steven is exceptional at.
+
+Add a concise proof line with tangible achievements (e.g., platform scale, velocity gains, savings).
+
+“Open to Leadership Roles” badge or banner is fully removed.
+
+Hero includes space for an optional portrait image (placeholder).
+
+Layout must feel polished, senior, and recruiter-friendly at first glance.
+
+2 — Executive Summary Card (Former Idea #1)
+User Story
+
+As a recruiter, I want a compact executive summary card that quickly communicates Steven’s strengths so I can assess fit without scrolling.
+
+Acceptance Criteria
+
+Below the hero, add a card summarizing:
+
+Key domain expertise
+
+Platform + AI experience
+
+Quantified impact metrics
+
+Card must be scannable in under 5 seconds.
+
+Works cleanly across mobile and desktop.
+
+3 — Case-Study Detail Cards for Each Role (Former Idea #2)
+User Story
+
+As a hiring manager, I want to click into any accomplishment to see a deeper STAR-format case study so I can understand Steven’s thinking and contribution.
+
+Acceptance Criteria
+
+Each timeline item or impact bullet opens a modal or inline card.
+
+Modal includes clear Problem → Action → Result breakdown.
+
+Includes metrics, systems-thinking explanation, and visuals where useful.
+
+Must not feel fluffy or marketing-heavy.
+
+4 — Compliance & Security Heatmap (Former Idea #4)
+User Story
+
+As an enterprise hiring leader, I want to see evidence that Steven approaches platform work with compliance, governance, and risk reduction in mind, so I can trust him in high-risk AI or GTM environments.
+
+Acceptance Criteria
+
+Add a small panel or heatmap showing platform risk zones.
+
+Includes icons/labels related to:
+
+TCPA
+
+CPRA
+
+SOC 2
+
+Responsible AI
+
+Brief explanation of how Steven’s work mitigates these risks.
+
+Styled to feel credible and enterprise-grade.
+
+5 — Leadership Philosophy Essays (Former Idea #6)
+User Story
+
+As a director or VP, I want to see Steven’s leadership philosophy so I can assess whether he fits our culture and how he thinks about platform and AI strategy.
+
+Acceptance Criteria
+
+Add a section with 2–3 short essays (2–3 paragraphs each).
+
+Topics include: Platform as a Product, Responsible AI, and GTM Velocity.
+
+Must feel original, thoughtful, and not generic.
+
+Uses clear headings and clean formatting.
+
+6 — Systems Thinking Diagram (Former Idea #7)
+User Story
+
+As a technical leader, I want a visual representation of Steven’s mental model so I can quickly internalize how he approaches platform ecosystems.
+
+Acceptance Criteria
+
+Add a diagram showing flow between:
+
+Data → Platform → Governance → AI → GTM
+
+Includes hover or subtle animation.
+
+Brief text explains each part of the system.
+
+Diagram must look modern and professional (e.g., Figma-esque).
+
+7 — Animated Career Trajectory Visualization (Former Idea #9)
+User Story
+
+As a VP or hiring manager, I want to clearly see Steven’s increasing scope of work over time so I can understand his seniority track record.
+
+Acceptance Criteria
+
+A visual timeline showing:
+
+Role progression
+
+Scope (team size, users, systems)
+
+Impact dollars/percentages
+
+Light animation (fade/slide/line growth) is used sparingly but effectively.
+
+Mobile responsive and readable.
+
+8 — “Why Hire Steven?” Value Proposition Section (Former Idea #10)
+User Story
+
+As a skeptical hiring manager, I want a clear, convincing articulation of what Steven uniquely brings to an organization so that I deeply understand his value.
+
+Acceptance Criteria
+
+Add a section titled “Why Hire Steven” or “What You Get With Steven.”
+
+Includes 3–5 crisp bullets tied to:
+
+Platform modernization
+
+GTM velocity
+
+AI governance
+
+Developer experience
+
+Should feel confident, not salesy.
+
+Must be supported by earlier sections (case studies, metrics, diagrams).
+
+✔️ Summary of Included Enhancements
+
+From your earlier list, this new prioritized enhancement set includes:
+
+#1 (Executive Summary / Identity-first hero, rewritten as your new top priority)
+
+#2 (Executive summary card)
+
+#4 (Compliance/security heatmap)
+
+#6 (Leadership essays)
+
+#7 (Systems diagram)
+
+#9 (Career trajectory viz)
+
+#10 (Why Hire Steven)

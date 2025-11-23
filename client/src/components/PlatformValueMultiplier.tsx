@@ -217,33 +217,100 @@ export default function PlatformValueMultiplier() {
           </Card>
         </div>
 
-        {/* Security & Compliance Callout */}
+        {/* Security & Compliance Heatmap */}
         <Card className="border-primary/20 bg-primary/5">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <Shield className="h-5 w-5 text-primary" />
-              Security & Compliance Foundation
+              Platform Risk Mitigation & Compliance
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-2">
-                <Lock className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium">TCPA/CPRA Compliance</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Scale className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium">Responsible AI Governance</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium">Audit Trail & Data Pipelines</span>
-              </div>
-            </div>
-            <p className="text-sm text-muted-foreground mt-4">
-              Platform work isn't just about speed—it's about building trust at scale through 
-              robust governance, compliance frameworks, and responsible AI practices.
+          <CardContent className="space-y-6">
+            <p className="text-sm text-muted-foreground">
+              Enterprise platform work requires balancing velocity with trust. Here's how disciplined 
+              platform engineering mitigates risk while accelerating delivery:
             </p>
+            
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* TCPA */}
+              <Card className="bg-background">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 rounded-md bg-chart-1/10">
+                      <Lock className="h-5 w-5 text-chart-1" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-1">TCPA Compliance</h4>
+                      <p className="text-xs text-muted-foreground">
+                        Embedded consent tracking, call logging, and policy-as-code to prevent 
+                        unauthorized contact—reducing regulatory risk by $1B+ at Zillow.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* CPRA */}
+              <Card className="bg-background">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 rounded-md bg-chart-2/10">
+                      <Scale className="h-5 w-5 text-chart-2" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-1">CPRA Data Privacy</h4>
+                      <p className="text-xs text-muted-foreground">
+                        Automated data classification, retention policies, and privacy controls 
+                        built into pipelines—ensuring consumer rights without manual overhead.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Responsible AI */}
+              <Card className="bg-background">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 rounded-md bg-chart-4/10">
+                      <Shield className="h-5 w-5 text-chart-4" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-1">Responsible AI Governance</h4>
+                      <p className="text-xs text-muted-foreground">
+                        Audit trails for model decisions, bias monitoring, and data lineage tracking—
+                        enabling safe AI innovation with accountability at every layer.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Platform Security */}
+              <Card className="bg-background">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 rounded-md bg-chart-3/10">
+                      <Shield className="h-5 w-5 text-chart-3" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-1">Platform Security</h4>
+                      <p className="text-xs text-muted-foreground">
+                        Automated testing, validation gates, and change management processes 
+                        that prevent production incidents while maintaining deployment velocity.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="pt-4 border-t">
+              <p className="text-sm font-medium text-center">
+                Platform work isn't just about speed—it's about building systems where 
+                compliance and governance are invisible infrastructure, not bottlenecks.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>

@@ -12,9 +12,11 @@ export default function Header({ onNavigate }: HeaderProps) {
 
   const navItems = [
     { label: "Principles", href: "#principles" },
-    { label: "Value Calculator", href: "#pvm" },
+    { label: "Systems", href: "#systems" },
+    { label: "Calculator", href: "#pvm" },
     { label: "Impact", href: "#impact" },
-    { label: "Value Prop", href: "#value-prop" },
+    { label: "Philosophy", href: "#philosophy" },
+    { label: "Why Hire", href: "#why-hire" },
   ];
 
   const handleClick = (href: string) => {

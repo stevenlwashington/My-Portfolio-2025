@@ -1,46 +1,134 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Users, Building2, TrendingUp, ChevronRight } from "lucide-react";
 
-const experiences = [
+interface CaseStudy {
+  problem: string;
+  action: string;
+  result: string;
+  metrics: string[];
+}
+
+interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  outcomes: string[];
+  scope?: {
+    teamSize?: string;
+    users?: string;
+    revenue?: string;
+  };
+  caseStudy?: CaseStudy;
+}
+
+const experiences: Experience[] = [
   {
     company: "Zillow",
     role: "Platform Product Lead, Revenue & AI",
     period: "2023-Present",
+    scope: {
+      teamSize: "Cross-functional platform teams",
+      users: "500+ engineers",
+      revenue: "$1.6B+ GTM platform"
+    },
     outcomes: [
       "Architected enterprise data pipelines consolidating 16 years of history for AI training, saving $450k/yr",
       "Built the on-demand CI/CD platform for Salesforce engineering—reducing release cycles from days to minutes",
       "Increased GTM delivery velocity by 80%"
-    ]
+    ],
+    caseStudy: {
+      problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Meanwhile, 16 years of enterprise data sat fragmented across systems, making it difficult to leverage for AI/ML initiatives.",
+      action: "I led the design and implementation of an on-demand CI/CD platform specifically for Salesforce deployments. This included automated testing pipelines, validation gates, and self-service deployment capabilities. In parallel, I architected enterprise data consolidation pipelines that unified historical data from multiple sources into a clean, AI-ready format with proper governance and audit trails.",
+      result: "Release cycles dropped from days to minutes, enabling GTM teams to ship features 80% faster. The CI/CD platform became the standard across all Salesforce engineering. Data consolidation enabled new AI training initiatives while reducing data storage costs by $450k annually. Both initiatives demonstrated that platform investments directly accelerate business velocity.",
+      metrics: [
+        "Release cycle: days → minutes",
+        "GTM velocity: +80%",
+        "Annual savings: $450K",
+        "500+ engineers enabled"
+      ]
+    }
   },
   {
     company: "Zillow",
     role: "Sr. Salesforce Product Manager, Frontline Engineering",
     period: "2020-2023",
+    scope: {
+      teamSize: "Platform engineering org",
+      users: "1,000+ sales & service reps",
+      revenue: "$1.6B+ annual revenue"
+    },
     outcomes: [
       "Modernized Zillow's Salesforce architecture and unified 4 orgs into a single GTM platform supporting $1.6B+ in annual revenue",
       "Added product analytics and platform telemetry to drive data-informed roadmap decisions",
       "Embedded TCPA/CPRA controls mitigating $1B+ in regulatory risk"
-    ]
+    ],
+    caseStudy: {
+      problem: "Zillow operated 4 separate Salesforce orgs due to acquisitions and organic growth, creating data silos, duplicate workflows, and compliance gaps. GTM teams struggled with fragmented customer data, and regulatory risk (TCPA/CPRA) was difficult to manage across disconnected systems. There was no unified view of the customer journey or consistent platform telemetry.",
+      action: "I led a multi-year platform consolidation initiative to unify all 4 orgs into a single Salesforce instance. This included data migration, workflow standardization, and architectural modernization. I embedded compliance controls directly into the platform (policy-as-code for TCPA/CPRA) and built product analytics capabilities to make the platform observable and data-driven.",
+      result: "Successfully unified 4 orgs into a single platform supporting $1.6B+ in revenue. Compliance became automated rather than manual, mitigating over $1B in potential regulatory risk. Platform telemetry enabled data-informed decisions, and GTM teams gained a unified customer view that improved sales efficiency and service quality.",
+      metrics: [
+        "4 orgs → 1 unified platform",
+        "Revenue supported: $1.6B+",
+        "Regulatory risk mitigated: $1B+",
+        "1,000+ users enabled"
+      ]
+    }
   },
   {
     company: "T-Mobile",
     role: "Sr. Product Manager, Product & Tech",
     period: "2019-2020",
+    scope: {
+      teamSize: "Multi-vendor platform teams",
+      users: "15,000+ frontline staff",
+      revenue: "Enterprise GTM platform"
+    },
     outcomes: [
       "Modernized T-Mobile's Salesforce Sales and Service Clouds for 15k+ frontline users",
       "Cut page load times by 50%",
       "Eliminated $5M+ in annual operational costs"
-    ]
+    ],
+    caseStudy: {
+      problem: "T-Mobile's Salesforce platform served 15,000+ frontline users across sales and service, but years of technical debt resulted in slow page loads (8-12 seconds), poor user experience, and high operational costs from manual workarounds. Reps were frustrated, productivity suffered, and the platform couldn't scale to support business growth.",
+      action: "I led a platform modernization initiative focused on performance, UX, and cost reduction. This included architectural cleanup, Lightning migration, workflow optimization, and eliminating redundant integrations. I worked with multi-vendor teams to consolidate tools, automate manual processes, and redesign the user experience around frontline workflows.",
+      result: "Page load times dropped by 50%, dramatically improving rep productivity and satisfaction. Operational costs decreased by $5M+ annually through automation and tool consolidation. The modernized platform became a competitive advantage, enabling faster customer service and better sales execution at scale.",
+      metrics: [
+        "Page load time: -50%",
+        "Annual cost savings: $5M+",
+        "Users served: 15,000+",
+        "Platform scalability: ✓"
+      ]
+    }
   },
   {
     company: "Amazon Web Services (AWS)",
     role: "Product Manager, Global Business Operations",
     period: "2016-2019",
+    scope: {
+      teamSize: "Global ops & engineering",
+      users: "Enterprise sales teams",
+      revenue: "$120B+ discount program"
+    },
     outcomes: [
       "Owned global pricing and billing infrastructure for AWS's $120B+ Enterprise Discount Program",
       "Modernized quote-to-cash systems",
       "Expanded seller-of-record capabilities into 18 EU markets"
-    ]
+    ],
+    caseStudy: {
+      problem: "AWS's Enterprise Discount Program managed $120B+ in customer commitments, but legacy quote-to-cash systems created friction in pricing, contracting, and billing. Global expansion into EU markets required new seller-of-record capabilities with complex tax and compliance requirements. Manual processes couldn't scale with AWS's growth.",
+      action: "I owned the end-to-end product strategy for pricing and billing infrastructure modernization. This included redesigning quote-to-cash workflows, automating manual processes, and building new capabilities for EU market expansion. I worked across finance, legal, engineering, and sales to ensure systems met both business and regulatory requirements.",
+      result: "Successfully modernized quote-to-cash systems, enabling faster deal cycles and better pricing accuracy. Expanded seller-of-record capabilities into 18 EU markets, unlocking new revenue opportunities while maintaining tax and compliance integrity. The platform scaled to support AWS's continued hypergrowth.",
+      metrics: [
+        "Program value: $120B+",
+        "EU markets: 18 new",
+        "Quote-to-cash: modernized",
+        "Deal cycle: faster"
+      ]
+    }
   },
   {
     company: "Microsoft (Merkle), LivingSocial, San Diego Padres",
@@ -55,13 +143,15 @@ const experiences = [
 ];
 
 export default function ImpactTimeline() {
+  const [selectedCase, setSelectedCase] = useState<Experience | null>(null);
+
   return (
     <section className="py-20 md:py-24" id="impact">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Impact History</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Career Trajectory & Impact</h2>
           <p className="text-lg text-muted-foreground">
-            A track record of building platforms that accelerate teams and deliver measurable results.
+            Progressive scope and responsibility across platform engineering, AI governance, and GTM systems.
           </p>
         </div>
 
@@ -78,28 +168,66 @@ export default function ImpactTimeline() {
                 <Card className="hover-elevate transition-all duration-300">
                   <CardHeader>
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
-                      <div>
+                      <div className="flex-1">
                         <CardTitle className="text-2xl mb-2">{exp.role}</CardTitle>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 mb-4">
                           <span className="text-lg font-semibold text-primary">{exp.company}</span>
                           <Badge variant="secondary">{exp.period}</Badge>
                         </div>
+                        
+                        {/* Scope indicators */}
+                        {exp.scope && (
+                          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                            {exp.scope.teamSize && (
+                              <div className="flex items-center gap-1.5">
+                                <Users className="h-3.5 w-3.5" />
+                                <span>{exp.scope.teamSize}</span>
+                              </div>
+                            )}
+                            {exp.scope.users && (
+                              <div className="flex items-center gap-1.5">
+                                <Building2 className="h-3.5 w-3.5" />
+                                <span>{exp.scope.users}</span>
+                              </div>
+                            )}
+                            {exp.scope.revenue && (
+                              <div className="flex items-center gap-1.5">
+                                <TrendingUp className="h-3.5 w-3.5" />
+                                <span>{exp.scope.revenue}</span>
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-3">
-                      <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                        Key Outcomes
-                      </p>
-                      <ul className="space-y-2">
-                        {exp.outcomes.map((outcome, i) => (
-                          <li key={i} className="flex gap-3 text-muted-foreground">
-                            <span className="text-primary mt-1.5 flex-shrink-0">•</span>
-                            <span>{outcome}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                          Key Outcomes
+                        </p>
+                        <ul className="space-y-2">
+                          {exp.outcomes.map((outcome, i) => (
+                            <li key={i} className="flex gap-3 text-muted-foreground">
+                              <span className="text-primary mt-1.5 flex-shrink-0">•</span>
+                              <span>{outcome}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      {exp.caseStudy && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => setSelectedCase(exp)}
+                          data-testid={`button-case-study-${index}`}
+                        >
+                          View Case Study
+                          <ChevronRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -108,6 +236,76 @@ export default function ImpactTimeline() {
           </div>
         </div>
       </div>
+
+      {/* Case Study Modal */}
+      <Dialog open={!!selectedCase} onOpenChange={() => setSelectedCase(null)}>
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">{selectedCase?.role}</DialogTitle>
+            <DialogDescription className="text-base">
+              {selectedCase?.company} • {selectedCase?.period}
+            </DialogDescription>
+          </DialogHeader>
+          
+          {selectedCase?.caseStudy && (
+            <div className="space-y-6 pt-4">
+              {/* Problem */}
+              <div>
+                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-md bg-destructive/10 flex items-center justify-center text-destructive font-bold">
+                    P
+                  </div>
+                  Problem
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  {selectedCase.caseStudy.problem}
+                </p>
+              </div>
+
+              {/* Action */}
+              <div>
+                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-md bg-primary/10 flex items-center justify-center text-primary font-bold">
+                    A
+                  </div>
+                  Action
+                </h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  {selectedCase.caseStudy.action}
+                </p>
+              </div>
+
+              {/* Result */}
+              <div>
+                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-md bg-chart-2/10 flex items-center justify-center text-chart-2 font-bold">
+                    R
+                  </div>
+                  Result
+                </h4>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  {selectedCase.caseStudy.result}
+                </p>
+                
+                {/* Metrics */}
+                <Card className="bg-muted/30">
+                  <CardContent className="pt-6">
+                    <p className="text-sm font-semibold mb-3">Key Metrics</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {selectedCase.caseStudy.metrics.map((metric, i) => (
+                        <div key={i} className="flex items-center gap-2 text-sm">
+                          <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                          <span className="font-mono">{metric}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
