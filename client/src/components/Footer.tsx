@@ -37,14 +37,20 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-sm mb-4">Connect</h3>
             <div className="flex gap-2">
-              <Button size="icon" variant="ghost" data-testid="button-linkedin">
-                <Linkedin className="h-4 w-4" />
+              <Button size="icon" variant="ghost" asChild data-testid="button-linkedin-footer">
+                <a href="https://www.linkedin.com/in/stevenlwashington/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-4 w-4" />
+                </a>
               </Button>
-              <Button size="icon" variant="ghost" data-testid="button-github">
-                <Github className="h-4 w-4" />
+              <Button size="icon" variant="ghost" asChild data-testid="button-github-footer">
+                <a href="https://github.com/stevenlwashington" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-4 w-4" />
+                </a>
               </Button>
-              <Button size="icon" variant="ghost" data-testid="button-email">
-                <Mail className="h-4 w-4" />
+              <Button size="icon" variant="ghost" asChild data-testid="button-email-footer">
+                <a href="mailto:stevenlwashington@gmail.com">
+                  <Mail className="h-4 w-4" />
+                </a>
               </Button>
             </div>
           </div>

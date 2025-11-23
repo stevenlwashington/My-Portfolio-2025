@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import portraitPlaceholder from "@assets/generated_images/executive_portrait_placeholder_with_sp_monogram.png";
 
 interface HeroProps {
   onViewImpact?: () => void;
-  onAskAI?: () => void;
 }
 
-export default function Hero({ onViewImpact, onAskAI }: HeroProps) {
+export default function Hero({ onViewImpact }: HeroProps) {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background gradient mesh */}
@@ -58,16 +57,6 @@ export default function Hero({ onViewImpact, onAskAI }: HeroProps) {
               >
                 View Impact
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-base backdrop-blur-sm"
-                onClick={onAskAI}
-                data-testid="button-ask-ai-twin"
-              >
-                <MessageSquare className="mr-2 h-4 w-4" />
-                Ask my AI Twin
               </Button>
             </div>
           </div>
