@@ -18,7 +18,10 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-sm mb-4">Quick Links</h3>
             <div className="flex flex-col gap-2">
-              <a href="#principles" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#summary" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Executive Summary
+              </a>
+              <a href="#philosophy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Leadership Principles
               </a>
               <a href="#pvm" className="text-sm text-muted-foreground hover:text-foreground transition-colors">

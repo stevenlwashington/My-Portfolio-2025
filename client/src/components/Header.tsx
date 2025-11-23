@@ -11,12 +11,10 @@ export default function Header({ onNavigate }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Principles", href: "#principles" },
-    { label: "Systems", href: "#systems" },
+    { label: "Summary", href: "#summary" },
+    { label: "Principles", href: "#philosophy" },
     { label: "Calculator", href: "#pvm" },
     { label: "Impact", href: "#impact" },
-    { label: "Philosophy", href: "#philosophy" },
-    { label: "Why Hire", href: "#why-hire" },
   ];
 
   const handleClick = (href: string) => {
@@ -54,7 +52,11 @@ export default function Header({ onNavigate }: HeaderProps) {
               {item.label}
             </button>
           ))}
-          <Button size="sm" data-testid="button-contact">
+          <Button 
+            size="sm" 
+            onClick={() => window.location.href = 'mailto:steven@example.com'}
+            data-testid="button-contact"
+          >
             Contact
           </Button>
         </nav>
@@ -77,7 +79,11 @@ export default function Header({ onNavigate }: HeaderProps) {
                   {item.label}
                 </button>
               ))}
-              <Button className="mt-4" data-testid="button-contact-mobile">
+              <Button 
+                className="mt-4" 
+                onClick={() => window.location.href = 'mailto:steven@example.com'}
+                data-testid="button-contact-mobile"
+              >
                 Contact
               </Button>
             </nav>

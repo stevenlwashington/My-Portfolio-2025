@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
-import { Package, ShieldCheck, Zap, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Package, ShieldCheck, Zap } from "lucide-react";
 
 const principles = [
   {
@@ -107,21 +106,19 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
           className="absolute inset-0 backface-hidden"
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
         >
-          <Card className="h-full flex flex-col p-6 overflow-hidden">
-            <div className="flex items-start justify-between mb-4">
-              <h3 className="text-xl font-bold pr-2">
+          <Card 
+            className="h-full flex flex-col p-6 overflow-hidden cursor-pointer hover-elevate active-elevate-2 transition-all"
+            onClick={onClose}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role="button"
+            aria-label={`${principle.title} details. Click to close.`}
+            data-testid={`card-principle-back-${index}`}
+          >
+            <div className="mb-4">
+              <h3 className="text-xl font-bold">
                 {principle.title}
               </h3>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={onClose}
-                onKeyDown={handleKeyDown}
-                aria-label="Close details"
-                data-testid={`button-close-principle-${index}`}
-              >
-                <X className="w-4 h-4" />
-              </Button>
             </div>
             <div className="flex-1 overflow-y-auto space-y-3">
               {principle.content.map((paragraph, pIndex) => (

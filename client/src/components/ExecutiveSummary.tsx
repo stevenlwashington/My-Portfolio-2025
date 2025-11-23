@@ -125,7 +125,7 @@ export default function ExecutiveSummary() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
         >
           {/* Platform Scale */}
           <Card>
@@ -138,11 +138,11 @@ export default function ExecutiveSummary() {
                   <h3 className="font-semibold text-lg">Platform Scale</h3>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <div className="text-2xl font-bold text-primary font-mono">15K+</div>
+                      <div className="text-2xl font-bold text-primary font-mono">50K+</div>
                       <div className="text-muted-foreground">End users enabled</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary font-mono">4</div>
+                      <div className="text-2xl font-bold text-primary font-mono">6</div>
                       <div className="text-muted-foreground">Major consolidations</div>
                     </div>
                   </div>
@@ -165,6 +165,47 @@ export default function ExecutiveSummary() {
               </div>
             </CardContent>
           </Card>
+        </motion.div>
+
+        {/* Strategic Capabilities */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          <h3 className="text-2xl font-bold mb-6 text-center">Strategic Platform Capabilities</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Card className="hover-elevate transition-all" data-testid="card-capability-salesforce">
+              <CardContent className="p-5">
+                <div className="space-y-2">
+                  <h4 className="font-semibold">Salesforce Consolidation</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Unified 4 production orgs serving 50K+ users, eliminating data silos and reducing integration complexity by 70%
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="hover-elevate transition-all" data-testid="card-capability-cicd">
+              <CardContent className="p-5">
+                <div className="space-y-2">
+                  <h4 className="font-semibold">CI/CD Acceleration</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Built on-demand deployment pipelines reducing release cycles from weeks to minutes, enabling 80% faster GTM execution
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="hover-elevate transition-all" data-testid="card-capability-ai">
+              <CardContent className="p-5">
+                <div className="space-y-2">
+                  <h4 className="font-semibold">AI Governance at Scale</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Designed TCPA/CPRA-compliant data pipelines for 16 years of enterprise data, enabling responsible AI innovation
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </motion.div>
       </div>
     </section>
