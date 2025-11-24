@@ -1,26 +1,38 @@
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function ValuePropGenerator() {
   const [orgName, setOrgName] = useState("");
   const [generatedProp, setGeneratedProp] = useState("");
-  const [isGenerating, setIsGenerating] = useState(false);
+  const { toast } = useToast();
 
-  // TODO: Remove mock functionality - Replace with actual Gemini API call
+  const mutation = useMutation({
+    mutationFn: async (companyName: string) => {
+      const response = await apiRequest("POST", "/api/generate-value-prop", { companyName });
+      const data = await response.json();
+      return data.valueProp as string;
+    },
+    onSuccess: (valueProp) => {
+      setGeneratedProp(valueProp);
+    },
+    onError: () => {
+      toast({
+        title: "Generation failed",
+        description: "Unable to generate value proposition. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const handleGenerate = () => {
     if (!orgName.trim()) return;
-
-    setIsGenerating(true);
-    
-    // Mock generation
-    setTimeout(() => {
-      const mockProp = `For ${orgName}, I bring 15+ years of platform engineering leadership with a proven track record of accelerating velocity and scaling GTM operations. My experience modernizing Salesforce platforms at Zillow ($1.6B+ revenue) and T-Mobile (15k+ users) shows how unified platforms eliminate friction, reduce operational costs, and enable teams to ship faster. I specialize in responsible AI governance, data unification, and treating platform engineering as a product—ensuring your engineering and go-to-market teams have the tools, automation, and insights they need to move from idea to production with confidence and compliance.`;
-      setGeneratedProp(mockProp);
-      setIsGenerating(false);
-    }, 1000);
+    mutation.mutate(orgName.trim());
   };
 
   return (
@@ -39,21 +51,41 @@ export default function ValuePropGenerator() {
                 placeholder="Your organization's name"
                 value={orgName}
                 onChange={(e) => setOrgName(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleGenerate()}
+                onKeyDown={(e) => e.key === "Enter" && !mutation.isPending && handleGenerate()}
                 className="flex-1"
                 data-testid="input-org-name"
               />
               <Button 
                 onClick={handleGenerate} 
-                disabled={isGenerating || !orgName.trim()}
+                disabled={mutation.isPending || !orgName.trim()}
                 data-testid="button-generate-value-prop"
               >
-                <Sparkles className="mr-2 h-4 w-4" />
-                Generate Value Prop
+                {mutation.isPending ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Generating...
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="mr-2 h-4 w-4" />
+                    Generate Value Prop
+                  </>
+                )}
               </Button>
             </div>
 
-            {generatedProp && (
+            {mutation.isPending && (
+              <Card className="border-primary/20 bg-primary/5">
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-center gap-3 text-muted-foreground">
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                    <p className="text-base">Crafting your personalized value proposition...</p>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {generatedProp && !mutation.isPending && (
               <Card className="border-primary/20 bg-primary/5">
                 <CardContent className="pt-6">
                   <p className="text-base leading-relaxed" data-testid="text-generated-prop">

@@ -1,0 +1,80 @@
+As a recruiter, hiring manager, or executive evaluating Steven
+I want to enter any company name and instantly receive a concise, leadership-level value proposition tailored to that organization
+So that I can clearly understand how Steven’s platform, AI, and GTM experience aligns with my company’s strategy without reading a long or generic response.
+
+Acceptance Criteria
+1. Input & Output
+
+User enters any company name into the input field.
+
+When clicking Generate Value Prop, the app generates a 2–4 sentence output in a concise, executive tone.
+
+Output must always reference:
+
+Steven’s platform engineering + AI + GTM/RevOps strengths
+
+Metrics or proof points (e.g., velocity, scale, impact)
+
+A clear “why this matters to that company” angle
+
+2. Tone & Style Requirements
+
+Tone must match Steven’s brand:
+
+Senior
+
+Clear
+
+Strategic
+
+No tangents
+
+No verbosity
+
+No filler
+
+Output should read like a VP-to-C-suite briefing.
+
+3. Company Context Integration
+
+The generation logic should:
+
+Use any high-level knowledge about the company (industry, business model, domain focus).
+
+If company context is unknown, the system must still generate a strong, generalizable value proposition.
+
+Never hallucinate specifics or fake financials; it should infer strategic alignment themes, not fabricated details.
+
+4. Structure of the Output
+
+Every generated value prop must include:
+
+Opening alignment statement
+(e.g., “For <Company>, I bring…”)
+
+Relevant core strengths
+(platform modernization, AI governance, velocity, GTM tooling, data unification)
+
+One or two quantified credibility anchors
+(80% velocity lift, $1.6B+ revenue platform, 15k+ users, etc.)
+
+Closing strategic outcome
+(e.g., “helping your teams ship faster, safer, and with clearer insights.”)
+
+5. Usability & UX
+
+Generated text appears in a clean, readable card (same as current styling).
+
+The card auto-expands if needed but maintains consistent spacing.
+
+Include a subtle loading state during generation.
+
+Ensure mobile responsiveness.
+
+6. Technical Requirements
+
+The component must accept any string as a company name.
+
+Logic for generation is centralized for easier refinement.
+
+Easily configurable: ability to adjust tone, length, or templates later.

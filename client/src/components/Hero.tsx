@@ -42,7 +42,7 @@ export default function Hero({ onViewImpact }: HeroProps) {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>$450K+ annual savings in storage and compute</span>
+                  <span>16+ years delivering technology, data, and platform solutions</span>
                 </div>
               </div>
             </div>
