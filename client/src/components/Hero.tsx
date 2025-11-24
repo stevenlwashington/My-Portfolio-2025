@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import portraitPlaceholder from "@assets/generated_images/steven_portrait.png";
+import { MetricCard } from "@/components/ui/metric-card";
+import { ArrowRight, TrendingUp, Zap, DollarSign } from "lucide-react";
 
 interface HeroProps {
   onViewImpact?: () => void;
@@ -14,9 +14,9 @@ export default function Hero({ onViewImpact }: HeroProps) {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,189,248,0.05),rgba(0,0,0,0))]" />
       
       <div className="relative w-full max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-[1fr,280px] gap-12 items-center">
+        <div className="space-y-12">
           {/* Main content */}
-          <div className="space-y-8">
+          <div className="space-y-8 text-center">
             <div className="space-y-6">
               <div className="space-y-2">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
@@ -27,28 +27,13 @@ export default function Hero({ onViewImpact }: HeroProps) {
                 </p>
               </div>
               
-              <p className="text-lg md:text-xl text-foreground max-w-2xl leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto leading-relaxed font-medium">
                 I build secure, compliant enterprise platforms that power responsible AI, accelerate engineering velocity, improve seller productivity, and deliver measurable business outcomes.
               </p>
-              
-              <div className="flex flex-wrap gap-6 text-base text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>$11B+ cumulative revenue supported across platform estate</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>80% acceleration in engineering deployment velocity</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span>16+ years delivering technology, data, and platform solutions</span>
-                </div>
-              </div>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               <Button 
                 size="lg" 
                 className="text-base"
@@ -61,39 +46,31 @@ export default function Hero({ onViewImpact }: HeroProps) {
             </div>
           </div>
 
-          {/* Portrait */}
-          <div className="hidden lg:flex justify-center">
-            <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full blur-2xl" />
-              
-              {/* Portrait container */}
-              <div className="relative w-64 h-64 rounded-full border-4 border-primary/30 overflow-hidden">
-                <img 
-                  src={portraitPlaceholder} 
-                  alt="Steven P." 
-                  className="w-full h-full object-cover"
-                  data-testid="img-portrait"
-                />
-              </div>
-              
-              {/* Accent ring */}
-              <div className="absolute -inset-2 bg-gradient-to-br from-primary via-primary/50 to-transparent rounded-full opacity-20 -z-10" />
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile portrait */}
-        <div className="lg:hidden flex justify-center mt-12">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full blur-2xl" />
-            <div className="relative w-48 h-48 rounded-full border-4 border-primary/30 overflow-hidden">
-              <img 
-                src={portraitPlaceholder} 
-                alt="Steven P." 
-                className="w-full h-full object-cover"
-              />
-            </div>
+          {/* Executive Impact Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <MetricCard
+              icon={TrendingUp}
+              value={11}
+              suffix="B+"
+              prefix="$"
+              label="Cumulative revenue supported across platform estate"
+              delay={0}
+            />
+            <MetricCard
+              icon={Zap}
+              value={80}
+              suffix="%"
+              label="Acceleration in engineering deployment velocity"
+              delay={0.15}
+            />
+            <MetricCard
+              icon={DollarSign}
+              value={5}
+              suffix="M+"
+              prefix="$"
+              label="Annual operational cost savings"
+              delay={0.3}
+            />
           </div>
         </div>
       </div>

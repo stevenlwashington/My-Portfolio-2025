@@ -32,13 +32,13 @@ const experiences: Experience[] = [
     period: "2023-Present",
     scope: {
       teamSize: "Cross-functional platform teams",
-      users: "500+ engineers",
-      revenue: "$1.6B+ GTM platform"
+      users: "100+ engineers",
+      revenue: "GTM Platform Engineering"
     },
     outcomes: [
-      "Architected enterprise data pipelines consolidating 16 years of history for AI training, saving $450k/yr",
       "Built the on-demand CI/CD platform for Salesforce engineering—reducing release cycles from days to minutes",
-      "Increased GTM delivery velocity by 80%"
+      "Increased GTM delivery velocity by 80%",
+      "Architected enterprise data pipelines consolidating 16 years of history for AI training, saving $450k/yr"
     ],
     caseStudy: {
       problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Meanwhile, 16 years of enterprise data sat fragmented across systems, making it difficult to leverage for AI/ML initiatives.",
@@ -48,7 +48,7 @@ const experiences: Experience[] = [
         "Release cycle: days → minutes",
         "GTM velocity: +80%",
         "Annual savings: $450K",
-        "500+ engineers enabled"
+        "100+ engineers enabled"
       ]
     }
   },
@@ -57,24 +57,24 @@ const experiences: Experience[] = [
     role: "Sr. Salesforce Product Manager, Frontline Engineering",
     period: "2020-2023",
     scope: {
-      teamSize: "Platform engineering org",
-      users: "1,000+ sales & service reps",
-      revenue: "$1.6B+ annual revenue"
+      teamSize: "Core Technology org",
+      users: "2,500+ sales & service reps",
+      revenue: "$1.5B+ annual revenue"
     },
     outcomes: [
-      "Modernized Zillow's Salesforce architecture and unified 4 orgs into a single GTM platform supporting $1.6B+ in annual revenue",
+      "Modernized Zillow's Salesforce architecture and unified 4 orgs into a single GTM platform supporting $1.5B+ in annual revenue",
       "Added product analytics and platform telemetry to drive data-informed roadmap decisions",
       "Embedded TCPA/CPRA controls mitigating $1B+ in regulatory risk"
     ],
     caseStudy: {
       problem: "Zillow operated 4 separate Salesforce orgs due to acquisitions and organic growth, creating data silos, duplicate workflows, and compliance gaps. GTM teams struggled with fragmented customer data, and regulatory risk (TCPA/CPRA) was difficult to manage across disconnected systems. There was no unified view of the customer journey or consistent platform telemetry.",
       action: "I led a multi-year platform consolidation initiative to unify all 4 orgs into a single Salesforce instance. This included data migration, workflow standardization, and architectural modernization. I embedded compliance controls directly into the platform (policy-as-code for TCPA/CPRA) and built product analytics capabilities to make the platform observable and data-driven.",
-      result: "Successfully unified 4 orgs into a single platform supporting $1.6B+ in revenue. Compliance became automated rather than manual, mitigating over $1B in potential regulatory risk. Platform telemetry enabled data-informed decisions, and GTM teams gained a unified customer view that improved sales efficiency and service quality.",
+      result: "Successfully unified 4 orgs into a single platform supporting $1.5B+ in revenue. Compliance became automated rather than manual, mitigating over $1B in potential regulatory risk. Platform telemetry enabled data-informed decisions, and GTM teams gained a unified customer view that improved sales efficiency and service quality.",
       metrics: [
         "4 orgs → 1 unified platform",
-        "Revenue supported: $1.6B+",
+        "Revenue supported: $1.5B+",
         "Regulatory risk mitigated: $1B+",
-        "1,000+ users enabled"
+        "2,500+ users enabled"
       ]
     }
   },
@@ -111,19 +111,19 @@ const experiences: Experience[] = [
     scope: {
       teamSize: "Global ops & engineering",
       users: "Enterprise sales teams",
-      revenue: "$120B+ discount program"
+      revenue: "$20B+ discount program"
     },
     outcomes: [
-      "Owned global pricing and billing infrastructure for AWS's $120B+ Enterprise Discount Program",
+      "Owned global pricing and billing infrastructure for AWS's $20B+ Enterprise Discount Program",
       "Modernized quote-to-cash systems",
       "Expanded seller-of-record capabilities into 18 EU markets"
     ],
     caseStudy: {
-      problem: "AWS's Enterprise Discount Program managed $120B+ in customer commitments, but legacy quote-to-cash systems created friction in pricing, contracting, and billing. Global expansion into EU markets required new seller-of-record capabilities with complex tax and compliance requirements. Manual processes couldn't scale with AWS's growth.",
+      problem: "AWS's Enterprise Discount Program managed $20B+ in customer commitments, but legacy quote-to-cash systems created friction in pricing, contracting, and billing. Global expansion into EU markets required new seller-of-record capabilities with complex tax and compliance requirements. Manual processes couldn't scale with AWS's growth.",
       action: "I owned the end-to-end product strategy for pricing and billing infrastructure modernization. This included redesigning quote-to-cash workflows, automating manual processes, and building new capabilities for EU market expansion. I worked across finance, legal, engineering, and sales to ensure systems met both business and regulatory requirements.",
       result: "Successfully modernized quote-to-cash systems, enabling faster deal cycles and better pricing accuracy. Expanded seller-of-record capabilities into 18 EU markets, unlocking new revenue opportunities while maintaining tax and compliance integrity. The platform scaled to support AWS's continued hypergrowth.",
       metrics: [
-        "Program value: $120B+",
+        "Program value: $20B+",
         "EU markets: 18 new",
         "Quote-to-cash: modernized",
         "Deal cycle: faster"
@@ -151,7 +151,7 @@ export default function ImpactTimeline() {
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Career Trajectory & Impact</h2>
           <p className="text-lg text-muted-foreground">
-            Progressive scope and responsibility across platform engineering, AI governance, and GTM systems.
+            Progressive scope and responsibility across platform engineering, AI governance, and GTM systems development.
           </p>
         </div>
 
