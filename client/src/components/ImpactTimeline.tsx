@@ -80,7 +80,7 @@ const experiences: Experience[] = [
   },
   {
     company: "T-Mobile",
-    role: "Sr. Product Manager, Product & Tech",
+    role: "Sr. Product Manager, Product & Technology",
     period: "2019-2020",
     scope: {
       teamSize: "Multi-vendor platform teams",
@@ -111,7 +111,7 @@ const experiences: Experience[] = [
     scope: {
       teamSize: "Global ops & engineering",
       users: "Enterprise sales teams",
-      revenue: "$20B+ discount program"
+      revenue: "$20B+ private pricing programs"
     },
     outcomes: [
       "Owned global pricing and billing infrastructure for AWS's $20B+ Enterprise Discount Program",

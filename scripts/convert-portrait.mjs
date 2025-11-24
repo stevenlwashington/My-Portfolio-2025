@@ -29,21 +29,25 @@ async function convertAndCropPortrait() {
 
     const width = metadata.width;
     const height = metadata.height;
-    const cropSize = Math.min(width, height);
     
+    // Zoom in more - use 60% of the width for a tighter crop on face/shoulders
+    const cropSize = Math.floor(width * 0.6);
+    const cropHeight = Math.floor(cropSize * 1.15);
+    
+    // Center horizontally, position near top for face
     const left = Math.floor((width - cropSize) / 2);
-    const top = 0;
+    const top = Math.floor(height * 0.05); // Start slightly below top
 
     await image
       .extract({
         left: left,
         top: top,
         width: cropSize,
-        height: Math.floor(cropSize * 1.2)
+        height: cropHeight
       })
-      .resize(512, 614, {
+      .resize(512, 588, {
         fit: 'cover',
-        position: 'top'
+        position: 'center'
       })
       .toFile(outputPath);
 
