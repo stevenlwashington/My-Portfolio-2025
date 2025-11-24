@@ -1,5 +1,48 @@
 # Product Backlog
 
+## Enhancement: Platform Value Multiplier Calculator
+
+### User Story
+As a recruiter, hiring manager, or executive evaluating Steven,  
+I want to see how platform improvements translate into tangible business outcomes through an interactive calculator,  
+So that I can understand the concrete value Steven brings to platform engineering initiatives.
+
+### Acceptance Criteria
+
+#### Input Sliders
+- [ ] Rename sliders to clearer, real-world concepts:
+  - Friction → "Development Friction" or "Operational Complexity"
+  - Data Fragmentation Index → "Data Silos"
+  - Frontline Users → "Team Size"
+- [ ] Add tooltip explanations under each slider describing what the metric represents
+- [ ] Ensure slider ranges produce realistic, predictable results
+
+#### Output Metrics
+- [ ] Results must update predictably based on slider changes
+- [ ] Use ranges or bands instead of absolute numbers where appropriate
+- [ ] Display transparent formula or logic summary (e.g., "Lower friction → faster deployments → improved GTM productivity")
+- [ ] Add small animated charts or micro-interactions that reinforce changes
+
+#### Quality & Credibility
+- [ ] No slider state produces unrealistic or nonsensical values
+- [ ] Calculations feel causally connected to inputs
+- [ ] Results should feel credible to a platform engineering leader
+
+#### User Experience
+- [ ] Clean, intuitive interface with clear visual hierarchy
+- [ ] Smooth animations when values change
+- [ ] Mobile-responsive design
+- [ ] Accessible via keyboard
+- [ ] Loading states for calculations (if needed)
+
+### Priority
+Medium - Temporarily removed to focus on core portfolio content; to be refined and reintroduced
+
+### Status
+Backlog - Removed from current build for refinement
+
+---
+
 ## Enhancement: Interactive Systems Thinking Visualization
 
 ### User Story

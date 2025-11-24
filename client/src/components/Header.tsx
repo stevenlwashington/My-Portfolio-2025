@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import ContactForm from "@/components/ContactForm";
-import logoIcon from "@assets/generated_images/ai_productivity_brand_icon.png";
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -17,7 +16,6 @@ export default function Header({ onNavigate }: HeaderProps) {
   const navItems = [
     { label: "Summary", href: "#summary" },
     { label: "Principles", href: "#philosophy" },
-    { label: "Calculator", href: "#pvm" },
     { label: "Impact", href: "#impact" },
   ];
 
@@ -37,10 +35,9 @@ export default function Header({ onNavigate }: HeaderProps) {
         <div className="flex items-center gap-3">
           <button
             onClick={() => handleClick("#top")}
-            className="flex items-center gap-2 hover-elevate rounded-md px-2 py-1"
+            className="hover-elevate rounded-md px-2 py-1"
             data-testid="button-logo"
           >
-            <img src={logoIcon} alt="" className="w-8 h-8" />
             <span className="text-xl font-bold">Steven Washington</span>
           </button>
         </div>

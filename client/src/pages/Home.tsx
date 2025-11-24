@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import ExecutiveSummary from "@/components/ExecutiveSummary";
-import PlatformValueMultiplier from "@/components/PlatformValueMultiplier";
 import ImpactTimeline from "@/components/ImpactTimeline";
 import LeadershipPhilosophy from "@/components/LeadershipPhilosophy";
 import ValuePropGenerator from "@/components/ValuePropGenerator";
@@ -19,7 +18,6 @@ export default function Home() {
         <Hero onViewImpact={scrollToImpact} />
         <ExecutiveSummary />
         <LeadershipPhilosophy />
-        <PlatformValueMultiplier />
         <ImpactTimeline />
         <ValuePropGenerator />
       </main>

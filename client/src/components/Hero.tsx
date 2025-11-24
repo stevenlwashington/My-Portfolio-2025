@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import portraitPlaceholder from "@assets/generated_images/executive_portrait_placeholder_with_sp_monogram.png";
+import portraitPlaceholder from "@assets/generated_images/steven_portrait.png";
 
 interface HeroProps {
   onViewImpact?: () => void;
