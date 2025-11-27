@@ -78,7 +78,7 @@ export default function Hero({ onViewImpact }: HeroProps) {
           {/* Main tagline */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="block bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-400 bg-clip-text text-transparent">
                 Product thinking.
               </span>
               <span className="block font-serif text-white">
