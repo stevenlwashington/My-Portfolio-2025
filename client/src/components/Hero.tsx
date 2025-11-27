@@ -77,11 +77,11 @@ export default function Hero({ onViewImpact }: HeroProps) {
 
           {/* Main tagline */}
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-400 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
+              <span className="block bg-gradient-to-r from-violet-500 via-pink-400 to-rose-500 bg-clip-text text-transparent">
                 Product thinking.
               </span>
-              <span className="block font-serif text-white">
+              <span className="block text-white">
                 Engineering execution.
               </span>
             </h1>
