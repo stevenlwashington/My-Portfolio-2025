@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Linkedin, Github } from "lucide-react";
+import { Menu, Linkedin, Github, Zap } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import ContactForm from "@/components/ContactForm";
-import portraitImage from "@assets/generated_images/steven_portrait.png";
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -32,21 +31,15 @@ export default function Header({ onNavigate }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo/Portrait */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => handleClick("#top")}
-            className="hover-elevate rounded-full p-1"
-            data-testid="button-logo"
-            aria-label="Return to top of page"
-          >
-            <img 
-              src={portraitImage} 
-              alt="Steven Washington" 
-              className="h-10 w-10 rounded-full object-cover"
-            />
-          </button>
-        </div>
+        {/* Logo */}
+        <button
+          onClick={() => handleClick("#top")}
+          className="hover-elevate rounded-lg p-2"
+          data-testid="button-logo"
+          aria-label="Return to top of page"
+        >
+          <Zap className="h-6 w-6 text-primary" />
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
