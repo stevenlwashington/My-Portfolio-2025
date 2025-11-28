@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import ExecutiveSummary from "@/components/ExecutiveSummary";
+import StrategicCapabilities from "@/components/StrategicCapabilities";
 import ImpactTimeline from "@/components/ImpactTimeline";
 import LeadershipPhilosophy from "@/components/LeadershipPhilosophy";
 import ValuePropGenerator from "@/components/ValuePropGenerator";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero onViewImpact={scrollToImpact} />
         <ExecutiveSummary />
+        <StrategicCapabilities />
         <LeadershipPhilosophy />
         <ImpactTimeline />
         <ValuePropGenerator />
