@@ -87,15 +87,20 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
             aria-label={`${principle.title}. Click to read more.`}
             data-testid={`card-principle-${index}`}
           >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-lg bg-primary/10">
-                <Icon className="w-8 h-8 text-primary" />
+            <div className="flex flex-col items-center text-center space-y-4 h-full justify-between">
+              <div className="space-y-4">
+                <div className="p-4 rounded-lg bg-primary/10">
+                  <Icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">
+                  {principle.title}
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed">
+                  {principle.tagline}
+                </p>
               </div>
-              <h3 className="text-2xl font-bold">
-                {principle.title}
-              </h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
-                {principle.tagline}
+              <p className="text-xs text-primary/70 font-medium tracking-wide uppercase">
+                Click to explore
               </p>
             </div>
           </Card>
