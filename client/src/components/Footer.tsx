@@ -24,9 +24,6 @@ export default function Footer() {
               <a href="#philosophy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Leadership Principles
               </a>
-              <a href="#pvm" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Value Calculator
-              </a>
               <a href="#impact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Impact History
               </a>
