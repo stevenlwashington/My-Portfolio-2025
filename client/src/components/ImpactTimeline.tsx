@@ -38,7 +38,7 @@ const experiences: Experience[] = [
     outcomes: [
       "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes",
       "Partnered with principal architects to design data pipelines and owned prioritization tradeoffs between reliability, cost, and velocity; increased GTM delivery velocity by 80%",
-      "Architected enterprise data consolidation pipelines unifying 16 years of history for AI training, saving $450k/yr while enabling responsible AI governance at scale"
+      "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450k/yr in annual savings while enabling responsible AI governance at scale"
     ],
     caseStudy: {
       problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Meanwhile, 16 years of enterprise data sat fragmented across systems, making it difficult to leverage for AI/ML initiatives.",
@@ -64,11 +64,11 @@ const experiences: Experience[] = [
     outcomes: [
       "Owned multi-year platform consolidation strategy unifying 4 legacy orgs into a single GTM platform supporting $1.5B+ in annual revenue",
       "Built product analytics capability from 0 to 1—implemented platform telemetry across Salesforce to drive data-informed roadmap decisions and improve platform observability",
-      "Embedded TCPA/CPRA controls directly into platform architecture, automating compliance and mitigating $1B+ in regulatory risk"
+      "Led TCO optimization across platform: negotiated Salesforce licensing consolidation, eliminated redundant tools, and drove vendor consolidation resulting in significant cost efficiency while maintaining reliability"
     ],
     caseStudy: {
       problem: "Zillow operated 4 separate Salesforce orgs due to acquisitions and organic growth, creating data silos, duplicate workflows, and compliance gaps. GTM teams struggled with fragmented customer data, and regulatory risk (TCPA/CPRA) was difficult to manage across disconnected systems. There was no unified view of the customer journey or consistent platform telemetry to inform product decisions.",
-      action: "I owned the multi-year platform consolidation strategy and led a team-of-teams initiative across Salesforce engineering, Security, and Finance to unify all 4 orgs into a single instance. I directed technical design reviews and architectural decisions on data migration, workflow standardization, and system integration. Built product analytics capability from scratch, implementing telemetry and dashboards to make the platform observable. Embedded compliance controls directly into the platform (policy-as-code for TCPA/CPRA) rather than relying on manual processes.",
+      action: "I owned the multi-year platform consolidation strategy and led a team-of-teams initiative across Salesforce engineering, Security, and Finance to unify all 4 orgs into a single instance. I directed technical design reviews and architectural decisions on data migration, workflow standardization, and system integration. Built product analytics capability from scratch, implementing telemetry and dashboards to make the platform observable. Owned TCO strategy: negotiated Salesforce licensing terms to reflect consolidated footprint and eliminated duplicate tool subscriptions across orgs. Embedded compliance controls directly into the platform (policy-as-code for TCPA/CPRA) rather than relying on manual processes.",
       result: "Successfully unified 4 orgs into a single platform supporting $1.5B+ in revenue. Compliance became automated rather than manual, mitigating over $1B in potential regulatory risk. New product analytics capability enabled data-informed decisions, improving roadmap prioritization. GTM teams gained a unified customer view that improved sales efficiency, service quality, and team alignment. Platform became the source of truth for all GTM operations.",
       metrics: [
         "4 orgs → 1 unified platform",
@@ -89,12 +89,12 @@ const experiences: Experience[] = [
     },
     outcomes: [
       "Modernized T-Mobile's Salesforce Sales and Service Clouds for 15k+ frontline users",
-      "Cut page load times by 50%",
-      "Eliminated $5M+ in annual operational costs"
+      "Cut page load times by 50% through architectural optimization and platform modernization",
+      "Owned platform TCO strategy including vendor consolidation and redundant tool elimination, delivering $5M+ in annual cost savings while improving platform reliability"
     ],
     caseStudy: {
       problem: "T-Mobile's Salesforce platform served 15,000+ frontline users across sales and service, but years of technical debt resulted in slow page loads (8-12 seconds), poor user experience, and high operational costs from manual workarounds. Reps were frustrated, productivity suffered, and the platform couldn't scale to support business growth.",
-      action: "I led a platform modernization initiative focused on performance, UX, and cost reduction. This included architectural cleanup, Lightning migration, workflow optimization, and eliminating redundant integrations. I worked with multi-vendor teams to consolidate tools, automate manual processes, and redesign the user experience around frontline workflows.",
+      action: "I led a platform modernization initiative focused on performance, UX, and cost reduction. This included architectural cleanup, Lightning migration, workflow optimization, and eliminating redundant integrations. I negotiated vendor contracts and managed TCO decisions around tool consolidation, eliminating duplicate subscriptions and licensing. I worked with multi-vendor teams to rationalize the platform stack, consolidate tools, automate manual processes, and redesign the user experience around frontline workflows.",
       result: "Page load times dropped by 50%, dramatically improving rep productivity and satisfaction. Operational costs decreased by $5M+ annually through automation and tool consolidation. The modernized platform became a competitive advantage, enabling faster customer service and better sales execution at scale.",
       metrics: [
         "Page load time: -50%",
