@@ -65,7 +65,7 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
 
   return (
     <div 
-      className="relative h-[320px] perspective-1000"
+      className="relative h-[380px] perspective-1000"
       style={{ perspective: "1000px" }}
     >
       <motion.div
@@ -90,22 +90,20 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
             aria-label={`${principle.title}. Click to read more.`}
             data-testid={`card-principle-${index}`}
           >
-            <div className="flex flex-col items-center text-center space-y-4 h-full justify-between">
-              <div className="space-y-4">
-                <div className="p-4 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
-                  <Icon className="w-8 h-8 text-cyan-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">
+            <div className="flex flex-col items-center text-center h-full justify-between">
+              <div className="space-y-3">
+                <Icon className="w-10 h-10 text-cyan-400 mx-auto" />
+                <h3 className="text-xl font-bold text-white">
                   {principle.title}
                 </h3>
-                <p className="text-white/70 text-base leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   {principle.tagline}
                 </p>
-                <p className="text-xs text-cyan-400 font-medium border-t border-cyan-500/20 pt-3 mt-2">
+                <p className="text-xs text-cyan-400 font-medium border-t border-cyan-500/20 pt-3">
                   {principle.proof}
                 </p>
               </div>
-              <p className="text-xs text-cyan-400/70 font-medium tracking-wide uppercase">
+              <p className="text-xs text-cyan-400/70 font-medium tracking-wide uppercase mt-3">
                 Click to explore
               </p>
             </div>

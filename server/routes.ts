@@ -49,6 +49,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Company industry/context lookup for tailored value propositions
+  const companyContextMap: Record<string, { industry: string; focus: string; challenges: string }> = {
+    "amazon": { industry: "E-commerce & Cloud", focus: "marketplace velocity, seller experience, AWS enterprise sales", challenges: "scale, operational efficiency, platform reliability at massive volume" },
+    "zillow": { industry: "Residential Real Estate", focus: "GTM velocity, agent/customer platforms, real estate data", challenges: "market fluctuations, regulatory compliance, data unification across listings" },
+    "anthropic": { industry: "AI Safety & Research", focus: "responsible AI, governance frameworks, developer platforms", challenges: "AI governance at scale, safety-first development, enterprise AI adoption" },
+    "openai": { industry: "AI & ML Platforms", focus: "AI product development, developer experience, enterprise APIs", challenges: "responsible AI deployment, platform scalability, governance frameworks" },
+    "google": { industry: "Technology & Advertising", focus: "ads platforms, cloud infrastructure, developer tools", challenges: "platform modernization, cross-product data unification, GTM velocity" },
+    "microsoft": { industry: "Enterprise Software & Cloud", focus: "enterprise productivity, Azure, developer platforms", challenges: "legacy modernization, enterprise data governance, platform consolidation" },
+    "salesforce": { industry: "CRM & Enterprise Platforms", focus: "customer data platforms, GTM tooling, integration ecosystems", challenges: "multi-org consolidation, release velocity, AppExchange governance" },
+    "stripe": { industry: "Fintech & Payments", focus: "payment infrastructure, developer experience, compliance", challenges: "regulatory compliance (PCI, AML), platform reliability, global expansion" },
+    "toast": { industry: "Restaurant Technology", focus: "restaurant operations, POS systems, merchant growth", challenges: "scaling merchant platforms, operational efficiency, data-driven insights" },
+    "meta": { industry: "Social Media & Advertising", focus: "ads platforms, creator tools, enterprise infrastructure", challenges: "platform governance, data privacy compliance, velocity at scale" },
+    "netflix": { industry: "Streaming & Entertainment", focus: "content delivery, personalization, studio operations", challenges: "platform performance, data infrastructure, global scaling" },
+    "uber": { industry: "Mobility & Delivery", focus: "marketplace platforms, driver/rider experience, logistics", challenges: "real-time systems, regulatory compliance, platform reliability" },
+    "airbnb": { industry: "Travel & Hospitality", focus: "host/guest platforms, trust & safety, marketplace velocity", challenges: "regulatory compliance, platform trust, cross-region data governance" },
+    "shopify": { industry: "E-commerce Platforms", focus: "merchant tools, checkout experience, partner ecosystems", challenges: "platform scalability, merchant data insights, velocity for SMBs" },
+    "t-mobile": { industry: "Telecommunications", focus: "frontline productivity, customer service, sales operations", challenges: "legacy platform modernization, user experience at scale, TCO optimization" },
+    "verizon": { industry: "Telecommunications", focus: "enterprise GTM, network services, customer platforms", challenges: "digital transformation, platform consolidation, operational efficiency" },
+    "boeing": { industry: "Aerospace & Defense", focus: "manufacturing systems, supply chain, engineering platforms", challenges: "compliance, data governance, legacy system modernization" },
+    "nvidia": { industry: "Semiconductors & AI", focus: "AI/ML platforms, developer ecosystems, enterprise compute", challenges: "platform scaling, developer experience, enterprise AI enablement" },
+  };
+
   // Value proposition generator endpoint
   app.post("/api/generate-value-prop", async (req, res) => {
     try {
@@ -58,7 +80,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ error: "Company name is required" });
       }
 
-      const prompt = `You are writing a concise, executive-level value proposition for Steven Washington, a Principal/Director-level Platform & AI Product Leader, tailored to ${companyName}.
+      // Look up company context (case-insensitive)
+      const normalizedName = companyName.trim().toLowerCase();
+      const companyContext = companyContextMap[normalizedName];
+      
+      let industryContext = "";
+      if (companyContext) {
+        industryContext = `
+Known Context for ${companyName}:
+- Industry: ${companyContext.industry}
+- Key Focus Areas: ${companyContext.focus}
+- Common Challenges: ${companyContext.challenges}
+
+Use this context to make the value proposition highly relevant to their specific industry and challenges.`;
+      } else {
+        industryContext = `
+Note: ${companyName} is not in our known database. Infer their likely industry and challenges based on the company name. If it's clearly a tech company, focus on platform engineering and velocity. If it's a traditional enterprise, focus on modernization and efficiency. If unsure, keep it general but strategic.`;
+      }
+
+      const prompt = `You are writing a concise, executive-level value proposition for Steven Washington, a Principal/Director-level Platform & AI Product Leader, tailored specifically to ${companyName}.
 
 Steven's Background:
 - 16+ years delivering technology, data, and platform solutions
@@ -66,17 +106,18 @@ Steven's Background:
 - Key metrics: $11B+ cumulative revenue supported, 80% deployment velocity acceleration
 - Experience at Zillow ($1.6B+ revenue platform) and T-Mobile (15k+ users)
 - Specializes in: platform modernization, AI governance, velocity improvements, GTM tooling, data unification
+${industryContext}
 
 Requirements:
 1. Write a 2-4 sentence value proposition in a senior, strategic, executive tone
-2. Opening alignment statement (e.g., "For ${companyName}, I bring...")
-3. Include relevant core strengths (platform modernization, AI governance, velocity, GTM tooling, data unification)
+2. Opening alignment statement that directly references ${companyName}'s industry or known focus areas (e.g., "For ${companyName}'s [specific domain]...")
+3. Connect Steven's relevant strengths to their specific challenges
 4. Include 1-2 quantified credibility anchors (80% velocity lift, $1.6B+ revenue platform, 15k+ users, $11B+ cumulative revenue)
-5. Closing strategic outcome (e.g., "helping your teams ship faster, safer, and with clearer insights")
+5. Closing strategic outcome tied to their business goals
 6. Match Steven's brand: senior, clear, strategic, no tangents, no verbosity, no filler
 7. Tone should read like a VP-to-C-suite briefing
-8. DO NOT hallucinate specifics about ${companyName} - infer strategic alignment themes if company context is unknown
-9. Focus on how Steven's expertise aligns with typical challenges in their industry or domain
+8. DO NOT hallucinate specific internal ${companyName} projects or initiatives
+9. Make the connection to their industry feel authentic and informed
 
 Generate the value proposition now:`;
 

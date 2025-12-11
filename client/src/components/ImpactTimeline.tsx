@@ -28,10 +28,10 @@ interface Experience {
 const experiences: Experience[] = [
   {
     company: "Zillow",
-    role: "Platform Product Lead, Revenue & AI",
+    role: "Platform Product Lead, Revenue Engineering and AI Platforms",
     period: "2023-Present",
     scope: {
-      teamSize: "Led cross-functional teams (30+ DevOps, Salesforce engineers, Security)",
+      teamSize: "Led cross-functional teams (DevOps, Salesforce, Security)",
       users: "100+ engineers",
       revenue: "GTM Platform Engineering"
     },
@@ -39,7 +39,7 @@ const experiences: Experience[] = [
       "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes",
       "Secured SVP+ alignment for multi-year modernization initiative through business case development, technical deep dives, and ROI framing; partnered with principal architects on target-state data architecture",
       "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450k/yr in annual savings while enabling responsible AI governance at scale",
-      "Invited to speak at Pendomonium 2024 on 'Transforming enterprise technology with product analytics'—recognized as industry thought leader"
+      "Invited to speak at Pendomonium 2023 on 'Transforming enterprise technology with product analytics'—recognized as industry thought leader"
     ],
     caseStudy: {
       problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Meanwhile, 16 years of enterprise data sat fragmented across systems, making it difficult to leverage for AI/ML initiatives.",

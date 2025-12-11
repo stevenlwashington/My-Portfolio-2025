@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Steven Washington</h3>
             <p className="text-sm text-muted-foreground">
-              Platform & AI leadership for governance, velocity, and scale.
+              Product thinking. Engineering execution.
             </p>
           </div>
 
