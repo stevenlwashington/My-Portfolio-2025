@@ -2,16 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Menu, Linkedin, Github, Zap } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import ContactForm from "@/components/ContactForm";
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
+  onContactClick?: () => void;
 }
 
-export default function Header({ onNavigate }: HeaderProps) {
+export default function Header({ onNavigate, onContactClick }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const navItems = [
     { label: "Summary", href: "#summary" },
@@ -77,7 +75,8 @@ export default function Header({ onNavigate }: HeaderProps) {
           </div>
           <Button 
             size="sm" 
-            onClick={() => setIsContactOpen(true)}
+            onClick={onContactClick}
+            className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold"
             data-testid="button-contact"
           >
             Contact
@@ -125,10 +124,10 @@ export default function Header({ onNavigate }: HeaderProps) {
                 </Button>
               </div>
               <Button 
-                className="mt-4" 
+                className="mt-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold" 
                 onClick={() => {
                   setIsOpen(false);
-                  setIsContactOpen(true);
+                  onContactClick?.();
                 }}
                 data-testid="button-contact-mobile"
               >
@@ -138,19 +137,6 @@ export default function Header({ onNavigate }: HeaderProps) {
           </SheetContent>
         </Sheet>
       </div>
-
-      {/* Contact Modal */}
-      <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Get in Touch</DialogTitle>
-            <DialogDescription>
-              Send me a message and I'll get back to you as soon as possible.
-            </DialogDescription>
-          </DialogHeader>
-          <ContactForm onSuccess={() => setIsContactOpen(false)} />
-        </DialogContent>
-      </Dialog>
     </header>
   );
 }

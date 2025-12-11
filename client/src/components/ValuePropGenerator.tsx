@@ -38,10 +38,10 @@ export default function ValuePropGenerator() {
   return (
     <section className="py-20 md:py-24" id="value-prop">
       <div className="max-w-4xl mx-auto px-6">
-        <Card>
+        <Card className="border-cyan-500/20 bg-slate-800/50">
           <CardHeader>
-            <CardTitle className="text-3xl">Strategic Alignment Check</CardTitle>
-            <p className="text-muted-foreground">
+            <CardTitle className="text-3xl text-cyan-400">Strategic Alignment Check</CardTitle>
+            <p className="text-white/70">
               Enter your organization's name to generate a custom value proposition based on my experience.
             </p>
           </CardHeader>
@@ -58,6 +58,7 @@ export default function ValuePropGenerator() {
               <Button 
                 onClick={handleGenerate} 
                 disabled={mutation.isPending || !orgName.trim()}
+                className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold"
                 data-testid="button-generate-value-prop"
               >
                 {mutation.isPending ? (
@@ -75,10 +76,10 @@ export default function ValuePropGenerator() {
             </div>
 
             {mutation.isPending && (
-              <Card className="border-primary/20 bg-primary/5">
+              <Card className="border-cyan-500/20 bg-cyan-500/5">
                 <CardContent className="pt-6">
-                  <div className="flex items-center justify-center gap-3 text-muted-foreground">
-                    <Loader2 className="h-5 w-5 animate-spin" />
+                  <div className="flex items-center justify-center gap-3 text-white/70">
+                    <Loader2 className="h-5 w-5 animate-spin text-cyan-400" />
                     <p className="text-base">Crafting your personalized value proposition...</p>
                   </div>
                 </CardContent>
@@ -86,9 +87,9 @@ export default function ValuePropGenerator() {
             )}
 
             {generatedProp && !mutation.isPending && (
-              <Card className="border-primary/20 bg-primary/5">
+              <Card className="border-cyan-500/20 bg-cyan-500/5">
                 <CardContent className="pt-6">
-                  <p className="text-base leading-relaxed" data-testid="text-generated-prop">
+                  <p className="text-base leading-relaxed text-white/80" data-testid="text-generated-prop">
                     {generatedProp}
                   </p>
                 </CardContent>

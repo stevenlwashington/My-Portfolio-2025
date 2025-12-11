@@ -81,19 +81,19 @@ function CapabilitySection({ capability, index }: { capability: Capability; inde
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-8"
         >
-          <div className="p-3 rounded-lg bg-primary/10">
-            <Icon className="w-6 h-6 text-primary" />
+          <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+            <Icon className="w-6 h-6 text-cyan-400" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-primary">{capability.company}</h3>
-            <h2 className="text-4xl md:text-5xl font-bold">{capability.title}</h2>
+            <h3 className="text-xl font-semibold text-cyan-400">{capability.company}</h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">{capability.title}</h2>
           </div>
         </motion.div>
 
         {/* Headline - reveals first */}
         <motion.p
           style={{ opacity: headlineOpacity, y: headlineY }}
-          className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl"
+          className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed max-w-2xl"
         >
           {capability.headline}
         </motion.p>
@@ -101,12 +101,12 @@ function CapabilitySection({ capability, index }: { capability: Capability; inde
         {/* Metrics - reveals second */}
         <motion.div
           style={{ opacity: metricsOpacity, y: metricsY }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 p-8 rounded-lg bg-card/50 border border-border/50"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 p-8 rounded-lg bg-slate-800/50 border border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)]"
         >
           {capability.metrics.map((metric, i) => (
             <div key={i} className="space-y-2">
-              <div className="text-3xl font-bold text-primary font-mono">{metric.value}</div>
-              <div className="text-sm text-muted-foreground">{metric.label}</div>
+              <div className="text-3xl font-bold text-cyan-400 font-mono">{metric.value}</div>
+              <div className="text-sm text-white/70">{metric.label}</div>
             </div>
           ))}
         </motion.div>
@@ -136,8 +136,8 @@ export default function StrategicCapabilities() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Strategic Platform Capabilities</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-400">Strategic Platform Capabilities</h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Scroll through proven capabilities. Each story reveals as you explore.
           </p>
         </motion.div>

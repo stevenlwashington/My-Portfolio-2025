@@ -10,8 +10,8 @@ export default function ExecutiveSummary() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Executive Impact</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">Executive Impact</h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Proven track record of building platforms that accelerate velocity, reduce costs, and unlock revenue at scale.
           </p>
         </div>
@@ -51,22 +51,22 @@ export default function ExecutiveSummary() {
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
         >
           {/* Platform Scale */}
-          <Card>
+          <Card className="border-cyan-500/20 bg-slate-800/50">
             <CardContent className="p-6">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
-                  <Users className="w-5 h-5 text-primary" />
+                <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex-shrink-0">
+                  <Users className="w-5 h-5 text-cyan-400" />
                 </div>
                 <div className="space-y-3 flex-1">
-                  <h3 className="font-semibold text-lg">Platform Scale</h3>
+                  <h3 className="font-semibold text-lg text-white">Platform Scale</h3>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <div className="text-2xl font-bold text-primary font-mono">50K+</div>
-                      <div className="text-muted-foreground">End users enabled</div>
+                      <div className="text-2xl font-bold text-cyan-400 font-mono">50K+</div>
+                      <div className="text-white/70">End users enabled</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary font-mono">6</div>
-                      <div className="text-muted-foreground">Major consolidations</div>
+                      <div className="text-2xl font-bold text-cyan-400 font-mono">6</div>
+                      <div className="text-white/70">Major consolidations</div>
                     </div>
                   </div>
                 </div>
@@ -75,16 +75,16 @@ export default function ExecutiveSummary() {
           </Card>
 
           {/* Domain Expertise */}
-          <Card>
+          <Card className="border-cyan-500/20 bg-slate-800/50">
             <CardContent className="p-6">
-              <h3 className="font-semibold text-lg mb-4">Domain Expertise</h3>
+              <h3 className="font-semibold text-lg mb-4 text-white">Domain Expertise</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary" data-testid="badge-expertise-platform">Platform Engineering</Badge>
-                <Badge variant="secondary" data-testid="badge-expertise-salesforce">Salesforce</Badge>
-                <Badge variant="secondary" data-testid="badge-expertise-ai">AI Governance</Badge>
-                <Badge variant="secondary" data-testid="badge-expertise-devops">DevOps/CI-CD</Badge>
-                <Badge variant="secondary" data-testid="badge-expertise-data">Data Unification</Badge>
-                <Badge variant="secondary" data-testid="badge-expertise-gtm">GTM Operations</Badge>
+                <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20" data-testid="badge-expertise-platform">Platform Engineering</Badge>
+                <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20" data-testid="badge-expertise-salesforce">Salesforce</Badge>
+                <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20" data-testid="badge-expertise-ai">AI Governance</Badge>
+                <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20" data-testid="badge-expertise-devops">DevOps/CI-CD</Badge>
+                <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20" data-testid="badge-expertise-data">Data Unification</Badge>
+                <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20" data-testid="badge-expertise-gtm">GTM Operations</Badge>
               </div>
             </CardContent>
           </Card>

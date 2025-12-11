@@ -66,8 +66,8 @@ export default function DirectorSummary() {
               transition={{ duration: 0.6 }}
               className="mb-8"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">What I Solve For</h2>
-              <p className="text-muted-foreground max-w-2xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">What I Solve For</h2>
+              <p className="text-white/80 max-w-2xl">
                 The category of problems I own—where platform leadership meets business impact.
               </p>
             </motion.div>
@@ -81,12 +81,12 @@ export default function DirectorSummary() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="p-5 rounded-lg border border-border/50 bg-background/50 hover-elevate"
+                    className="p-5 rounded-lg border border-cyan-500/20 bg-slate-800/30 hover-elevate"
                     data-testid={`card-solve-${index}`}
                   >
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-md bg-primary/10 flex-shrink-0">
-                        <Icon className="w-5 h-5 text-primary" />
+                      <div className="p-2 rounded-md bg-cyan-500/10 flex-shrink-0">
+                        <Icon className="w-5 h-5 text-cyan-400" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-sm mb-1">{domain.title}</h3>
@@ -107,9 +107,9 @@ export default function DirectorSummary() {
               transition={{ duration: 0.6 }}
               className="lg:sticky lg:top-24"
             >
-              <Card className="border-primary/20 bg-card/80 backdrop-blur-sm">
+              <Card className="border-cyan-500/20 bg-slate-800/50 backdrop-blur-sm shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
-                  <h3 className="text-sm font-bold uppercase tracking-wide text-primary mb-4">
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-cyan-400 mb-4">
                     Scope of Ownership
                   </h3>
                   <div className="space-y-4">
@@ -117,14 +117,14 @@ export default function DirectorSummary() {
                       const Icon = item.icon;
                       return (
                         <div key={index} className="flex items-center gap-3" data-testid={`scope-item-${index}`}>
-                          <div className="p-2 rounded-md bg-primary/10 flex-shrink-0">
-                            <Icon className="w-4 h-4 text-primary" />
+                          <div className="p-2 rounded-md bg-cyan-500/10 flex-shrink-0">
+                            <Icon className="w-4 h-4 text-cyan-400" />
                           </div>
                           <div>
-                            <div className="text-xl font-bold text-primary font-mono leading-tight">
+                            <div className="text-xl font-bold text-cyan-400 font-mono leading-tight">
                               {item.value}
                             </div>
-                            <div className="text-xs text-muted-foreground">
+                            <div className="text-xs text-white/70">
                               {item.label}
                             </div>
                           </div>

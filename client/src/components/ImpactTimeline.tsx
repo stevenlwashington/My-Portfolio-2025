@@ -150,8 +150,8 @@ export default function ImpactTimeline() {
     <section className="py-20 md:py-24" id="impact">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Career Trajectory & Impact</h2>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-400">Career Trajectory & Impact</h2>
+          <p className="text-lg text-white/80">
             Progressive scope and responsibility across platform engineering, AI governance, and GTM systems development.
           </p>
         </div>
@@ -164,16 +164,16 @@ export default function ImpactTimeline() {
             {experiences.map((exp, index) => (
               <div key={index} className="relative pl-8 md:pl-20" data-testid={`card-experience-${index}`}>
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-6 top-6 w-4 h-4 rounded-full bg-primary border-4 border-background" />
+                <div className="absolute left-0 md:left-6 top-6 w-4 h-4 rounded-full bg-cyan-500 border-4 border-background" />
 
-                <Card className="hover-elevate transition-all duration-300">
+                <Card className="hover-elevate transition-all duration-300 border-cyan-500/20 bg-slate-800/50">
                   <CardHeader>
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
                       <div className="flex-1">
-                        <CardTitle className="text-2xl mb-2">{exp.role}</CardTitle>
+                        <CardTitle className="text-2xl mb-2 text-white">{exp.role}</CardTitle>
                         <div className="flex items-center gap-3 mb-4">
-                          <span className="text-lg font-semibold text-primary">{exp.company}</span>
-                          <Badge variant="secondary">{exp.period}</Badge>
+                          <span className="text-lg font-semibold text-cyan-400">{exp.company}</span>
+                          <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20">{exp.period}</Badge>
                         </div>
                         
                         {/* Scope indicators */}
@@ -205,13 +205,13 @@ export default function ImpactTimeline() {
                   <CardContent>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                        <p className="text-sm font-semibold text-white/60 uppercase tracking-wide mb-2">
                           Key Outcomes
                         </p>
                         <ul className="space-y-2">
                           {exp.outcomes.map((outcome, i) => (
-                            <li key={i} className="flex gap-3 text-muted-foreground">
-                              <span className="text-primary mt-1.5 flex-shrink-0">•</span>
+                            <li key={i} className="flex gap-3 text-white/80">
+                              <span className="text-cyan-400 mt-1.5 flex-shrink-0">•</span>
                               <span>{outcome}</span>
                             </li>
                           ))}
@@ -223,6 +223,7 @@ export default function ImpactTimeline() {
                           variant="outline"
                           size="sm"
                           onClick={() => setSelectedCase(exp)}
+                          className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10"
                           data-testid={`button-case-study-${index}`}
                         >
                           View Case Study

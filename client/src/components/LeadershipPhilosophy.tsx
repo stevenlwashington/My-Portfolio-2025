@@ -81,7 +81,7 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
           style={{ backfaceVisibility: "hidden" }}
         >
           <Card
-            className="h-full flex flex-col justify-center p-8 cursor-pointer hover-elevate active-elevate-2 transition-all"
+            className="h-full flex flex-col justify-center p-8 cursor-pointer hover-elevate active-elevate-2 transition-all border-cyan-500/20 bg-slate-800/50"
             onClick={onFlip}
             onKeyDown={handleKeyDown}
             tabIndex={0}
@@ -92,20 +92,20 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
           >
             <div className="flex flex-col items-center text-center space-y-4 h-full justify-between">
               <div className="space-y-4">
-                <div className="p-4 rounded-lg bg-primary/10">
-                  <Icon className="w-8 h-8 text-primary" />
+                <div className="p-4 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+                  <Icon className="w-8 h-8 text-cyan-400" />
                 </div>
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-2xl font-bold text-white">
                   {principle.title}
                 </h3>
-                <p className="text-muted-foreground text-base leading-relaxed">
+                <p className="text-white/70 text-base leading-relaxed">
                   {principle.tagline}
                 </p>
-                <p className="text-xs text-primary font-medium border-t border-border/50 pt-3 mt-2">
+                <p className="text-xs text-cyan-400 font-medium border-t border-cyan-500/20 pt-3 mt-2">
                   {principle.proof}
                 </p>
               </div>
-              <p className="text-xs text-primary/70 font-medium tracking-wide uppercase">
+              <p className="text-xs text-cyan-400/70 font-medium tracking-wide uppercase">
                 Click to explore
               </p>
             </div>
@@ -118,7 +118,7 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
         >
           <Card 
-            className="h-full flex flex-col p-6 overflow-hidden cursor-pointer hover-elevate active-elevate-2 transition-all"
+            className="h-full flex flex-col p-6 overflow-hidden cursor-pointer hover-elevate active-elevate-2 transition-all border-cyan-500/20 bg-slate-800/50"
             onClick={onClose}
             onKeyDown={handleKeyDown}
             tabIndex={0}
@@ -127,13 +127,13 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
             data-testid={`card-principle-back-${index}`}
           >
             <div className="mb-4">
-              <h3 className="text-xl font-bold">
+              <h3 className="text-xl font-bold text-cyan-400">
                 {principle.title}
               </h3>
             </div>
             <div className="flex-1 overflow-y-auto space-y-3">
               {principle.content.map((paragraph, pIndex) => (
-                <p key={pIndex} className="text-sm text-muted-foreground leading-relaxed">
+                <p key={pIndex} className="text-sm text-white/70 leading-relaxed">
                   {paragraph}
                 </p>
               ))}
@@ -160,8 +160,8 @@ export default function LeadershipPhilosophy() {
     <section className="py-20 md:py-24 bg-card/30" id="philosophy">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Leadership Principles</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-400">Leadership Principles</h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             How I think about platform engineering, AI governance, and enabling teams to move faster.
           </p>
         </div>

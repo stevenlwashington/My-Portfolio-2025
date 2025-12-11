@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Linkedin, Github, ArrowRight } from "lucide-react";
+import { Linkedin, Github, Mail } from "lucide-react";
 import portraitImage from "@assets/generated_images/steven_portrait.png";
 
 interface HeroProps {
-  onViewImpact?: () => void;
+  onContactClick?: () => void;
 }
 
-export default function Hero({ onViewImpact }: HeroProps) {
+export default function Hero({ onContactClick }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       {/* Background gradient */}
@@ -40,7 +40,7 @@ export default function Hero({ onViewImpact }: HeroProps) {
                     size="icon"
                     variant="ghost"
                     asChild
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white"
+                    className="w-12 h-12 rounded-full bg-[#0077b5] hover:bg-[#006699] text-white"
                     data-testid="button-linkedin-hero"
                   >
                     <a href="https://www.linkedin.com/in/stevenlwashington/" target="_blank" rel="noopener noreferrer">
@@ -56,7 +56,7 @@ export default function Hero({ onViewImpact }: HeroProps) {
                     size="icon"
                     variant="ghost"
                     asChild
-                    className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white"
+                    className="w-12 h-12 rounded-full bg-zinc-700 hover:bg-zinc-600 text-white"
                     data-testid="button-github-hero"
                   >
                     <a href="https://github.com/stevenlwashington" target="_blank" rel="noopener noreferrer">
@@ -78,7 +78,7 @@ export default function Hero({ onViewImpact }: HeroProps) {
           {/* Main tagline */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
-              <span className="block bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="block text-primary">
                 Product thinking.
               </span>
               <span className="block text-white">
@@ -87,20 +87,20 @@ export default function Hero({ onViewImpact }: HeroProps) {
             </h1>
           </div>
 
-          {/* Value Proposition */}
-          <p className="text-base md:text-lg font-semibold text-foreground max-w-xl leading-relaxed">
-            I build secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue for global organizations.
+          {/* Value Proposition - integrated as subtitle */}
+          <p className="text-base md:text-lg text-white/80 max-w-xl leading-relaxed">
+            Seattle-based Platform Product Manager building secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue.
           </p>
 
-          {/* CTA */}
+          {/* Single CTA - Contact Me */}
           <Button 
             size="lg" 
-            className="rounded-full px-8 gap-2 mt-4"
-            onClick={onViewImpact}
-            data-testid="button-view-impact"
+            onClick={onContactClick}
+            className="rounded-full px-10 py-6 text-lg font-semibold gap-3 mt-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-all"
+            data-testid="button-contact-hero"
           >
-            View Impact
-            <ArrowRight className="h-4 w-4" />
+            <Mail className="h-5 w-5" />
+            Contact Me
           </Button>
         </div>
       </div>
