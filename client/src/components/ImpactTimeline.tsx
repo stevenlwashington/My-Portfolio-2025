@@ -31,19 +31,19 @@ const experiences: Experience[] = [
     role: "Platform Product Lead, Revenue & AI",
     period: "2023-Present",
     scope: {
-      teamSize: "Cross-functional platform teams",
+      teamSize: "Led cross-functional teams (30+ DevOps, Salesforce engineers, Security)",
       users: "100+ engineers",
       revenue: "GTM Platform Engineering"
     },
     outcomes: [
-      "Built the on-demand CI/CD platform for Salesforce engineering—reducing release cycles from days to minutes",
-      "Increased GTM delivery velocity by 80%",
-      "Architected enterprise data pipelines consolidating 16 years of history for AI training, saving $450k/yr"
+      "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes",
+      "Partnered with principal architects to design data pipelines and owned prioritization tradeoffs between reliability, cost, and velocity; increased GTM delivery velocity by 80%",
+      "Architected enterprise data consolidation pipelines unifying 16 years of history for AI training, saving $450k/yr while enabling responsible AI governance at scale"
     ],
     caseStudy: {
       problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Meanwhile, 16 years of enterprise data sat fragmented across systems, making it difficult to leverage for AI/ML initiatives.",
-      action: "I led the design and implementation of an on-demand CI/CD platform specifically for Salesforce deployments. This included automated testing pipelines, validation gates, and self-service deployment capabilities. In parallel, I architected enterprise data consolidation pipelines that unified historical data from multiple sources into a clean, AI-ready format with proper governance and audit trails.",
-      result: "Release cycles dropped from days to minutes, enabling GTM teams to ship features 80% faster. The CI/CD platform became the standard across all Salesforce engineering. Data consolidation enabled new AI training initiatives while reducing data storage costs by $450k annually. Both initiatives demonstrated that platform investments directly accelerate business velocity.",
+      action: "I defined the multi-year platform vision and initiated an org-wide architectural shift toward self-service CI/CD. I led the design and implementation of an on-demand CI/CD platform with automated testing pipelines, validation gates, and self-service deployment capabilities. Partnered with principal architects on target-state data architecture. Made critical prioritization tradeoffs between platform reliability, operational cost, and deployment velocity. In parallel, architected enterprise data consolidation pipelines that unified historical data from multiple sources into a clean, AI-ready format with proper governance and audit trails.",
+      result: "Release cycles dropped from days to minutes, enabling GTM teams to ship features 80% faster. The CI/CD platform became the standard across all Salesforce engineering. Data consolidation enabled new AI training initiatives while reducing data storage costs by $450k annually. Demonstrated platform investments directly accelerate business velocity while managing cost and reliability. Drove executive alignment across Engineering, Security, and GTM on platform roadmap priorities.",
       metrics: [
         "Release cycle: days → minutes",
         "GTM velocity: +80%",
@@ -57,19 +57,19 @@ const experiences: Experience[] = [
     role: "Sr. Salesforce Product Manager, Frontline Engineering",
     period: "2020-2023",
     scope: {
-      teamSize: "Core Technology org",
+      teamSize: "Led cross-functional product and engineering workstreams across 30+ contributors (Salesforce engineers, Security, Finance)",
       users: "2,500+ sales & service reps",
       revenue: "$1.5B+ annual revenue"
     },
     outcomes: [
-      "Modernized Zillow's Salesforce architecture and unified 4 orgs into a single GTM platform supporting $1.5B+ in annual revenue",
-      "Added product analytics and platform telemetry to drive data-informed roadmap decisions",
-      "Embedded TCPA/CPRA controls mitigating $1B+ in regulatory risk"
+      "Owned multi-year platform consolidation strategy unifying 4 legacy orgs into a single GTM platform supporting $1.5B+ in annual revenue",
+      "Built product analytics capability from 0 to 1—implemented platform telemetry across Salesforce to drive data-informed roadmap decisions and improve platform observability",
+      "Embedded TCPA/CPRA controls directly into platform architecture, automating compliance and mitigating $1B+ in regulatory risk"
     ],
     caseStudy: {
-      problem: "Zillow operated 4 separate Salesforce orgs due to acquisitions and organic growth, creating data silos, duplicate workflows, and compliance gaps. GTM teams struggled with fragmented customer data, and regulatory risk (TCPA/CPRA) was difficult to manage across disconnected systems. There was no unified view of the customer journey or consistent platform telemetry.",
-      action: "I led a multi-year platform consolidation initiative to unify all 4 orgs into a single Salesforce instance. This included data migration, workflow standardization, and architectural modernization. I embedded compliance controls directly into the platform (policy-as-code for TCPA/CPRA) and built product analytics capabilities to make the platform observable and data-driven.",
-      result: "Successfully unified 4 orgs into a single platform supporting $1.5B+ in revenue. Compliance became automated rather than manual, mitigating over $1B in potential regulatory risk. Platform telemetry enabled data-informed decisions, and GTM teams gained a unified customer view that improved sales efficiency and service quality.",
+      problem: "Zillow operated 4 separate Salesforce orgs due to acquisitions and organic growth, creating data silos, duplicate workflows, and compliance gaps. GTM teams struggled with fragmented customer data, and regulatory risk (TCPA/CPRA) was difficult to manage across disconnected systems. There was no unified view of the customer journey or consistent platform telemetry to inform product decisions.",
+      action: "I owned the multi-year platform consolidation strategy and led a team-of-teams initiative across Salesforce engineering, Security, and Finance to unify all 4 orgs into a single instance. I directed technical design reviews and architectural decisions on data migration, workflow standardization, and system integration. Built product analytics capability from scratch, implementing telemetry and dashboards to make the platform observable. Embedded compliance controls directly into the platform (policy-as-code for TCPA/CPRA) rather than relying on manual processes.",
+      result: "Successfully unified 4 orgs into a single platform supporting $1.5B+ in revenue. Compliance became automated rather than manual, mitigating over $1B in potential regulatory risk. New product analytics capability enabled data-informed decisions, improving roadmap prioritization. GTM teams gained a unified customer view that improved sales efficiency, service quality, and team alignment. Platform became the source of truth for all GTM operations.",
       metrics: [
         "4 orgs → 1 unified platform",
         "Revenue supported: $1.5B+",
