@@ -5,6 +5,14 @@ Modern, executive-focused portfolio showcasing Steven Washington as a Principal/
 
 ## Recent Changes (December 11, 2025)
 
+### Content & Card Refinements (December 11, 2025)
+- **Leadership Principles Cards**: Removed icon rectangle backgrounds (cleaner icon-only design), tightened typography, increased card height to 380px
+- **Engineer Count**: Fixed inconsistency - now uses "100+ engineers" consistently (removed conflicting 30+ reference)
+- **Pendomonium Year**: Corrected to 2023
+- **Job Title**: Updated to "Revenue Engineering and AI Platforms"
+- **Strategic Alignment Check**: Added industry-tailored output with 18 known companies (Amazon, Zillow, Anthropic, Toast, etc.) mapped to industry, focus areas, and challenges
+- **Footer Tagline**: Updated to match hero ("Product thinking. Engineering execution.")
+
 ### Design System Enhancements
 - **Vibrant Gradient Brand Identity**: 3-color gradient (Electric Blue → Cyan → Neon Pink) applied to:
   - Hero "Product thinking" text with `.gradient-text` utility
