@@ -87,9 +87,9 @@ export default function Hero({ onViewImpact }: HeroProps) {
             </h1>
           </div>
 
-          {/* Subtitle */}
-          <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
-            I build secure, compliant enterprise platforms that power responsible AI, accelerate engineering velocity, and deliver measurable business outcomes.
+          {/* Value Proposition */}
+          <p className="text-base md:text-lg font-semibold text-foreground max-w-xl leading-relaxed">
+            I build secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue for global organizations.
           </p>
 
           {/* CTA */}

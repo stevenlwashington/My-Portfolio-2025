@@ -5,7 +5,10 @@ Modern, executive-focused portfolio showcasing Steven Washington as a Principal/
 
 ## Recent Changes (December 11, 2025)
 
-### Director-Level Enhancements
+### Director-Level Enhancements Complete
+- **Hero Value Proposition**: Added bold, executive-targeted value proposition:
+  - "I build secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue for global organizations."
+  - Communicates scope, business value, clarity, and confidence in one sentence
 - **DirectorSummary.tsx**: New combined component with two-column layout:
   - "What I Solve For" section (5 problem domains: Engineering Velocity, AI Governance, GTM Modernization, Developer Experience, Data Unification)
   - "Scope of Ownership" sticky sidebar (100+ engineers, 20+ systems, $11B+ GTM pipeline, 15+ engineering orgs)
