@@ -6,8 +6,9 @@ Modern, executive-focused portfolio showcasing Steven Washington as a Principal/
 ## Recent Changes (December 11, 2025)
 
 ### v1 Final Enhancements (December 11, 2025)
-- **Custom Brand Logo**: New SVG logo in header combining hexagon (platform), circuit pattern (AI), and connection nodes (product thinking) with brand gradient
+- **Custom Brand Logo**: "Steven Washington" text logo in bold white—professional, clean, executive-level
 - **Scroll to Top Button**: Floating button appears after scrolling, smooth animation, cyan accent styling
+- **Navigation**: Logo clickable to return to top; scroll-to-top button for bottom-of-page navigation
 
 ### Content & Card Refinements (December 11, 2025)
 - **Leadership Principles Cards**: Removed icon rectangle backgrounds (cleaner icon-only design), tightened typography, increased card height to 380px

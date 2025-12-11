@@ -33,11 +33,11 @@ export default function Header({ onNavigate, onContactClick }: HeaderProps) {
         {/* Logo */}
         <button
           onClick={() => handleClick("#top")}
-          className="hover-elevate rounded-lg p-1.5 transition-transform hover:scale-105"
+          className="hover-elevate rounded-lg px-3 py-2 transition-colors"
           data-testid="button-logo"
           aria-label="Return to top of page"
         >
-          <BrandLogo className="w-9 h-9" />
+          <BrandLogo />
         </button>
 
         {/* Desktop Navigation */}
