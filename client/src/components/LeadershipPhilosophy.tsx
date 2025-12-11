@@ -157,11 +157,11 @@ export default function LeadershipPhilosophy() {
   };
 
   return (
-    <section className="py-20 md:py-24 bg-card/30" id="philosophy">
+    <section className="py-24 md:py-32" id="philosophy">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-400">Leadership Principles</h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+        <div className="mb-20 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cyan-400">Leadership Principles</h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
             How I think about platform engineering, AI governance, and enabling teams to move faster.
           </p>
         </div>

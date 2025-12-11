@@ -19,12 +19,37 @@ export default function Home() {
       <Header onContactClick={() => setIsContactOpen(true)} />
       <main>
         <Hero onContactClick={() => setIsContactOpen(true)} />
+        
+        {/* Gradient divider */}
+        <div className="gradient-divider mx-auto max-w-4xl" />
+        
         <DirectorSummary />
-        <ExecutiveSummary />
+        
+        <div className="gradient-divider mx-auto max-w-4xl" />
+        
+        <div className="section-alt">
+          <ExecutiveSummary />
+        </div>
+        
+        <div className="gradient-divider mx-auto max-w-4xl" />
+        
         <StrategicCapabilities />
-        <LeadershipPhilosophy />
+        
+        <div className="gradient-divider mx-auto max-w-4xl" />
+        
+        <div className="section-alt">
+          <LeadershipPhilosophy />
+        </div>
+        
+        <div className="gradient-divider mx-auto max-w-4xl" />
+        
         <ImpactTimeline />
-        <ValuePropGenerator />
+        
+        <div className="gradient-divider mx-auto max-w-4xl" />
+        
+        <div className="section-alt">
+          <ValuePropGenerator />
+        </div>
       </main>
       <Footer />
 

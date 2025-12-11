@@ -36,7 +36,7 @@ export default function ValuePropGenerator() {
   };
 
   return (
-    <section className="py-20 md:py-24" id="value-prop">
+    <section className="py-24 md:py-32" id="value-prop">
       <div className="max-w-4xl mx-auto px-6">
         <Card className="border-cyan-500/20 bg-slate-800/50">
           <CardHeader>

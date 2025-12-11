@@ -147,11 +147,11 @@ export default function ImpactTimeline() {
   const [selectedCase, setSelectedCase] = useState<Experience | null>(null);
 
   return (
-    <section className="py-20 md:py-24" id="impact">
+    <section className="py-24 md:py-32" id="impact">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-400">Career Trajectory & Impact</h2>
-          <p className="text-lg text-white/80">
+        <div className="mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cyan-400">Career Trajectory & Impact</h2>
+          <p className="text-lg text-white/80 leading-relaxed">
             Progressive scope and responsibility across platform engineering, AI governance, and GTM systems development.
           </p>
         </div>

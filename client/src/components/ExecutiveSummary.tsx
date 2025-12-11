@@ -6,12 +6,12 @@ import { TrendingUp, Zap, DollarSign, Users } from "lucide-react";
 
 export default function ExecutiveSummary() {
   return (
-    <section className="py-20 md:py-24" id="summary">
+    <section className="py-24 md:py-32" id="summary">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">Executive Impact</h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-cyan-400">Executive Impact</h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
             Proven track record of building platforms that accelerate velocity, reduce costs, and unlock revenue at scale.
           </p>
         </div>

@@ -55,7 +55,7 @@ const scopeItems = [
 
 export default function DirectorSummary() {
   return (
-    <section className="py-16 bg-card/30" id="director-summary">
+    <section className="py-24 md:py-32" id="director-summary">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content - What I Solve For */}
@@ -64,10 +64,10 @@ export default function DirectorSummary() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-8"
+              className="mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">What I Solve For</h2>
-              <p className="text-white/80 max-w-2xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-cyan-400">What I Solve For</h2>
+              <p className="text-white/80 max-w-2xl leading-relaxed">
                 The category of problems I own—where platform leadership meets business impact.
               </p>
             </motion.div>

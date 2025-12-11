@@ -78,7 +78,7 @@ export default function Hero({ onContactClick }: HeroProps) {
           {/* Main tagline */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
-              <span className="block text-primary">
+              <span className="block gradient-text">
                 Product thinking.
               </span>
               <span className="block text-white">
@@ -92,16 +92,18 @@ export default function Hero({ onContactClick }: HeroProps) {
             Seattle-based Platform Product Manager building secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue.
           </p>
 
-          {/* Single CTA - Contact Me */}
-          <Button 
-            size="lg" 
-            onClick={onContactClick}
-            className="rounded-full px-10 py-6 text-lg font-semibold gap-3 mt-4 bg-cyan-500 hover:bg-cyan-400 text-slate-900 shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] transition-all"
-            data-testid="button-contact-hero"
-          >
-            <Mail className="h-5 w-5" />
-            Contact Me
-          </Button>
+          {/* Single CTA - Contact Me with gradient border */}
+          <div className="gradient-border rounded-full mt-4">
+            <Button 
+              size="lg" 
+              onClick={onContactClick}
+              className="rounded-full px-10 py-6 text-lg font-semibold gap-3 bg-slate-900/90 hover:bg-slate-800 text-white shadow-[0_0_25px_rgba(99,102,241,0.3)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] transition-all"
+              data-testid="button-contact-hero"
+            >
+              <Mail className="h-5 w-5" />
+              Contact Me
+            </Button>
+          </div>
         </div>
       </div>
     </section>
