@@ -3,7 +3,21 @@
 ## Overview
 Modern, executive-focused portfolio showcasing Steven Washington as a Principal/Director-level Platform & AI Product Leader. Features identity-first hero, interactive Platform Value Multiplier calculator, comprehensive impact timeline with STAR-format case study modals, clickable/flippable leadership principle cards, strategic capabilities showcase, contact form modal, and streamlined navigation with custom branding icon.
 
-## Recent Changes (November 24, 2025)
+## Recent Changes (December 11, 2025)
+
+### Director-Level Enhancements
+- **DirectorSummary.tsx**: New combined component with two-column layout:
+  - "What I Solve For" section (5 problem domains: Engineering Velocity, AI Governance, GTM Modernization, Developer Experience, Data Unification)
+  - "Scope of Ownership" sticky sidebar (100+ engineers, 20+ systems, $11B+ GTM pipeline, 15+ engineering orgs)
+- **Executive Alignment Examples**: Added to ImpactTimeline outcomes:
+  - "Secured SVP+ alignment for multi-year modernization initiative through business case development, technical deep dives, and ROI framing"
+  - "Invited to speak at Pendomonium 2024 on 'Transforming enterprise technology with product analytics'"
+- **Leadership Principles Proof Statements**: Added evidence-backed proof to each principle card:
+  - Platform as a Product: "Operationalized this principle by defining service boundaries, SLAs, and product operating mechanisms adopted across 100+ engineers at Zillow"
+  - Responsible AI & Governance: "Built TCPA/CPRA-compliant data pipelines enabling 16 years of enterprise data to be used for AI training"
+  - GTM Velocity: "Unified 4 Salesforce orgs into single platform supporting $1.5B+ revenue; reduced release cycles from days to minutes"
+
+## Previous Changes (November 24, 2025)
 
 ### Contact Form Implementation
 - Created ContactForm modal component following stack patterns (react-hook-form, zod validation, react-query mutation)
@@ -34,11 +48,14 @@ Modern, executive-focused portfolio showcasing Steven Washington as a Principal/
 ### Frontend (React + TypeScript + Vite)
 - **Pages**: `client/src/pages/Home.tsx` - main landing page
 - **Components**:
-  - `Hero.tsx` - Identity-first hero section
+  - `Hero.tsx` - Identity-first hero section with portrait and gradient tagline
+  - `DirectorSummary.tsx` - Combined "What I Solve For" + "Scope of Ownership" sidebar layout
+  - `ImpactTimeline.tsx` - Career timeline with STAR-format case studies and executive alignment examples
+  - `LeadershipPhilosophy.tsx` - Flippable principle cards with proof statements
+  - `StrategicCapabilities.tsx` - Scroll-driven progressive reveal of capabilities
   - `Header.tsx` - Navigation with custom icon, social links, contact modal trigger
   - `ContactForm.tsx` - Modal form with validation (react-hook-form + zod)
   - `Footer.tsx` - Footer with social links
-  - Additional components in `client/src/components/`
 - **Styling**: Tailwind CSS with custom design in `client/src/index.css`
 - **State Management**: React Query for server state, React hooks for local state
 
