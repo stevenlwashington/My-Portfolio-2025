@@ -8,6 +8,7 @@ import ImpactTimeline from "@/components/ImpactTimeline";
 import LeadershipPhilosophy from "@/components/LeadershipPhilosophy";
 import ValuePropGenerator from "@/components/ValuePropGenerator";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import ContactForm from "@/components/ContactForm";
 
@@ -65,6 +66,9 @@ export default function Home() {
           <ContactForm onSuccess={() => setIsContactOpen(false)} />
         </DialogContent>
       </Dialog>
+
+      {/* Floating scroll to top button */}
+      <ScrollToTop />
     </div>
   );
 }

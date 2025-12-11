@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Linkedin, Github, Zap } from "lucide-react";
+import { Menu, Linkedin, Github } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import BrandLogo from "./BrandLogo";
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -32,11 +33,11 @@ export default function Header({ onNavigate, onContactClick }: HeaderProps) {
         {/* Logo */}
         <button
           onClick={() => handleClick("#top")}
-          className="hover-elevate rounded-lg p-2"
+          className="hover-elevate rounded-lg p-1.5 transition-transform hover:scale-105"
           data-testid="button-logo"
           aria-label="Return to top of page"
         >
-          <Zap className="h-6 w-6 text-primary" />
+          <BrandLogo className="w-9 h-9" />
         </button>
 
         {/* Desktop Navigation */}
