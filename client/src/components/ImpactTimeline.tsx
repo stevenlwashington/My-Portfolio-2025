@@ -37,8 +37,9 @@ const experiences: Experience[] = [
     },
     outcomes: [
       "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes",
-      "Partnered with principal architects to design data pipelines and owned prioritization tradeoffs between reliability, cost, and velocity; increased GTM delivery velocity by 80%",
-      "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450k/yr in annual savings while enabling responsible AI governance at scale"
+      "Secured SVP+ alignment for multi-year modernization initiative through business case development, technical deep dives, and ROI framing; partnered with principal architects on target-state data architecture",
+      "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450k/yr in annual savings while enabling responsible AI governance at scale",
+      "Invited to speak at Pendomonium 2024 on 'Transforming enterprise technology with product analytics'—recognized as industry thought leader"
     ],
     caseStudy: {
       problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Meanwhile, 16 years of enterprise data sat fragmented across systems, making it difficult to leverage for AI/ML initiatives.",
@@ -62,7 +63,7 @@ const experiences: Experience[] = [
       revenue: "$1.5B+ annual revenue"
     },
     outcomes: [
-      "Owned multi-year platform consolidation strategy unifying 4 legacy orgs into a single GTM platform supporting $1.5B+ in annual revenue",
+      "Owned multi-year platform consolidation strategy unifying 4 legacy orgs into a single GTM platform supporting $1.5B+ in annual revenue; secured executive buy-in through business case development and ROI modeling",
       "Built product analytics capability from 0 to 1—implemented platform telemetry across Salesforce to drive data-informed roadmap decisions and improve platform observability",
       "Led TCO optimization across platform: negotiated Salesforce licensing consolidation, eliminated redundant tools, and drove vendor consolidation resulting in significant cost efficiency while maintaining reliability"
     ],

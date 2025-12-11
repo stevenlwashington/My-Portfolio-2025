@@ -8,6 +8,7 @@ const principles = [
     icon: Package,
     title: "Platform as a Product",
     tagline: "Engineers choose platforms that make them faster and happier.",
+    proof: "Operationalized this principle by defining service boundaries, SLAs, and product operating mechanisms adopted across 100+ engineers at Zillow.",
     content: [
       "Too many platforms fail because they're built as infrastructure projects, not as products. Engineers are asked to adopt tools that slow them down, increase cognitive load, or duplicate work they're already doing. The result? Shadow IT, workarounds, and platform teams wondering why adoption is low.",
       "I treat platform engineering like product management. That means understanding the user (the engineer), measuring their pain points, building clear roadmaps, and obsessing over developer experience. A great platform isn't just technically sound—it's the obvious choice. It removes friction, automates repetitive work, and makes engineers faster and happier.",
@@ -18,6 +19,7 @@ const principles = [
     icon: ShieldCheck,
     title: "Responsible AI & Governance",
     tagline: "Governance as infrastructure: ship AI features quickly while staying compliant.",
+    proof: "Built TCPA/CPRA-compliant data pipelines enabling 16 years of enterprise data to be used for AI training—mitigating $1B+ regulatory risk while accelerating innovation.",
     content: [
       "AI is transformative, but without governance, it's also risky. Teams are eager to ship AI features, but concerns around data privacy, model bias, audit trails, and regulatory compliance often create bottlenecks. The temptation is to either lock down everything (killing innovation) or move fast and hope for the best (creating risk).",
       "My approach is to build governance into the platform itself. Instead of making compliance a manual checklist, I design systems where the right thing is the easy thing. Clean data pipelines, automated audit trails, and policy-as-code frameworks allow teams to ship AI features quickly while staying compliant with TCPA, CPRA, and emerging AI regulations.",
@@ -28,6 +30,7 @@ const principles = [
     icon: Zap,
     title: "GTM Velocity Through Data & Automation",
     tagline: "Unified platforms eliminate friction and accelerate GTM execution.",
+    proof: "Unified 4 Salesforce orgs into single platform supporting $1.5B+ revenue; reduced release cycles from days to minutes, enabling 80% faster GTM execution.",
     content: [
       "Sales and service teams are only as fast as the systems behind them. Fragmented data, manual workflows, and slow release cycles compound into massive operational drag. A rep spends 30 seconds searching for information. Multiply that by 10,000 reps per day, and you've lost weeks of productivity—or deals.",
       "I focus on building unified platforms that eliminate this friction. By consolidating Salesforce orgs, integrating telemetry, and automating common workflows, I turn scattered systems into a single source of truth. Reps get faster answers, managers get better insights, and the business moves quicker.",
@@ -97,6 +100,9 @@ function FlippableCard({ principle, index, isFlipped, onFlip, onClose }: Flippab
                 </h3>
                 <p className="text-muted-foreground text-base leading-relaxed">
                   {principle.tagline}
+                </p>
+                <p className="text-xs text-primary font-medium border-t border-border/50 pt-3 mt-2">
+                  {principle.proof}
                 </p>
               </div>
               <p className="text-xs text-primary/70 font-medium tracking-wide uppercase">
