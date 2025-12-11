@@ -68,13 +68,6 @@ export default function Hero({ onContactClick }: HeroProps) {
             </div>
           </div>
 
-          {/* Name badge */}
-          <div className="px-4 py-2 rounded-full border border-primary/30 bg-card/50 backdrop-blur-sm">
-            <span className="text-sm font-semibold text-muted-foreground uppercase tracking-widest">
-              Steven Washington
-            </span>
-          </div>
-
           {/* Main tagline */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
