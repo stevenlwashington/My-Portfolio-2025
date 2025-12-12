@@ -82,7 +82,7 @@ export default function Hero({ onContactClick }: HeroProps) {
 
           {/* Value Proposition - integrated as subtitle */}
           <p className="text-base md:text-lg text-white/80 max-w-xl leading-relaxed">
-            Seattle-based Platform Product Manager building secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue.
+            Hi, I'm Steven. A Seattle-based Platform Product Manager building secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue.
           </p>
 
           {/* Single CTA - Contact Me with gradient border */}
