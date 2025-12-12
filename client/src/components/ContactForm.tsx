@@ -101,7 +101,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell me about your needs..."
+                  placeholder="What's on your mind?"
                   rows={5}
                   {...field}
                   data-testid="input-contact-message"

@@ -58,9 +58,9 @@ export default function Home() {
       <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Get in Touch</DialogTitle>
+            <DialogTitle>Let's Connect</DialogTitle>
             <DialogDescription>
-              Send me a message and I'll get back to you as soon as possible.
+              Share a quick note about what you're thinking—I'll follow up within 48 hours.
             </DialogDescription>
           </DialogHeader>
           <ContactForm onSuccess={() => setIsContactOpen(false)} />
