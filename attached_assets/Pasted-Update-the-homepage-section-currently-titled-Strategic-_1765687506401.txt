@@ -1,0 +1,141 @@
+Update the homepage section currently titled “Strategic Platform Capabilities” (the scroll/reveal section that displays 3 capability cards like “Salesforce Consolidation,” “CI/CD Acceleration,” and “AI Governance at Scale”).
+
+Goal: Reframe this entire section from “Capabilities” to “Use Cases”, tighten the copy for skimmability, expand to exactly 5 use cases, and keep the existing structure/layout (company label + large title + 1-line subheading + metric band + short paragraph). This section should function like a “preview reel” and avoid repeating deeper detail from later sections.
+
+1) Section heading + subheading
+
+Replace:
+
+Heading: Strategic Platform Capabilities
+
+Subheading: Scroll through proven capabilities. Each story reveals as you explore.
+
+With:
+
+Heading: Use Cases
+
+Subheading: A few representative platform initiatives and the outcomes they enabled.
+
+Keep spacing/typography consistent with the current design system.
+
+2) Use case ordering (must be in this exact order)
+
+The 5 use cases should appear in this order:
+
+Salesforce Consolidation
+
+CI/CD Acceleration
+
+AI Governance at Scale
+
+Enterprise Data Archival & AI Enablement
+
+AWS Enterprise Discount Program Enablement
+
+3) Use case content (titles, subheads, metrics, body)
+
+Update each use case card to match the content below exactly. Keep the existing “Zillow” label for the first four items and “AWS” for the last item (or “Amazon Web Services (AWS)” if that label already exists in the UI).
+
+(1) Salesforce Consolidation (Zillow)
+
+Title: Salesforce Consolidation
+Subheading: Turning fragmented GTM systems into a single source of truth
+Metrics (4):
+
+4 → 1 — Orgs Consolidated
+
+50K+ — Users Enabled
+
+–70% — Integration Complexity
+
+$1B+ — Regulatory Risk Mitigated
+Body (max 3 sentences):
+Unified four Salesforce orgs into a single enterprise platform supporting GTM teams at scale. Embedded compliance and shared data models directly into core workflows. Created a foundation for faster execution, cleaner analytics, and safer AI adoption.
+
+(2) CI/CD Acceleration (Zillow)
+
+Title: CI/CD Acceleration
+Subheading: Release cycles from days to minutes
+Metrics (4):
+
+Days → Minutes — Release Cycle
+
++80% — GTM Velocity
+
+100+ — Engineers Enabled
+
+$450K — Annual Savings
+Body (max 3 sentences):
+Built a self-service CI/CD platform with automated testing and deployment. Removed manual bottlenecks slowing delivery across teams. Velocity increased without sacrificing reliability or control.
+
+(3) AI Governance at Scale (Zillow)
+
+Title: AI Governance at Scale
+Subheading: Shipping AI safely in regulated environments
+Metrics (4):
+
+16 Years — Data Unified
+
+TCPA/CPRA — Compliant by Design
+
+$450K — Annual Savings
+
+100% — Audit Coverage
+Body (max 3 sentences):
+Embedded governance directly into platform infrastructure using policy-as-code and automated audits. Teams shipped AI features quickly while staying compliant. Governance became invisible infrastructure—not a blocker.
+
+(4) Enterprise Data Archival & AI Enablement (Zillow)
+
+Title: Enterprise Data Archival & AI Enablement
+Subheading: Unlocking AI and analytics from legacy data
+Metrics (4):
+
+16+ Years — Archived
+
+$450K — Annual Cost Reduction
+
+AI-Ready — Datasets Enabled
+
+Improved — System Performance
+Body (max 3 sentences):
+Led an enterprise data archival strategy separating cold data from operational systems. Reduced cost and complexity while preserving access and governance. Established a clean foundation for analytics and AI use cases.
+
+(5) AWS Enterprise Discount Program Enablement (AWS)
+
+Title: Enterprise Discount Program Enablement
+Subheading: Operationalizing complex pricing at enterprise scale
+Metrics (4):
+
+Enterprise — EDP Workflows Enabled
+
+Reduced — Manual Overhead
+
+Improved — Deal Accuracy
+
+Scaled — Contract Compliance
+Body (max 3 sentences):
+Implemented Salesforce workflows supporting AWS enterprise discount programs. Aligned sales, finance, and legal around a single operating model. Turned complex pricing into a scalable GTM capability.
+
+4) Implementation notes (important)
+
+If this section is driven by an array/object (e.g., capabilities), rename it to something like useCases and update field names accordingly.
+
+Keep the existing UI pattern (icon + company label + big title + subheading + metric band + paragraph).
+
+Keep the paragraphs tight (no more than 3 sentences each).
+
+Do not add new sub-sections or extra headings.
+
+5) Acceptance criteria
+
+Section title shows Use Cases with the new subheading
+
+Exactly 5 use cases render, in the specified order
+
+Each use case matches the title/subheading/metrics/body exactly
+
+Mobile layout remains readable (no text overflow in metrics band)
+
+No TypeScript errors; build passes
+
+Please tell me which files you changed (with paths) and paste the updated code for this section/component.

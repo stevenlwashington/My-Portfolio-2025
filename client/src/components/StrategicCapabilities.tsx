@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Building2, Zap, Shield } from "lucide-react";
+import { Building2, Zap, Shield, Database, DollarSign } from "lucide-react";
 
-interface Capability {
+interface UseCase {
   icon: typeof Building2;
   title: string;
   headline: string;
@@ -11,58 +11,83 @@ interface Capability {
   company?: string;
 }
 
-const capabilities: Capability[] = [
+const useCases: UseCase[] = [
   {
     icon: Building2,
     title: "Salesforce Consolidation",
     company: "Zillow",
-    headline: "Unified 4 orgs into a single platform supporting $1.5B+ in revenue",
+    headline: "Turning fragmented GTM systems into a single source of truth",
     metrics: [
       { value: "4 → 1", label: "Orgs Consolidated" },
       { value: "50K+", label: "Users Enabled" },
-      { value: "-70%", label: "Integration Complexity" },
+      { value: "–70%", label: "Integration Complexity" },
       { value: "$1B+", label: "Regulatory Risk Mitigated" }
     ],
-    story: "Unified fragmented Salesforce infrastructure serving GTM teams. Embedded compliance controls directly into platform, automating TCPA/CPRA requirements. Gained unified customer view enabling better sales efficiency and service quality across 2,500+ users."
+    story: "Unified four Salesforce orgs into a single enterprise platform supporting GTM teams at scale. Embedded compliance and shared data models directly into core workflows. Created a foundation for faster execution, cleaner analytics, and safer AI adoption."
   },
   {
     icon: Zap,
     title: "CI/CD Acceleration",
     company: "Zillow",
-    headline: "Release cycles from days to minutes. 80% faster GTM execution.",
+    headline: "Release cycles from days to minutes",
     metrics: [
       { value: "Days → Minutes", label: "Release Cycle" },
       { value: "+80%", label: "GTM Velocity" },
       { value: "100+", label: "Engineers Enabled" },
       { value: "$450K", label: "Annual Savings" }
     ],
-    story: "Built on-demand CI/CD platform with automated testing pipelines and self-service deployment. Architected enterprise data consolidation unifying 16 years of history into clean, AI-ready format. Reduced data storage costs while enabling new AI/ML initiatives at scale."
+    story: "Built a self-service CI/CD platform with automated testing and deployment. Removed manual bottlenecks slowing delivery across teams. Velocity increased without sacrificing reliability or control."
   },
   {
     icon: Shield,
     title: "AI Governance at Scale",
     company: "Zillow",
-    headline: "Policy-as-code governance enabling responsible AI innovation without compromise",
+    headline: "Shipping AI safely in regulated environments",
     metrics: [
       { value: "16 Years", label: "Data Unified" },
-      { value: "TCPA/CPRA", label: "Compliance" },
+      { value: "TCPA/CPRA", label: "Compliant by Design" },
       { value: "$450K", label: "Annual Savings" },
       { value: "100%", label: "Audit Coverage" }
     ],
-    story: "Built governance into platform infrastructure through policy-as-code frameworks, automated audit trails, and compliance controls. Teams ship AI features quickly while staying compliant. Governance is invisible infrastructure enabling innovation without increasing risk."
+    story: "Embedded governance directly into platform infrastructure using policy-as-code and automated audits. Teams shipped AI features quickly while staying compliant. Governance became invisible infrastructure—not a blocker."
+  },
+  {
+    icon: Database,
+    title: "Enterprise Data Archival & AI Enablement",
+    company: "Zillow",
+    headline: "Unlocking AI and analytics from legacy data",
+    metrics: [
+      { value: "16+ Years", label: "Archived" },
+      { value: "$450K", label: "Annual Cost Reduction" },
+      { value: "AI-Ready", label: "Datasets Enabled" },
+      { value: "Improved", label: "System Performance" }
+    ],
+    story: "Led an enterprise data archival strategy separating cold data from operational systems. Reduced cost and complexity while preserving access and governance. Established a clean foundation for analytics and AI use cases."
+  },
+  {
+    icon: DollarSign,
+    title: "Enterprise Discount Program Enablement",
+    company: "AWS",
+    headline: "Operationalizing complex pricing at enterprise scale",
+    metrics: [
+      { value: "Enterprise", label: "EDP Workflows Enabled" },
+      { value: "Reduced", label: "Manual Overhead" },
+      { value: "Improved", label: "Deal Accuracy" },
+      { value: "Scaled", label: "Contract Compliance" }
+    ],
+    story: "Implemented Salesforce workflows supporting AWS enterprise discount programs. Aligned sales, finance, and legal around a single operating model. Turned complex pricing into a scalable GTM capability."
   }
 ];
 
-function CapabilitySection({ capability, index }: { capability: Capability; index: number }) {
+function UseCaseSection({ useCase, index }: { useCase: UseCase; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  const Icon = capability.icon;
+  const Icon = useCase.icon;
 
-  // Smooth opacity transitions
   const headlineOpacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 1]);
   const metricsOpacity = useTransform(scrollYProgress, [0.15, 0.35, 0.9, 1], [0, 1, 1, 1]);
   const storyOpacity = useTransform(scrollYProgress, [0.3, 0.5, 0.9, 1], [0, 1, 1, 1]);
@@ -72,9 +97,8 @@ function CapabilitySection({ capability, index }: { capability: Capability; inde
   const storyY = useTransform(scrollYProgress, [0.3, 0.5], [40, 0]);
 
   return (
-    <div ref={ref} className="relative min-h-screen flex items-center justify-center py-20">
+    <div ref={ref} className="relative min-h-screen flex items-center justify-center py-20" data-testid={`usecase-section-${index}`}>
       <div className="max-w-4xl mx-auto px-6 w-full">
-        {/* Icon and Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,39 +109,36 @@ function CapabilitySection({ capability, index }: { capability: Capability; inde
             <Icon className="w-6 h-6 text-cyan-400" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-cyan-400">{capability.company}</h3>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">{capability.title}</h2>
+            <h3 className="text-xl font-semibold text-cyan-400">{useCase.company}</h3>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">{useCase.title}</h2>
           </div>
         </motion.div>
 
-        {/* Headline - reveals first */}
         <motion.p
           style={{ opacity: headlineOpacity, y: headlineY }}
           className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed max-w-2xl"
         >
-          {capability.headline}
+          {useCase.headline}
         </motion.p>
 
-        {/* Metrics - reveals second */}
         <motion.div
           style={{ opacity: metricsOpacity, y: metricsY }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 p-8 rounded-lg bg-slate-800/50 border border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)]"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16 p-6 md:p-8 rounded-lg bg-slate-800/50 border border-cyan-500/20 shadow-[0_0_15px_rgba(6,182,212,0.1)]"
         >
-          {capability.metrics.map((metric, i) => (
+          {useCase.metrics.map((metric, i) => (
             <div key={i} className="space-y-2">
-              <div className="text-3xl font-bold text-cyan-400 font-mono">{metric.value}</div>
-              <div className="text-sm text-white/70">{metric.label}</div>
+              <div className="text-2xl md:text-3xl font-bold text-cyan-400 font-mono break-words">{metric.value}</div>
+              <div className="text-xs md:text-sm text-white/70">{metric.label}</div>
             </div>
           ))}
         </motion.div>
 
-        {/* Story - reveals last */}
         <motion.div
           style={{ opacity: storyOpacity, y: storyY }}
           className="prose prose-invert max-w-none"
         >
           <p className="text-base text-muted-foreground leading-relaxed">
-            {capability.story}
+            {useCase.story}
           </p>
         </motion.div>
       </div>
@@ -127,8 +148,7 @@ function CapabilitySection({ capability, index }: { capability: Capability; inde
 
 export default function StrategicCapabilities() {
   return (
-    <section className="py-24 md:py-32">
-      {/* Section intro - always visible */}
+    <section className="py-24 md:py-32" id="use-cases">
       <div className="max-w-4xl mx-auto px-6 mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -136,16 +156,15 @@ export default function StrategicCapabilities() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-400">Strategic Platform Capabilities</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyan-400">Use Cases</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Scroll through proven capabilities. Each story reveals as you explore.
+            A few representative platform initiatives and the outcomes they enabled.
           </p>
         </motion.div>
       </div>
 
-      {/* Scroll-driven sections */}
-      {capabilities.map((capability, index) => (
-        <CapabilitySection key={index} capability={capability} index={index} />
+      {useCases.map((useCase, index) => (
+        <UseCaseSection key={index} useCase={useCase} index={index} />
       ))}
 
       <div className="h-12" />
