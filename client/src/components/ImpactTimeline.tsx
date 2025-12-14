@@ -150,7 +150,7 @@ export default function ImpactTimeline() {
         <div className="mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cyan-400">Career Trajectory & Impact</h2>
           <p className="text-lg text-white/80 leading-relaxed">
-            Progressive scope and responsibility across platform engineering, AI governance, and GTM systems development.
+            Progressive scope and responsibility across platform engineering, AI governance, and revenue systems development.
           </p>
         </div>
 

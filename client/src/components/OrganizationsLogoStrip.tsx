@@ -70,7 +70,7 @@ export default function OrganizationsLogoStrip() {
             <h2 className="text-3xl md:text-4xl font-bold text-cyan-400">
               Organizations I've Worked With
             </h2>
-            <Tooltip>
+            <Tooltip delayDuration={0}>
               <TooltipTrigger asChild>
                 <button 
                   className="text-white/40 hover:text-white/60 transition-colors"
@@ -79,7 +79,7 @@ export default function OrganizationsLogoStrip() {
                   <Info className="w-5 h-5" />
                 </button>
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent side="right">
                 <p>No endorsement implied.</p>
               </TooltipContent>
             </Tooltip>
