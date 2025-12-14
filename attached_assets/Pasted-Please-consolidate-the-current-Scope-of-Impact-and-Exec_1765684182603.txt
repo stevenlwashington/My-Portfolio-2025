@@ -1,0 +1,90 @@
+Please consolidate the current “Scope of Impact” and “Executive Impact” sections into a single section immediately following “How I Drive Value”.
+
+Goal
+
+Remove redundancy by creating one consolidated section named “Impact at Scale” that contains:
+	1.	a short framing line,
+	2.	the grouped metrics, and
+	3.	one executive-style validation quote with attribution.
+
+Keep the page visually consistent with the current dark theme and make sure spacing and mobile responsiveness remain strong.
+
+⸻
+
+1) “How I Drive Value” section (ensure this content remains)
+
+Confirm the section directly above the consolidated impact section uses:
+
+Main Heading: How I Drive Value
+Subtitle: These are the problems I’m accountable for at scale—across strategy, delivery, and measurable outcomes.
+
+Cards in this exact order (titles + descriptions):
+	1.	Engineering Velocity
+Accelerating delivery through self-service CI/CD and platform automation
+	2.	Developer Experience
+Building self-service platforms engineers choose—not ones they’re forced to use
+	3.	Unified Data Fabric
+Consolidating enterprise data to enable reliable analytics and AI at scale
+	4.	Revenue Systems Acceleration
+Fixing broken GTM flows caused by fragmented CRM, data, and tooling
+	5.	AI Governance
+Making AI safe to ship in regulated environments—without slowing teams down
+
+⸻
+
+2) Create the consolidated section: “Impact at Scale”
+
+Replace/remove the separate “Scope of Impact” and “Executive Impact” sections and implement a single combined section with:
+
+Heading: Impact at Scale
+
+Framing line (subtitle):
+The scope and outcomes I’ve been accountable for across platform, data, and revenue systems.
+
+⸻
+
+3) Metrics (grouped layout)
+
+Within “Impact at Scale”, render metrics as two grouped blocks:
+
+People & Orgs
+	•	100+ Engineers Unlocked
+	•	15+ Engineering Orgs Aligned
+
+Systems & Business Impact
+	•	20+ Enterprise Systems Consolidated
+	•	$11B+ Revenue Pipeline Impact
+
+Requirements:
+	•	Preserve the existing metric styling (large number emphasis, clean typography)
+	•	On desktop: groups can be side-by-side if layout supports it
+	•	On mobile: groups must stack vertically with good spacing
+
+⸻
+
+4) Quote block (validation)
+
+Add a quote block directly below the metrics inside “Impact at Scale”.
+
+Use this exact copy:
+
+Quote:
+“Steven consistently took ownership of the hardest cross-org problems—especially where platform decisions directly impacted velocity and revenue outcomes.”
+
+Attribution:
+— Senior Engineering Leader
+
+Styling:
+	•	Quote text italicized, slightly smaller than section heading
+	•	Attribution muted
+	•	Include a subtle quote icon if consistent with the design system
+
+⸻
+
+5) Acceptance Criteria
+	•	Only one impact-oriented section exists after consolidation (“Impact at Scale”)
+	•	No duplicate/repetitive “Scope” or “Executive Impact” sections remain
+	•	Spacing looks intentional and not cramped (desktop + mobile)
+	•	No TypeScript errors; build passes
+
+Please list the exact files you changed (with paths) and paste the final updated component code for the consolidated section.

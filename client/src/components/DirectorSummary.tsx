@@ -104,9 +104,9 @@ export default function DirectorSummary() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-12"
         >
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-cyan-400">Scope of Impact</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-cyan-400">Impact at Scale</h3>
           <p className="text-white/70 max-w-2xl leading-relaxed">
-            The surface area I've been accountable for.
+            The scope and outcomes I've been accountable for across platform, data, and revenue systems.
           </p>
         </motion.div>
 

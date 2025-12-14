@@ -2,7 +2,6 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import DirectorSummary from "@/components/DirectorSummary";
-import ExecutiveSummary from "@/components/ExecutiveSummary";
 import StrategicCapabilities from "@/components/StrategicCapabilities";
 import ImpactTimeline from "@/components/ImpactTimeline";
 import LeadershipPhilosophy from "@/components/LeadershipPhilosophy";
@@ -25,12 +24,6 @@ export default function Home() {
         <div className="gradient-divider mx-auto max-w-4xl" />
         
         <DirectorSummary />
-        
-        <div className="gradient-divider mx-auto max-w-4xl" />
-        
-        <div className="section-alt">
-          <ExecutiveSummary />
-        </div>
         
         <div className="gradient-divider mx-auto max-w-4xl" />
         
