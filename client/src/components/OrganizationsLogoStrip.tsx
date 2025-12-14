@@ -1,66 +1,61 @@
 import { motion } from "framer-motion";
 import { Info } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { 
+  SiAmazonwebservices, 
+  SiSalesforce, 
+  SiZillow, 
+  SiZendesk, 
+  SiGitlab,
+  SiPalantir
+} from "react-icons/si";
 
-const organizations = [
-  { name: "Zillow", alt: "Zillow logo — prior organization" },
-  { name: "Amazon", alt: "Amazon logo — prior organization" },
-  { name: "AWS", alt: "AWS logo — prior organization" },
-  { name: "Salesforce", alt: "Salesforce logo — platform partnership" },
-  { name: "Microsoft", alt: "Microsoft logo — enterprise initiative" },
-  { name: "Google Cloud", alt: "Google Cloud logo — enterprise initiative" },
-  { name: "Snowflake", alt: "Snowflake logo — platform partnership" },
-  { name: "Tableau", alt: "Tableau logo — platform partnership" },
-  { name: "Databricks", alt: "Databricks logo — enterprise initiative" },
-  { name: "Confluent", alt: "Confluent logo — platform partnership" },
-  { name: "MongoDB", alt: "MongoDB logo — platform partnership" },
-  { name: "Redis", alt: "Redis logo — platform partnership" },
-  { name: "Docker", alt: "Docker logo — platform partnership" },
-  { name: "Kubernetes", alt: "Kubernetes logo — platform partnership" },
-  { name: "GitHub", alt: "GitHub logo — platform partnership" },
-  { name: "GitLab", alt: "GitLab logo — platform partnership" },
-  { name: "Jenkins", alt: "Jenkins logo — platform partnership" },
-  { name: "CircleCI", alt: "CircleCI logo — platform partnership" },
-  { name: "Terraform", alt: "Terraform logo — platform partnership" },
-  { name: "HashiCorp", alt: "HashiCorp logo — platform partnership" },
-  { name: "Datadog", alt: "Datadog logo — platform partnership" },
-  { name: "Splunk", alt: "Splunk logo — platform partnership" },
-  { name: "New Relic", alt: "New Relic logo — platform partnership" },
-  { name: "PagerDuty", alt: "PagerDuty logo — platform partnership" },
-  { name: "Okta", alt: "Okta logo — platform partnership" },
-  { name: "Auth0", alt: "Auth0 logo — platform partnership" },
-  { name: "Stripe", alt: "Stripe logo — enterprise initiative" },
-  { name: "Twilio", alt: "Twilio logo — platform partnership" },
-  { name: "SendGrid", alt: "SendGrid logo — platform partnership" },
-  { name: "Segment", alt: "Segment logo — platform partnership" },
-  { name: "Amplitude", alt: "Amplitude logo — platform partnership" },
-  { name: "Mixpanel", alt: "Mixpanel logo — platform partnership" },
-  { name: "Heap", alt: "Heap logo — platform partnership" },
-  { name: "Looker", alt: "Looker logo — platform partnership" },
-  { name: "dbt", alt: "dbt logo — platform partnership" },
-  { name: "Fivetran", alt: "Fivetran logo — platform partnership" },
-  { name: "Airbyte", alt: "Airbyte logo — platform partnership" },
-  { name: "MuleSoft", alt: "MuleSoft logo — platform partnership" },
-  { name: "Workato", alt: "Workato logo — platform partnership" },
-  { name: "Zapier", alt: "Zapier logo — platform partnership" },
+interface Organization {
+  name: string;
+  alt: string;
+  icon?: typeof SiAmazonwebservices;
+}
+
+const organizations: Organization[] = [
+  { name: "Amazon Web Services", alt: "Amazon Web Services logo — prior organization", icon: SiAmazonwebservices },
+  { name: "Microsoft", alt: "Microsoft logo — prior organization" },
+  { name: "Salesforce", alt: "Salesforce logo — platform partnership", icon: SiSalesforce },
+  { name: "Zillow", alt: "Zillow logo — prior organization", icon: SiZillow },
+  { name: "T-Mobile", alt: "T-Mobile logo — prior organization" },
+  { name: "LivingSocial", alt: "LivingSocial logo — prior organization" },
+  { name: "Zendesk", alt: "Zendesk logo — platform partnership", icon: SiZendesk },
+  { name: "GitLab", alt: "GitLab logo — platform partnership", icon: SiGitlab },
+  { name: "Functionize", alt: "Functionize logo — prior organization" },
+  { name: "Windsurf", alt: "Windsurf logo — platform partnership" },
+  { name: "Pendo", alt: "Pendo logo — platform partnership" },
+  { name: "CrowdStrike", alt: "CrowdStrike logo — enterprise initiative" },
+  { name: "Palantir", alt: "Palantir logo — enterprise initiative", icon: SiPalantir },
+  { name: "Seattle Storm", alt: "Seattle Storm logo — prior organization" },
+  { name: "San Diego Padres", alt: "San Diego Padres logo — prior organization" },
 ];
 
-function LogoPlaceholder({ name, alt }: { name: string; alt: string }) {
+function LogoItem({ org }: { org: Organization }) {
+  const Icon = org.icon;
+  
   return (
     <div
-      className="flex items-center justify-center h-12 px-6 flex-shrink-0"
+      className="flex items-center justify-center h-12 px-8 flex-shrink-0"
       role="img"
-      aria-label={alt}
+      aria-label={org.alt}
     >
-      <span className="text-white/30 font-medium text-sm whitespace-nowrap tracking-wide">
-        {name}
-      </span>
+      {Icon ? (
+        <Icon className="h-8 w-auto text-white/40" />
+      ) : (
+        <span className="text-white/40 font-medium text-sm whitespace-nowrap tracking-wide">
+          {org.name}
+        </span>
+      )}
     </div>
   );
 }
 
 export default function OrganizationsLogoStrip() {
-  const duplicatedOrgs = [...organizations, ...organizations];
+  const duplicatedOrgs = [...organizations, ...organizations, ...organizations];
 
   return (
     <section className="py-16 md:py-24 overflow-hidden" id="organizations">
@@ -108,24 +103,20 @@ export default function OrganizationsLogoStrip() {
           }}
         >
           <motion.div
-            className="flex gap-6 md:gap-10 px-6"
+            className="flex gap-8 md:gap-12 px-6"
             animate={{
-              x: [0, -40 * organizations.length],
+              x: [0, -100 * organizations.length],
             }}
             transition={{
               x: {
-                duration: 80,
+                duration: 40,
                 repeat: Infinity,
                 ease: "linear",
               },
             }}
           >
             {duplicatedOrgs.map((org, index) => (
-              <LogoPlaceholder
-                key={`${org.name}-${index}`}
-                name={org.name}
-                alt={org.alt}
-              />
+              <LogoItem key={`${org.name}-${index}`} org={org} />
             ))}
           </motion.div>
         </div>
