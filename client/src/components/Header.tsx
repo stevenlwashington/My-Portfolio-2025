@@ -13,14 +13,14 @@ export default function Header({ onNavigate, onContactClick }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Summary", href: "#summary" },
-    { label: "Principles", href: "#philosophy" },
-    { label: "Impact", href: "#impact" },
+    { label: "Blog", href: "/blog" },
   ];
 
   const handleClick = (href: string) => {
     setIsOpen(false);
-    if (onNavigate) {
+    if (href.startsWith("/")) {
+      window.location.href = href;
+    } else if (onNavigate) {
       onNavigate(href);
     } else {
       document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });

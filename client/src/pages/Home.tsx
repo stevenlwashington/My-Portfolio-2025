@@ -5,7 +5,6 @@ import DirectorSummary from "@/components/DirectorSummary";
 import StrategicCapabilities from "@/components/StrategicCapabilities";
 import OrganizationsLogoStrip from "@/components/OrganizationsLogoStrip";
 import ImpactTimeline from "@/components/ImpactTimeline";
-import LeadershipPhilosophy from "@/components/LeadershipPhilosophy";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -36,13 +35,6 @@ export default function Home() {
         <div className="gradient-divider mx-auto max-w-4xl" />
         
         <ImpactTimeline />
-        
-        <div className="gradient-divider mx-auto max-w-4xl" />
-        
-        <div className="section-alt">
-          <LeadershipPhilosophy />
-        </div>
-        
       </main>
       <Footer />
 

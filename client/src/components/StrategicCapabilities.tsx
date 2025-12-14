@@ -97,7 +97,7 @@ function UseCaseSection({ useCase, index }: { useCase: UseCase; index: number })
   const storyY = useTransform(scrollYProgress, [0.3, 0.5], [40, 0]);
 
   return (
-    <div ref={ref} className="relative min-h-screen flex items-center justify-center py-20" data-testid={`usecase-section-${index}`}>
+    <div ref={ref} className="relative min-h-[70vh] flex items-center justify-center py-12" data-testid={`usecase-section-${index}`}>
       <div className="max-w-4xl mx-auto px-6 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -14,18 +14,12 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Blog */}
           <div>
-            <h3 className="font-semibold text-sm mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-sm mb-4">Explore</h3>
             <div className="flex flex-col gap-2">
-              <a href="#summary" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Executive Summary
-              </a>
-              <a href="#philosophy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Leadership Principles
-              </a>
-              <a href="#impact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Impact History
+              <a href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Blog
               </a>
             </div>
           </div>
