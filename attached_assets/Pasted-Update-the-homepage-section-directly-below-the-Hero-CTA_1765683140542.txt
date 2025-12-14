@@ -1,0 +1,75 @@
+Update the homepage section directly below the Hero + CTA (currently “What I Solve For” and the “Scope of Ownership” metrics).
+
+Goal: Replace copy, adjust card ordering and titles, update the metrics block to grouped “People & Orgs” and “Systems & Business Impact,” and add a short executive-style quote block beneath the metrics. Keep the existing visual style (dark theme, cards, icons) and ensure the layout is mobile-friendly.
+
+⸻
+
+1) Section header + subtitle
+
+Replace the section title with:
+Main Heading: How I Drive Value
+Replace the subtitle paragraph with:
+These are the problems I’m accountable for at scale—across strategy, delivery, and measurable outcomes.
+
+⸻
+
+2) Cards (update titles + descriptions + keep icons)
+
+Update the 5 cards to the following, in this exact order:
+	1.	Engineering Velocity
+Accelerating delivery through self-service CI/CD and platform automation
+	2.	Developer Experience
+Building self-service platforms engineers choose—not ones they’re forced to use
+	3.	Unified Data Fabric
+Consolidating enterprise data to enable reliable analytics and AI at scale
+	4.	Revenue Systems Acceleration
+Fixing broken GTM flows caused by fragmented CRM, data, and tooling
+	5.	AI Governance
+Making AI safe to ship in regulated environments—without slowing teams down
+
+If card content is data-driven (array/map), update the data source accordingly. If it is hard-coded, update the JSX/TSX directly.
+
+⸻
+
+3) Metrics section
+
+Rename the metrics section heading from Scope of Ownership to:
+Heading: Scope of Impact
+Update the subtitle to:
+The surface area I’ve been accountable for.
+
+Update metrics layout into two grouped blocks with group headers:
+
+People & Orgs
+	•	100+ Engineers Unlocked
+	•	15+ Engineering Orgs Aligned
+
+Systems & Business Impact
+	•	20+ Enterprise Systems Consolidated
+	•	$11B+ Revenue Pipeline Impact
+
+Preserve the current visual style (icons, number emphasis, spacing). Ensure these groups stack vertically on mobile and appear as two columns on desktop if the layout supports it.
+
+⸻
+
+4) Quote block under metrics
+
+Add a short quote block below the metrics (still within this section) that looks intentional and “executive.” Use a quote icon and include attribution. Use this exact copy for now:
+
+Quote:
+“Steven consistently took ownership of the hardest cross-org problems—especially where platform decisions directly impacted velocity and revenue outcomes.”
+Attribution:
+— Senior Engineering Leader
+
+Style: slightly smaller than the section subtitle, italicized quote text, muted attribution, consistent with dark theme.
+
+⸻
+
+5) Acceptance criteria
+	•	Updated copy appears on both desktop and mobile without overflow or clipping
+	•	Cards render in the new order with updated titles/descriptions
+	•	Metrics render as two grouped blocks with the exact labels above
+	•	Quote block renders below the metrics and matches existing styling
+	•	No TypeScript errors; build passes
+
+Please tell me which files you changed (with paths) and paste the final updated component code for the section.
