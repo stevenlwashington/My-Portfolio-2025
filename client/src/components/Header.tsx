@@ -32,10 +32,10 @@ export default function Header({ onNavigate, onContactClick }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <button
-          onClick={() => handleClick("#top")}
+          onClick={() => handleClick("/")}
           className="hover-elevate rounded-lg px-3 py-2 transition-colors"
           data-testid="button-logo"
-          aria-label="Return to top of page"
+          aria-label="Return to home page"
         >
           <BrandLogo />
         </button>
