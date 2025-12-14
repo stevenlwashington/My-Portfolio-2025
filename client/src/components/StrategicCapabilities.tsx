@@ -127,8 +127,8 @@ function UseCaseSection({ useCase, index }: { useCase: UseCase; index: number })
         >
           {useCase.metrics.map((metric, i) => (
             <div key={i} className="space-y-2">
-              <div className="text-lg sm:text-2xl md:text-3xl font-bold text-cyan-400 font-mono break-words">{metric.value}</div>
-              <div className="text-xs sm:text-sm text-white/70 leading-tight whitespace-nowrap overflow-hidden text-ellipsis">{metric.label}</div>
+              <div className="text-base sm:text-xl md:text-2xl font-bold text-cyan-400 font-normal tracking-tight break-words">{metric.value}</div>
+              <div className="text-xs sm:text-sm text-white/70 leading-tight">{metric.label}</div>
             </div>
           ))}
         </motion.div>
