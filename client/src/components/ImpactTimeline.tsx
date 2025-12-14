@@ -31,20 +31,18 @@ const experiences: Experience[] = [
     role: "Platform Product Lead, Revenue Engineering and AI Platforms",
     period: "2023-Present",
     scope: {
-      teamSize: "Led cross-functional teams (DevOps, Salesforce, Security)",
-      users: "100+ engineers",
-      revenue: "GTM Platform Engineering"
+      teamSize: "100+ Eng.",
+      users: "Cross-Functional (DevOps/AI/GTM)",
+      revenue: "$450K Annual Savings"
     },
     outcomes: [
-      "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes",
-      "Secured SVP+ alignment for multi-year modernization initiative through business case development, technical deep dives, and ROI framing; partnered with principal architects on target-state data architecture",
-      "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450k/yr in annual savings while enabling responsible AI governance at scale",
-      "Invited to speak at Pendomonium 2023 on 'Transforming enterprise technology with product analytics'—recognized as industry thought leader"
+      "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes, enabling GTM teams to ship features 80% faster",
+      "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450K/yr in annual savings while enabling responsible AI governance at scale"
     ],
     caseStudy: {
-      problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Meanwhile, 16 years of enterprise data sat fragmented across systems, making it difficult to leverage for AI/ML initiatives.",
-      action: "I defined the multi-year platform vision and initiated an org-wide architectural shift toward self-service CI/CD. I led the design and implementation of an on-demand CI/CD platform with automated testing pipelines, validation gates, and self-service deployment capabilities. Partnered with principal architects on target-state data architecture. Made critical prioritization tradeoffs between platform reliability, operational cost, and deployment velocity. In parallel, architected enterprise data consolidation pipelines that unified historical data from multiple sources into a clean, AI-ready format with proper governance and audit trails.",
-      result: "Release cycles dropped from days to minutes, enabling GTM teams to ship features 80% faster. The CI/CD platform became the standard across all Salesforce engineering. Data consolidation enabled new AI training initiatives while reducing data storage costs by $450k annually. Demonstrated platform investments directly accelerate business velocity while managing cost and reliability. Drove executive alignment across Engineering, Security, and GTM on platform roadmap priorities.",
+      problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Fragmented enterprise data across systems made it difficult to leverage for AI/ML initiatives.",
+      action: "I defined the multi-year platform vision and initiated an org-wide architectural shift toward self-service CI/CD. I led the design and implementation of an on-demand CI/CD platform with automated testing pipelines, validation gates, and self-service deployment capabilities. Partnered with principal architects on target-state data architecture and architected enterprise data consolidation pipelines that unified historical data into a clean, AI-ready format with proper governance and audit trails.",
+      result: "Release cycles dropped from days to minutes, enabling GTM teams to ship features 80% faster. The CI/CD platform became the standard across all Salesforce engineering. Data consolidation enabled new AI training initiatives while reducing data storage costs by $450K annually. Secured executive buy-in for multi-year platform roadmap through demonstrated business velocity acceleration and financial impact.",
       metrics: [
         "Release cycle: days → minutes",
         "GTM velocity: +80%",
