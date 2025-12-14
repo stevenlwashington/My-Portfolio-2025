@@ -168,10 +168,10 @@ export default function ImpactTimeline() {
                   <CardHeader>
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
                       <div className="flex-1">
-                        <CardTitle className="text-2xl mb-2 text-white">{exp.role}</CardTitle>
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="text-lg font-semibold text-cyan-400">{exp.company}</span>
-                          <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20">{exp.period}</Badge>
+                        <CardTitle className="text-lg sm:text-xl md:text-2xl mb-2 text-white leading-tight">{exp.role}</CardTitle>
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
+                          <span className="text-base sm:text-lg font-semibold text-cyan-400">{exp.company}</span>
+                          <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20 text-xs sm:text-sm">{exp.period}</Badge>
                         </div>
                         
                         {/* Scope indicators */}

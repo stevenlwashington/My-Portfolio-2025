@@ -109,14 +109,14 @@ function UseCaseSection({ useCase, index }: { useCase: UseCase; index: number })
             <Icon className="w-6 h-6 text-cyan-400" />
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-cyan-400">{useCase.company}</h3>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">{useCase.title}</h2>
+            <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-cyan-400">{useCase.company}</h3>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">{useCase.title}</h2>
           </div>
         </motion.div>
 
         <motion.p
           style={{ opacity: headlineOpacity, y: headlineY }}
-          className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed max-w-2xl"
+          className="text-base sm:text-lg md:text-xl text-white/80 mb-12 leading-relaxed max-w-2xl"
         >
           {useCase.headline}
         </motion.p>
@@ -127,8 +127,8 @@ function UseCaseSection({ useCase, index }: { useCase: UseCase; index: number })
         >
           {useCase.metrics.map((metric, i) => (
             <div key={i} className="space-y-2">
-              <div className="text-2xl md:text-3xl font-bold text-cyan-400 font-mono break-words">{metric.value}</div>
-              <div className="text-xs md:text-sm text-white/70">{metric.label}</div>
+              <div className="text-lg sm:text-2xl md:text-3xl font-bold text-cyan-400 font-mono break-words">{metric.value}</div>
+              <div className="text-xs sm:text-sm text-white/70 leading-tight">{metric.label}</div>
             </div>
           ))}
         </motion.div>
