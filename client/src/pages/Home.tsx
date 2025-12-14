@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import DirectorSummary from "@/components/DirectorSummary";
 import StrategicCapabilities from "@/components/StrategicCapabilities";
+import OrganizationsLogoStrip from "@/components/OrganizationsLogoStrip";
 import ImpactTimeline from "@/components/ImpactTimeline";
 import LeadershipPhilosophy from "@/components/LeadershipPhilosophy";
 import ValuePropGenerator from "@/components/ValuePropGenerator";
@@ -31,13 +32,17 @@ export default function Home() {
         
         <div className="gradient-divider mx-auto max-w-4xl" />
         
-        <div className="section-alt">
-          <LeadershipPhilosophy />
-        </div>
+        <OrganizationsLogoStrip />
         
         <div className="gradient-divider mx-auto max-w-4xl" />
         
         <ImpactTimeline />
+        
+        <div className="gradient-divider mx-auto max-w-4xl" />
+        
+        <div className="section-alt">
+          <LeadershipPhilosophy />
+        </div>
         
         <div className="gradient-divider mx-auto max-w-4xl" />
         
