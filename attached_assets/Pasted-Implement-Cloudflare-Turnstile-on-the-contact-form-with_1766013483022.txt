@@ -1,0 +1,98 @@
+Implement Cloudflare Turnstile on the contact form with minimal code changes and no refactors. This is a Vite + React frontend and Express backend.
+
+Current flow: client/src/components/ContactForm.tsx submits JSON to POST /api/contact. Backend route is in server/routes.ts. Shared Zod schema is in shared/schema.ts. Emails are sent via Resend and already working in production.
+
+Goal
+
+Block bot submissions by requiring a valid Turnstile token before sending any emails.
+
+Secrets / Env Vars (do not hardcode)
+
+Use these environment variables:
+
+Client: import.meta.env.VITE_TURNSTILE_SITE_KEY
+
+Server: process.env.TURNSTILE_SECRET_KEY
+
+If these variables are missing, the UI should show a clear but simple error message near the submit button (“Verification unavailable. Please try again later.”) and prevent submission.
+
+Frontend requirements (ContactForm.tsx)
+
+File: client/src/components/ContactForm.tsx
+
+Add a Turnstile widget to the form UI above the submit button.
+
+Capture the Turnstile token and include it in the form submission payload as turnstileToken.
+
+Disable the submit button unless:
+
+the form is valid AND
+
+a Turnstile token is present AND
+
+mutation is not pending
+
+If the token expires or Turnstile errors, clear turnstileToken and require the user to re-verify.
+
+On successful submit, reset the form AND reset Turnstile state (so token is cleared and widget is ready for the next submission).
+
+Keep existing form styling (shadcn/ui) and existing validation patterns (React Hook Form + zodResolver).
+
+Implementation note: Prefer using a small React wrapper (e.g., react-turnstile) if it works cleanly with Vite. If not, implement with the Turnstile script directly, but keep it minimal and stable.
+
+Shared schema requirements (shared/schema.ts)
+
+File: shared/schema.ts
+
+Add a required field to the contact form schema:
+
+turnstileToken: non-empty string
+
+Ensure TypeScript types stay consistent across frontend and backend.
+
+Backend requirements (server/routes.ts)
+
+File: server/routes.ts
+
+In POST /api/contact:
+
+After Zod validation succeeds, verify turnstileToken with Cloudflare:
+
+POST to https://challenges.cloudflare.com/turnstile/v0/siteverify
+
+Send secret = process.env.TURNSTILE_SECRET_KEY
+
+Send response = turnstileToken
+
+Use application/x-www-form-urlencoded
+
+If verification fails, return HTTP 400:
+{ success: false, error: "Verification failed" }
+and do not send any Resend emails.
+
+If verification succeeds, proceed with existing Resend email behavior unchanged.
+
+Add robust error handling:
+
+If Turnstile verification request throws, return HTTP 500:
+{ success: false, error: "Verification error" }
+
+Log the error server-side.
+
+Use Node 18+ fetch (do not add dependencies unless required).
+
+Acceptance criteria
+
+Submitting without Turnstile completion is blocked (no emails sent).
+
+Valid Turnstile token allows submission and emails send as they do today.
+
+Token expiration requires re-verification.
+
+No build/type errors.
+
+List all changed files and paste the final code for each changed file (ContactForm.tsx, shared/schema.ts, server/routes.ts).
+
+Do not restructure folders or rename existing functions/components.
+
+Proceed with implementation now.
