@@ -45,6 +45,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await resend.emails.send({
         from: `Steven Washington <${process.env.CONTACT_FROM_EMAIL}>`,
         to: email,
+        replyTo: process.env.CONTACT_TO_EMAIL!,
         subject: `I received your message`,
         text: `Hi ${name},\n\nThanks for reaching out. I received your message and will follow up within 48 hours.\n\n— Steven`,
       });
