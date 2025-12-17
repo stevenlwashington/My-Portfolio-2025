@@ -1,8 +1,11 @@
+import { Resend } from "resend";
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
 import { GoogleGenAI } from "@google/genai";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Initialize Gemini AI using Replit AI Integrations (no API key required)
 const ai = new GoogleGenAI({
@@ -29,18 +32,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const { name, email, message } = validationResult.data;
 
-      // TODO: Integrate with Resend to send email
-      // For now, just log the contact form submission
-      console.log("Contact form submission:", { name, email, message });
+      // 1) Notify you (lands in your inbox)
+      await resend.emails.send({
+        from: `Steven Washington <${process.env.CONTACT_FROM_EMAIL}>`,
+        to: process.env.CONTACT_TO_EMAIL!,
+        replyTo: email,
+        subject: `New message from stevenwa.com — ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      });
 
-      // In production, this would send an email to stevenlwashington@gmail.com
-      // Example:
-      // await resend.emails.send({
-      //   from: 'portfolio@yourdomain.com',
-      //   to: 'stevenlwashington@gmail.com',
-      //   subject: `Portfolio Contact from ${name}`,
-      //   html: `<p><strong>From:</strong> ${name} (${email})</p><p><strong>Message:</strong><br/>${message}</p>`
-      // });
+      // 2) Auto-reply to the sender
+      await resend.emails.send({
+        from: `Steven Washington <${process.env.CONTACT_FROM_EMAIL}>`,
+        to: email,
+        subject: `I received your message`,
+        text: `Hi ${name},\n\nThanks for reaching out. I received your message and will follow up within 48 hours.\n\n— Steven`,
+      });
 
       return res.status(200).json({ success: true });
     } catch (error) {
