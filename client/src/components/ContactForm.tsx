@@ -16,7 +16,8 @@ interface ContactFormProps {
   onSuccess?: () => void;
 }
 
-const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+// Turnstile site key is public (not sensitive) - safe to hardcode
+const TURNSTILE_SITE_KEY = "0x4AAAAAACHSj1Itg-urobPN";
 
 export default function ContactForm({ onSuccess }: ContactFormProps) {
   const { toast } = useToast();
