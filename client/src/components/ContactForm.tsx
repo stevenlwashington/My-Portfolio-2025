@@ -26,6 +26,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
   const form = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema),
+    mode: "onChange",
     defaultValues: {
       name: "",
       email: "",
