@@ -9,8 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { contactFormSchema, type ContactForm as ContactFormType } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { Turnstile } from "react-turnstile";
-import { useState, useRef } from "react";
+import Turnstile from "react-turnstile";
+import { useState } from "react";
 
 interface ContactFormProps {
   onSuccess?: () => void;
@@ -22,7 +22,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   const { toast } = useToast();
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const [turnstileError, setTurnstileError] = useState<boolean>(false);
-  const turnstileRef = useRef<{ reset: () => void } | null>(null);
+  const [turnstileKey, setTurnstileKey] = useState<number>(0);
 
   const form = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema),
@@ -45,7 +45,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
       });
       form.reset();
       setTurnstileToken("");
-      turnstileRef.current?.reset();
+      setTurnstileKey(prev => prev + 1);
       if (onSuccess) {
         onSuccess();
       }
@@ -145,7 +145,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         <div className="flex flex-col items-center gap-2">
           {TURNSTILE_SITE_KEY ? (
             <Turnstile
-              ref={turnstileRef}
+              key={turnstileKey}
               sitekey={TURNSTILE_SITE_KEY}
               onVerify={handleTurnstileVerify}
               onExpire={handleTurnstileExpire}

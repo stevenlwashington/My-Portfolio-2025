@@ -30,7 +30,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      const { name, email, message } = validationResult.data;
+      const { name, email, message, turnstileToken } = validationResult.data;
+
+      // Verify Turnstile token with Cloudflare
+      const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+      if (!turnstileSecretKey) {
+        console.error("TURNSTILE_SECRET_KEY is not configured");
+        return res.status(500).json({ success: false, error: "Verification error" });
+      }
+
+      try {
+        const turnstileResponse = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            secret: turnstileSecretKey,
+            response: turnstileToken,
+          }),
+        });
+
+        const turnstileResult = await turnstileResponse.json() as { success: boolean };
+        
+        if (!turnstileResult.success) {
+          return res.status(400).json({ success: false, error: "Verification failed" });
+        }
+      } catch (turnstileError) {
+        console.error("Turnstile verification error:", turnstileError);
+        return res.status(500).json({ success: false, error: "Verification error" });
+      }
 
       // 1) Notify you (lands in your inbox)
       await resend.emails.send({
