@@ -44,4 +44,9 @@ integrations = ["javascript_gemini_ai_integrations:1.0.0"]
 [userenv]
 
 [userenv.shared]
+
+[userenv.production]
+VITE_TURNSTILE_SITE_KEY = "0x4AAAAAACHSj1Itg-urobPN"
+
+[userenv.development]
 VITE_TURNSTILE_SITE_KEY = "0x4AAAAAACHSj1Itg-urobPN"
