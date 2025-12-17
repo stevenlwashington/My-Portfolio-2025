@@ -9,13 +9,20 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { contactFormSchema, type ContactForm as ContactFormType } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
+import { Turnstile } from "react-turnstile";
+import { useState, useRef } from "react";
 
 interface ContactFormProps {
   onSuccess?: () => void;
 }
 
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+
 export default function ContactForm({ onSuccess }: ContactFormProps) {
   const { toast } = useToast();
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const [turnstileError, setTurnstileError] = useState<boolean>(false);
+  const turnstileRef = useRef<{ reset: () => void } | null>(null);
 
   const form = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema),
@@ -23,6 +30,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
       name: "",
       email: "",
       message: "",
+      turnstileToken: "",
     },
   });
 
@@ -36,6 +44,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
       form.reset();
+      setTurnstileToken("");
+      turnstileRef.current?.reset();
       if (onSuccess) {
         onSuccess();
       }
@@ -50,8 +60,27 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   });
 
   const onSubmit = (data: ContactFormType) => {
-    mutation.mutate(data);
+    mutation.mutate({ ...data, turnstileToken });
   };
+
+  const handleTurnstileVerify = (token: string) => {
+    setTurnstileToken(token);
+    setTurnstileError(false);
+    form.setValue("turnstileToken", token);
+  };
+
+  const handleTurnstileExpire = () => {
+    setTurnstileToken("");
+    form.setValue("turnstileToken", "");
+  };
+
+  const handleTurnstileError = () => {
+    setTurnstileError(true);
+    setTurnstileToken("");
+    form.setValue("turnstileToken", "");
+  };
+
+  const isSubmitDisabled = !form.formState.isValid || !turnstileToken || mutation.isPending;
 
   return (
     <Form {...form}>
@@ -112,10 +141,34 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           )}
         />
 
+        {/* Turnstile Widget */}
+        <div className="flex flex-col items-center gap-2">
+          {TURNSTILE_SITE_KEY ? (
+            <Turnstile
+              ref={turnstileRef}
+              sitekey={TURNSTILE_SITE_KEY}
+              onVerify={handleTurnstileVerify}
+              onExpire={handleTurnstileExpire}
+              onError={handleTurnstileError}
+              theme="dark"
+              data-testid="turnstile-widget"
+            />
+          ) : (
+            <p className="text-sm text-destructive" data-testid="turnstile-unavailable">
+              Verification unavailable. Please try again later.
+            </p>
+          )}
+          {turnstileError && (
+            <p className="text-sm text-destructive" data-testid="turnstile-error">
+              Verification failed. Please try again.
+            </p>
+          )}
+        </div>
+
         <Button
           type="submit"
           className="w-full"
-          disabled={mutation.isPending}
+          disabled={isSubmitDisabled || !TURNSTILE_SITE_KEY}
           data-testid="button-submit-contact"
         >
           {mutation.isPending ? (
