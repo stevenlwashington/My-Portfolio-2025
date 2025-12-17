@@ -46,8 +46,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         from: `Steven Washington <${process.env.CONTACT_FROM_EMAIL}>`,
         to: email,
         replyTo: process.env.CONTACT_TO_EMAIL!,
-        subject: `I received your message`,
-        text: `Hi ${name},\n\nThanks for reaching out. I received your message and will follow up within 48 hours.\n\n— Steven`,
+        subject: `Thanks for your message, ${name}`,
+        text: `Hi ${name},\n\nThanks for reaching out. I received your message and will follow up within 48                 hours.\n\n If there’s anything else you’d like to add, feel free to reply directly to this email — it’ll            come straight to me.\n\n— Steven`,
       });
 
       return res.status(200).json({ success: true });
