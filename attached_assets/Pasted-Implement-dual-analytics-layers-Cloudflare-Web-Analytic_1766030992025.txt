@@ -1,0 +1,38 @@
+Implement dual analytics layers (Cloudflare Web Analytics + Microsoft Clarity) with minimal changes and no refactors.
+
+Context: This is a Vite-powered React app (SPA) hosted on Replit and served by an Express backend. We want privacy-conscious analytics with low operational overhead.
+
+Vendors
+	1.	Cloudflare Web Analytics (traffic + referrers + geo + devices)
+	2.	Microsoft Clarity (behavior: clicks + scroll + heatmaps + session replays)
+
+Environment variables (do not hardcode)
+	•	VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN (Cloudflare beacon token)
+	•	VITE_CLARITY_PROJECT_ID (Clarity project id)
+
+Requirements
+	1.	Add both analytics only in production (use import.meta.env.PROD).
+	2.	Do not break local/dev/preview; if env vars are missing, analytics should simply not load.
+	3.	Avoid editing many files. Prefer adding a single Analytics component and mounting it once near the app root.
+	4.	Ensure scripts load once and never duplicate on route changes.
+	5.	Add minimal inline comments + a short README section: “How to configure analytics.”
+
+Implementation details
+	•	Create client/src/components/Analytics.tsx that:
+	•	Checks import.meta.env.PROD.
+	•	Reads import.meta.env.VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN and import.meta.env.VITE_CLARITY_PROJECT_ID.
+	•	If Cloudflare token exists: inject a <script> tag:
+	•	src="https://static.cloudflareinsights.com/beacon.min.js"
+	•	defer=true
+	•	data-cf-beacon should be JSON string containing the token, e.g. {"token":"<TOKEN>"}.
+	•	If Clarity project id exists: inject the standard Clarity snippet script (via document.createElement("script") and text/innerHTML) using the project id.
+	•	Use unique script element IDs (e.g., cf-beacon and ms-clarity) to prevent duplicates.
+	•	Mount <Analytics /> once in a top-level file that always renders (e.g., client/src/App.tsx or client/src/main.tsx).
+
+Deliverables
+	•	List the exact files changed/added.
+	•	Paste the full contents of any new files (Analytics.tsx).
+	•	Paste the modified sections of existing files (where you mounted the component).
+	•	Add a README section describing the two env vars and how to verify data is flowing in each dashboard.
+
+Proceed now.

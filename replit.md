@@ -114,8 +114,29 @@ Modern, executive-focused portfolio showcasing Steven Washington as a Principal/
 - `server/routes.ts` - Backend API routes
 - `Backlog.md` - Enhancement backlog with user stories
 
+## How to Configure Analytics
+
+This site uses dual analytics layers for privacy-conscious traffic and behavior insights:
+
+### Cloudflare Web Analytics (Traffic + Referrers + Geo + Devices)
+1. Go to [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/)
+2. Add your site and get the beacon token
+3. Set environment variable: `VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN=<your-token>`
+4. View data at: https://dash.cloudflare.com → Web Analytics
+
+### Microsoft Clarity (Behavior: Clicks + Scroll + Heatmaps + Session Replays)
+1. Go to [Microsoft Clarity](https://clarity.microsoft.com/)
+2. Create a project and get the project ID
+3. Set environment variable: `VITE_CLARITY_PROJECT_ID=<your-project-id>`
+4. View data at: https://clarity.microsoft.com/projects
+
+### Notes
+- Analytics only load in production (`import.meta.env.PROD`)
+- If env vars are missing, analytics simply don't load (no errors)
+- Scripts are deduplicated to prevent multiple loads on route changes
+
 ## Notes
-- **Email Integration**: User dismissed Resend integration twice. For production email delivery to stevenlwashington@gmail.com, will need credentials-based service (SendGrid, Mailgun, etc.) or alternative approach. This is documented as TODO in server/routes.ts.
-- Contact form currently functional but only logs to console
+- **Email Integration**: Resend integration configured with RESEND_API_KEY, CONTACT_TO_EMAIL, and CONTACT_FROM_EMAIL secrets
+- Contact form sends emails via Resend with Turnstile bot protection
 - All social media links verified and working
 - Custom icon successfully integrated in header
