@@ -48,7 +48,14 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2025 Steven Washington. All rights reserved.</p>
+          <p className="mb-2">© 2025 Steven Washington. All rights reserved.</p>
+          <a 
+            href="/privacy" 
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            data-testid="link-privacy"
+          >
+            Privacy Policy
+          </a>
         </div>
       </div>
     </footer>
