@@ -38,16 +38,19 @@ export default function Home() {
       </main>
       <Footer />
 
-      {/* Contact Modal - fix mobile scroll: constrain height, enable overflow */}
+      {/* Contact Modal - fix mobile scroll: entire content area scrollable */}
       <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
-        <DialogContent className="w-[calc(100%-2rem)] max-w-md max-h-[calc(100dvh-2rem)] flex flex-col">
-          <DialogHeader className="flex-shrink-0">
-            <DialogTitle>Let's Connect</DialogTitle>
-            <DialogDescription>
-              Share a quick note about what you're thinking—I'll follow up within 48 hours.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex-1 overflow-y-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
+        <DialogContent className="w-[calc(100%-2rem)] max-w-md max-h-[85dvh] overflow-hidden p-0">
+          <div 
+            className="overflow-y-auto overscroll-contain p-6" 
+            style={{ WebkitOverflowScrolling: 'touch', maxHeight: '85dvh' }}
+          >
+            <DialogHeader className="mb-4">
+              <DialogTitle>Let's Connect</DialogTitle>
+              <DialogDescription>
+                Share a quick note about what you're thinking—I'll follow up within 48 hours.
+              </DialogDescription>
+            </DialogHeader>
             <ContactForm onSuccess={() => setIsContactOpen(false)} />
           </div>
         </DialogContent>
