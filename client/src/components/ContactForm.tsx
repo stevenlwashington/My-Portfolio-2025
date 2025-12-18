@@ -23,6 +23,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   const { toast } = useToast();
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const [turnstileError, setTurnstileError] = useState<boolean>(false);
+  const [turnstileExpired, setTurnstileExpired] = useState<boolean>(false);
   const [turnstileKey, setTurnstileKey] = useState<number>(0);
 
   const form = useForm<ContactFormType>({
@@ -68,18 +69,30 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   const handleTurnstileVerify = (token: string) => {
     setTurnstileToken(token);
     setTurnstileError(false);
+    setTurnstileExpired(false);
     form.setValue("turnstileToken", token);
   };
 
   const handleTurnstileExpire = () => {
     setTurnstileToken("");
+    setTurnstileExpired(true);
+    setTurnstileError(false);
     form.setValue("turnstileToken", "");
   };
 
   const handleTurnstileError = () => {
     setTurnstileError(true);
+    setTurnstileExpired(false);
     setTurnstileToken("");
     form.setValue("turnstileToken", "");
+  };
+
+  const handleRefreshTurnstile = () => {
+    setTurnstileExpired(false);
+    setTurnstileError(false);
+    setTurnstileToken("");
+    form.setValue("turnstileToken", "");
+    setTurnstileKey(prev => prev + 1);
   };
 
   const isSubmitDisabled = !form.formState.isValid || !turnstileToken || mutation.isPending;
@@ -143,7 +156,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           )}
         />
 
-        {/* Turnstile Widget */}
+        {/* Turnstile Widget with status feedback */}
         <div className="flex flex-col items-center gap-2">
           {TURNSTILE_SITE_KEY ? (
             <Turnstile
@@ -160,10 +173,35 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
               Verification unavailable. Please try again later.
             </p>
           )}
-          {turnstileError && (
-            <p className="text-sm text-destructive" data-testid="turnstile-error">
-              Verification failed. Please try again.
-            </p>
+          {turnstileExpired && (
+            <div className="text-center" data-testid="turnstile-expired">
+              <p className="text-sm text-amber-500">
+                Verification expired.
+              </p>
+              <button
+                type="button"
+                onClick={handleRefreshTurnstile}
+                className="text-sm text-cyan-400 hover:text-cyan-300 underline mt-1"
+                data-testid="button-refresh-turnstile"
+              >
+                Click to refresh
+              </button>
+            </div>
+          )}
+          {turnstileError && !turnstileExpired && (
+            <div className="text-center" data-testid="turnstile-error">
+              <p className="text-sm text-destructive">
+                Verification failed.
+              </p>
+              <button
+                type="button"
+                onClick={handleRefreshTurnstile}
+                className="text-sm text-cyan-400 hover:text-cyan-300 underline mt-1"
+                data-testid="button-retry-turnstile"
+              >
+                Click to retry
+              </button>
+            </div>
           )}
         </div>
 
