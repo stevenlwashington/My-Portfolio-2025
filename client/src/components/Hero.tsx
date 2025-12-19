@@ -70,20 +70,25 @@ export default function Hero({ onContactClick }: HeroProps) {
 
           {/* Main tagline */}
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
               <span className="block gradient-text">
                 Product thinking.
               </span>
               <span className="block text-white">
                 Engineering execution.
               </span>
-            </h1>
+            </div>
           </div>
 
-          {/* Value Proposition - integrated as subtitle */}
-          <p className="text-base md:text-lg text-white/80 max-w-xl leading-relaxed">
-            Hi, I'm Steven. A Seattle-based Platform Product Manager building secure, compliant, AI-ready enterprise platforms that improve engineering velocity, reduce operational cost, and unlock new revenue.
-          </p>
+          {/* Two-line hierarchy */}
+          <div className="space-y-6 mt-4">
+            <h1 className="text-2xl md:text-3xl font-semibold text-white leading-snug">
+              Hi, I'm Steven. I lead platform and internal product organizations.
+            </h1>
+            <p className="text-base md:text-lg text-white/70 max-w-lg mx-auto leading-relaxed font-normal">
+              I build capabilities that reduce toil, accelerate delivery, and turn complex systems into leverage across engineering, operations, and go-to-market teams.
+            </p>
+          </div>
 
           {/* Single CTA - Contact Me with gradient border */}
           <div className="gradient-border rounded-full mt-4">
