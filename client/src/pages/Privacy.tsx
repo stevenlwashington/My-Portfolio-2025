@@ -7,7 +7,7 @@ export default function Privacy() {
       <Header />
       <main className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
-        <p className="text-sm text-muted-foreground mb-8">Last updated: December 2024</p>
+        <p className="text-sm text-muted-foreground mb-8">Last updated: December 2025</p>
 
         <div className="space-y-8 text-muted-foreground">
           <section>
