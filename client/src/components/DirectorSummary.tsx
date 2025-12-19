@@ -68,7 +68,7 @@ export default function DirectorSummary() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-cyan-400">How I Drive Value</h2>
           <p className="text-white/80 max-w-3xl leading-relaxed">
-            These are the problems I'm accountable for at scale—across strategy, delivery, and measurable outcomes.
+            I build capabilities that reduce toil, accelerate delivery, and turn complex systems into leverage.
           </p>
         </motion.div>
 

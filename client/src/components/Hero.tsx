@@ -83,7 +83,7 @@ export default function Hero({ onContactClick }: HeroProps) {
           {/* Two-line hierarchy */}
           <div className="space-y-6 mt-4">
             <h1 className="text-2xl md:text-3xl font-semibold text-white leading-snug">
-              Hi, I'm Steven. I lead platform and internal product organizations.
+              Hi, I'm Steven. I lead platform and internal product teams.
             </h1>
             <p className="text-base md:text-lg text-white/70 max-w-lg mx-auto leading-relaxed font-normal">
               I build capabilities that reduce toil, accelerate delivery, and turn complex systems into leverage across engineering, operations, and go-to-market teams.
