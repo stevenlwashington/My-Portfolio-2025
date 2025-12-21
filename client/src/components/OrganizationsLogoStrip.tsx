@@ -22,45 +22,47 @@ interface Organization {
   alt: string;
   icon?: typeof SiAmazonwebservices;
   logoPath?: string;
+  size?: "normal" | "large" | "xlarge";
 }
 
 const organizations: Organization[] = [
   { name: "Amazon Web Services", alt: "Amazon Web Services logo — prior organization", icon: SiAmazonwebservices },
   { name: "Microsoft", alt: "Microsoft logo — prior organization", logoPath: microsoftLogo },
-  { name: "Salesforce", alt: "Salesforce logo — platform partnership", logoPath: salesforceLogo },
+  { name: "Salesforce", alt: "Salesforce logo — platform partnership", logoPath: salesforceLogo, size: "xlarge" },
   { name: "Zillow", alt: "Zillow logo — prior organization", logoPath: zillowLogo },
   { name: "T-Mobile", alt: "T-Mobile logo — prior organization", logoPath: tmobileLogo },
   { name: "LivingSocial", alt: "LivingSocial logo — prior organization", logoPath: livingsocialLogo },
-  { name: "Zendesk", alt: "Zendesk logo — platform partnership", logoPath: zendeskLogo },
+  { name: "Zendesk", alt: "Zendesk logo — platform partnership", logoPath: zendeskLogo, size: "large" },
   { name: "GitLab", alt: "GitLab logo — platform partnership", logoPath: gitlabLogo },
   { name: "Functionize", alt: "Functionize logo — prior organization", logoPath: functionizeLogo },
   { name: "Windsurf", alt: "Windsurf logo — platform partnership", logoPath: windsurfLogo },
   { name: "Pendo", alt: "Pendo logo — platform partnership", logoPath: pendoLogo },
   { name: "CrowdStrike", alt: "CrowdStrike logo — enterprise initiative", logoPath: crowdstrikeLogo },
   { name: "Palantir", alt: "Palantir logo — enterprise initiative", logoPath: palantirLogo },
-  { name: "Seattle Storm", alt: "Seattle Storm logo — prior organization", logoPath: stormLogo },
-  { name: "San Diego Padres", alt: "San Diego Padres logo — prior organization", logoPath: padresLogo },
+  { name: "Seattle Storm", alt: "Seattle Storm logo — prior organization", logoPath: stormLogo, size: "large" },
+  { name: "San Diego Padres", alt: "San Diego Padres logo — prior organization", logoPath: padresLogo, size: "large" },
 ];
 
 function LogoItem({ org }: { org: Organization }) {
   const Icon = org.icon;
+  const sizeClass = org.size === "xlarge" ? "h-14" : org.size === "large" ? "h-10" : "h-7";
   
   return (
     <div
-      className="flex items-center justify-center h-12 px-8 flex-shrink-0"
+      className="flex items-center justify-center w-32 h-16 flex-shrink-0"
       role="img"
       aria-label={org.alt}
     >
       {Icon ? (
-        <Icon className="h-8 w-auto text-white/40 transition-opacity duration-200 hover:text-white/65" />
+        <Icon className="h-7 w-auto text-white/65 transition-opacity duration-200 hover:text-white/90" />
       ) : org.logoPath ? (
         <img 
           src={org.logoPath} 
           alt={org.name}
-          className="h-8 w-auto opacity-65 transition-opacity duration-200 hover:opacity-85"
+          className={`${sizeClass} w-auto max-w-full object-contain opacity-65 transition-opacity duration-200 hover:opacity-90`}
         />
       ) : (
-        <span className="text-white/40 font-medium text-sm whitespace-nowrap tracking-wide">
+        <span className="text-white/65 font-medium text-sm whitespace-nowrap tracking-wide">
           {org.name}
         </span>
       )}
@@ -117,7 +119,7 @@ export default function OrganizationsLogoStrip() {
           }}
         >
           <motion.div
-            className="flex gap-8 md:gap-12 px-6"
+            className="flex items-center gap-6 md:gap-8 px-6"
             animate={{
               x: [0, -100 * organizations.length],
             }}
