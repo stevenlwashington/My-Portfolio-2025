@@ -14,8 +14,6 @@ import windsurfLogo from "@assets/windsurf_1766294022811.png";
 import pendoLogo from "@assets/pendo_1766294022811.png";
 import crowdstrikeLogo from "@assets/crowdstrike_1766294022812.png";
 import palantirLogo from "@assets/palantir_1766294022812.png";
-import stormLogo from "@assets/storm_1766294022812.png";
-import padresLogo from "@assets/padres_1766294022812.png";
 
 interface Organization {
   name: string;
@@ -39,8 +37,6 @@ const organizations: Organization[] = [
   { name: "Pendo", alt: "Pendo logo — platform partnership", logoPath: pendoLogo },
   { name: "CrowdStrike", alt: "CrowdStrike logo — enterprise initiative", logoPath: crowdstrikeLogo },
   { name: "Palantir", alt: "Palantir logo — enterprise initiative", logoPath: palantirLogo },
-  { name: "Seattle Storm", alt: "Seattle Storm logo — prior organization", logoPath: stormLogo, size: "large" },
-  { name: "San Diego Padres", alt: "San Diego Padres logo — prior organization", logoPath: padresLogo, size: "large" },
 ];
 
 function LogoItem({ org }: { org: Organization }) {
