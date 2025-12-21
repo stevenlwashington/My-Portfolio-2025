@@ -41,21 +41,21 @@ const organizations: Organization[] = [
 
 function LogoItem({ org }: { org: Organization }) {
   const Icon = org.icon;
-  const sizeClass = org.size === "xlarge" ? "h-14" : org.size === "large" ? "h-10" : "h-7";
+  const sizeClass = org.size === "xlarge" ? "max-h-14" : org.size === "large" ? "max-h-10" : "max-h-8";
   
   return (
     <div
-      className="flex items-center justify-center w-32 h-16 flex-shrink-0"
+      className="flex items-center justify-center h-16 px-2 flex-shrink-0"
       role="img"
       aria-label={org.alt}
     >
       {Icon ? (
-        <Icon className="h-7 w-auto text-white/65 transition-opacity duration-200 hover:text-white/90" />
+        <Icon className="h-10 w-auto text-white/65 transition-opacity duration-200 hover:text-white/90" />
       ) : org.logoPath ? (
         <img 
           src={org.logoPath} 
           alt={org.name}
-          className={`${sizeClass} w-auto max-w-full object-contain opacity-65 transition-opacity duration-200 hover:opacity-90`}
+          className={`${sizeClass} w-auto object-contain opacity-65 transition-opacity duration-200 hover:opacity-90`}
         />
       ) : (
         <span className="text-white/65 font-medium text-sm whitespace-nowrap tracking-wide">
@@ -115,7 +115,7 @@ export default function OrganizationsLogoStrip() {
           }}
         >
           <motion.div
-            className="flex items-center gap-6 md:gap-8 px-6"
+            className="flex items-center gap-10 md:gap-12 px-6"
             animate={{
               x: [0, -100 * organizations.length],
             }}
