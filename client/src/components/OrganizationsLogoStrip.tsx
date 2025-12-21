@@ -1,37 +1,45 @@
 import { motion } from "framer-motion";
 import { Info } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { 
-  SiAmazonwebservices, 
-  SiSalesforce, 
-  SiZillow, 
-  SiZendesk, 
-  SiGitlab,
-  SiPalantir
-} from "react-icons/si";
+import { SiAmazonwebservices } from "react-icons/si";
+import microsoftLogo from "@assets/microsoft_1766294022812.png";
+import salesforceLogo from "@assets/salesforce_1766294022812.png";
+import zillowLogo from "@assets/zillow_1766294022812.png";
+import tmobileLogo from "@assets/t-mobile_1766294022811.png";
+import livingsocialLogo from "@assets/livingsocial_1766294022811.png";
+import zendeskLogo from "@assets/zendesk_1766294022812.png";
+import gitlabLogo from "@assets/gitlab_1766294022813.png";
+import functionizeLogo from "@assets/functionize_1766294022811.png";
+import windsurfLogo from "@assets/windsurf_1766294022811.png";
+import pendoLogo from "@assets/pendo_1766294022811.png";
+import crowdstrikeLogo from "@assets/crowdstrike_1766294022812.png";
+import palantirLogo from "@assets/palantir_1766294022812.png";
+import stormLogo from "@assets/storm_1766294022812.png";
+import padresLogo from "@assets/padres_1766294022812.png";
 
 interface Organization {
   name: string;
   alt: string;
   icon?: typeof SiAmazonwebservices;
+  logoPath?: string;
 }
 
 const organizations: Organization[] = [
   { name: "Amazon Web Services", alt: "Amazon Web Services logo — prior organization", icon: SiAmazonwebservices },
-  { name: "Microsoft", alt: "Microsoft logo — prior organization" },
-  { name: "Salesforce", alt: "Salesforce logo — platform partnership", icon: SiSalesforce },
-  { name: "Zillow", alt: "Zillow logo — prior organization", icon: SiZillow },
-  { name: "T-Mobile", alt: "T-Mobile logo — prior organization" },
-  { name: "LivingSocial", alt: "LivingSocial logo — prior organization" },
-  { name: "Zendesk", alt: "Zendesk logo — platform partnership", icon: SiZendesk },
-  { name: "GitLab", alt: "GitLab logo — platform partnership", icon: SiGitlab },
-  { name: "Functionize", alt: "Functionize logo — prior organization" },
-  { name: "Windsurf", alt: "Windsurf logo — platform partnership" },
-  { name: "Pendo", alt: "Pendo logo — platform partnership" },
-  { name: "CrowdStrike", alt: "CrowdStrike logo — enterprise initiative" },
-  { name: "Palantir", alt: "Palantir logo — enterprise initiative", icon: SiPalantir },
-  { name: "Seattle Storm", alt: "Seattle Storm logo — prior organization" },
-  { name: "San Diego Padres", alt: "San Diego Padres logo — prior organization" },
+  { name: "Microsoft", alt: "Microsoft logo — prior organization", logoPath: microsoftLogo },
+  { name: "Salesforce", alt: "Salesforce logo — platform partnership", logoPath: salesforceLogo },
+  { name: "Zillow", alt: "Zillow logo — prior organization", logoPath: zillowLogo },
+  { name: "T-Mobile", alt: "T-Mobile logo — prior organization", logoPath: tmobileLogo },
+  { name: "LivingSocial", alt: "LivingSocial logo — prior organization", logoPath: livingsocialLogo },
+  { name: "Zendesk", alt: "Zendesk logo — platform partnership", logoPath: zendeskLogo },
+  { name: "GitLab", alt: "GitLab logo — platform partnership", logoPath: gitlabLogo },
+  { name: "Functionize", alt: "Functionize logo — prior organization", logoPath: functionizeLogo },
+  { name: "Windsurf", alt: "Windsurf logo — platform partnership", logoPath: windsurfLogo },
+  { name: "Pendo", alt: "Pendo logo — platform partnership", logoPath: pendoLogo },
+  { name: "CrowdStrike", alt: "CrowdStrike logo — enterprise initiative", logoPath: crowdstrikeLogo },
+  { name: "Palantir", alt: "Palantir logo — enterprise initiative", logoPath: palantirLogo },
+  { name: "Seattle Storm", alt: "Seattle Storm logo — prior organization", logoPath: stormLogo },
+  { name: "San Diego Padres", alt: "San Diego Padres logo — prior organization", logoPath: padresLogo },
 ];
 
 function LogoItem({ org }: { org: Organization }) {
@@ -44,7 +52,13 @@ function LogoItem({ org }: { org: Organization }) {
       aria-label={org.alt}
     >
       {Icon ? (
-        <Icon className="h-8 w-auto text-white/40" />
+        <Icon className="h-8 w-auto text-white/40 transition-opacity duration-200 hover:text-white/65" />
+      ) : org.logoPath ? (
+        <img 
+          src={org.logoPath} 
+          alt={org.name}
+          className="h-8 w-auto opacity-65 transition-opacity duration-200 hover:opacity-85"
+        />
       ) : (
         <span className="text-white/40 font-medium text-sm whitespace-nowrap tracking-wide">
           {org.name}
