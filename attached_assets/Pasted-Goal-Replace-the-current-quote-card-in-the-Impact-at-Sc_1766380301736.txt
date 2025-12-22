@@ -1,0 +1,73 @@
+Goal: Replace the current “quote card” in the Impact at Scale section with a full-width quote band (no rounded card UI), aligned to the same grid as the metrics, with subtle divider lines, constrained text width for readability, and responsive behavior across viewports.
+
+Requirements
+	1.	Find the Impact at Scale section and locate the current quote “card” component/markup (likely a div with rounded corners/border/shadow).
+	2.	Replace that quote card with a new component (or updated markup) named something like ImpactQuoteBand (or keep the existing component but change its structure/styles).
+	3.	The quote band must:
+	•	Span the full content width of the section container (same width as the metrics grid).
+	•	Have no “card” look: remove rounded corners, heavy border, and strong background.
+	•	Use a subtle band treatment:
+	•	top and bottom hairline dividers (very low opacity)
+	•	a very soft background wash/gradient (optional but subtle)
+	•	Constrain quote text width to improve readability (target max-width: 60ch).
+	•	Include a quote icon on the left (existing icon is fine), but keep it subtle.
+	4.	Responsive layout
+	•	Desktop/tablet: quote band is centered within the section container, text constrained, icon on left.
+	•	Mobile: stack icon above text or keep icon inline but ensure padding is comfortable and text doesn’t feel cramped.
+	5.	Maintain existing typography style (font family) but make quote feel premium:
+	•	Quote text: slightly larger than body, italic optional but not required
+	•	Attribution: smaller, muted, clearly separated (e.g., em dash prefix)
+	6.	Ensure this doesn’t break dark theme contrast.
+
+Implementation details (do this in code)
+	•	Update the JSX/TSX for the quote area to this structure:
+	•	A wrapper: div with class impactQuoteBand
+	•	Inside: div with class impactQuoteInner
+	•	Quote icon + content in a flex row:
+	•	div.impactQuoteIcon
+	•	blockquote.impactQuoteText (contains the quote)
+	•	div.impactQuoteAttribution (contains attribution line)
+
+CSS / Tailwind rules
+
+Implement either Tailwind classes or CSS module styles (use whatever pattern the repo is already using). Use these design targets:
+	•	Band container:
+	•	width: 100%
+	•	margin-top: 24px (or consistent spacing)
+	•	padding: 20px 0 (band vertical padding)
+	•	border-top: 1px solid rgba(255,255,255,0.08)
+	•	border-bottom: 1px solid rgba(255,255,255,0.08)
+	•	Optional subtle background wash:
+	•	background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01), rgba(255,255,255,0.02))
+	•	Inner layout:
+	•	display: flex; gap: 16px; align-items: flex-start;
+	•	Constrain text block:
+	•	max-width: 60ch;
+	•	Icon:
+	•	low opacity (e.g., 0.35–0.5)
+	•	Quote text:
+	•	increase size slightly vs body
+	•	line-height comfortable
+	•	Attribution:
+	•	smaller text
+	•	muted color/opacity
+	•	margin-top: 10–12px
+
+Responsive rules
+	•	At max-width: 640px:
+	•	switch to column layout
+	•	reduce padding
+	•	keep max-width but allow full width if necessary
+
+Acceptance Criteria
+	•	Quote no longer appears as a “card” and instead reads as an editorial pull-quote band.
+	•	Quote band aligns visually with metrics grid width.
+	•	Quote text does not stretch uncomfortably wide on large screens.
+	•	Mobile layout is readable, clean, and not cramped.
+	•	No layout shifts or overflow issues.
+
+Deliverables
+	•	Update the quote markup/component in the Impact at Scale section.
+	•	Add/update the corresponding CSS/Tailwind styles.
+	•	Verify in Replit Preview at multiple widths (mobile + desktop) that it looks intentional and premium.
+	•	Do not change copy/content unless required to move it into the new structure.

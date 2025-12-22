@@ -113,17 +113,20 @@ export default function DirectorSummary() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               style={{ gridColumn: '1 / -1' }}
+              className="impact-quote-band"
             >
-              <div className="relative px-4 sm:px-6 py-6 rounded-lg bg-slate-800/30 border border-cyan-500/10">
-                <Quote className="w-6 h-6 text-cyan-500/30 absolute top-4 left-4" />
-                <blockquote className="pl-8">
-                  <p className="text-white/80 italic text-xs sm:text-sm md:text-base leading-relaxed mb-3 max-w-[48ch]">
+              <div className="impact-quote-inner">
+                <div className="impact-quote-icon">
+                  <Quote className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div className="impact-quote-content">
+                  <blockquote className="impact-quote-text">
                     "Steven solved the cross-org constraints that limit velocity—aligning engineering systems, implementing AI and automation, and bringing execution rigor so teams shipped faster without trading off reliability."
-                  </p>
-                  <footer className="text-xs text-white/50">
+                  </blockquote>
+                  <div className="impact-quote-attribution">
                     — Senior Engineering Leader
-                  </footer>
-                </blockquote>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

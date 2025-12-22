@@ -351,3 +351,65 @@
     gap: 1.5rem;
   }
 }
+
+/* Impact Quote Band - Editorial pull-quote style */
+.impact-quote-band {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.02));
+}
+
+.impact-quote-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.impact-quote-icon {
+  flex-shrink: 0;
+  color: rgba(6, 182, 212, 0.4);
+}
+
+.impact-quote-content {
+  max-width: 60ch;
+}
+
+.impact-quote-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: normal;
+}
+
+.impact-quote-attribution {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 640px) {
+  .impact-quote-band {
+    padding: 1rem 0;
+  }
+
+  .impact-quote-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .impact-quote-content {
+    max-width: 100%;
+  }
+
+  .impact-quote-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .impact-quote-attribution {
+    font-size: 0.8125rem;
+  }
+}
