@@ -352,6 +352,24 @@
   }
 }
 
+/* Hero Visual System - Tight coupling between avatar/rings and headline */
+.hero-visual-system {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-visual-system .hero-headline {
+  margin-top: clamp(12px, 2vw, 24px);
+  text-align: center;
+}
+
+/* Ensure rings container has proper padding to not collide with headline */
+.hero-visual-system > div:first-child {
+  padding-bottom: clamp(40px, 5vw, 64px);
+}
+
 /* Impact Quote Band - Editorial pull-quote style */
 .impact-quote-band {
   width: 100%;

@@ -1,0 +1,32 @@
+Goal: Make the hero’s concentric rings + avatar + gradient headline feel like one intentional system by tightening spacing, centering alignment, and making it responsive (no awkward gap on mobile/desktop). Do not change colors, fonts, or the headline text itself—only layout/spacing.
+
+Instructions:
+	1.	Find the hero section component (likely something like Hero.tsx, HeroSection.tsx, or a Home page section) that renders:
+	•	the avatar/headshot
+	•	the concentric circle/ring background
+	•	the gradient headline (“Product thinking.” etc.)
+	2.	Wrap the avatar+rings and headline into a single parent container (if not already) called something like:
+	•	<section className="hero">
+	•	inside it: <div className="heroVisual"> and <div className="heroHeadline">
+	3.	Tighten vertical spacing so the headline reads like a label for the avatar system:
+	•	Reduce the margin/padding between the bottom of the rings and the headline.
+	•	On mobile, make the gap smaller than desktop.
+	4.	Enforce strict center alignment:
+	•	The hero visual (avatar+rings) and the gradient headline should share the same center axis.
+	•	Ensure no accidental left offset at any breakpoint.
+	5.	Implement responsive spacing with CSS clamp():
+	•	Add CSS (or Tailwind equivalents) so the gap between visual and headline scales smoothly:
+	•	target gap range: ~10–16px on small screens, ~18–28px on desktop
+	•	Example target: gap: clamp(10px, 2vw, 24px);
+	6.	Ensure rings never collide with headline:
+	•	If the rings are absolutely positioned, confirm the hero container has enough bottom padding so the lowest ring doesn’t overlap the headline.
+	•	But keep the distance intentionally tight.
+	7.	Deliverable:
+	•	Commit changes that update the hero layout/styles to achieve Option 1.
+	•	Provide the exact files changed and a brief note of what was adjusted.
+
+Acceptance criteria:
+	•	The whitespace between the lowest ring and the gradient headline no longer feels accidental.
+	•	The headline visually reads as “part of” the hero system.
+	•	Layout looks correct on common widths: 375px, 768px, 1024px, 1440px.
+	•	No changes to colors, copy, or logo section behavior.
