@@ -370,6 +370,34 @@
   padding-bottom: clamp(40px, 5vw, 64px);
 }
 
+/* Outer ring: blur effect for atmospheric quality */
+.hero-ring-outer {
+  filter: blur(0.5px);
+}
+
+/* Fade gradient overlay: attenuates ring visibility toward headline */
+.hero-rings-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Gradient from transparent (top) to full opacity (bottom 30%) to prevent ring bleed */
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(13, 27, 42, 0.4) 100%);
+  border-radius: 50%;
+  z-index: 5;
+}
+
+@media (max-width: 640px) {
+  /* Even more subtle rings on mobile */
+  .hero-ring-outer {
+    filter: blur(0.75px);
+    opacity: 0.7;
+  }
+  
+  .hero-rings-fade {
+    background: linear-gradient(to bottom, transparent 0%, transparent 45%, rgba(13, 27, 42, 0.55) 100%);
+  }
+}
+
 /* Impact Quote Band - Editorial pull-quote style */
 .impact-quote-band {
   width: 100%;

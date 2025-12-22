@@ -26,9 +26,14 @@ export default function Hero({ onContactClick }: HeroProps) {
           <div className="hero-visual-system flex flex-col items-center">
             {/* Portrait with social links */}
             <div className="relative w-full flex justify-center items-center">
-              {/* Concentric circles background */}
-              <div className="absolute w-72 h-72 rounded-full border border-primary/20" />
-              <div className="absolute w-80 h-80 rounded-full border border-primary/10" />
+              {/* Concentric circles background - atmospheric subordinate rings */}
+              {/* Inner ring: crisp, more visible */}
+              <div className="absolute w-72 h-72 rounded-full border border-primary/12 sm:border-primary/14" />
+              {/* Outer ring: blurred for atmospheric effect, very subtle */}
+              <div className="absolute w-80 h-80 rounded-full border border-primary/7 sm:border-primary/9 hero-ring-outer" />
+              
+              {/* Gradient fade overlay: prevents rings from competing with headline */}
+              <div className="hero-rings-fade" />
               
               {/* Portrait */}
               <div className="relative z-10 flex flex-col items-center">
