@@ -1,9 +1,34 @@
 # Steven Washington's Portfolio
 
 ## Overview
-Modern, executive-focused portfolio showcasing Steven Washington as a Principal/Director-level Platform & AI Product Leader. Features identity-first hero, interactive Platform Value Multiplier calculator, comprehensive impact timeline with STAR-format case study modals, clickable/flippable leadership principle cards, strategic capabilities showcase, contact form modal, and streamlined navigation with custom branding icon.
+Modern, executive-focused portfolio showcasing Steven Washington as a Principal/Director-level Platform & AI Product Leader. Features identity-first hero with dual CTAs, Impact at Scale 2x2 grid, accordion-expandable Career Trajectory cards with STAR-format case study modals, organizations logo strip, footer CTA, and contact form modal with Turnstile bot protection.
 
-## Recent Changes (December 11, 2025)
+## Recent Changes (December 22, 2025)
+
+### Major UI/UX Redesign
+- **Hero Section**:
+  - Updated subheadline: "I build internal platforms and AI-enabled systems that eliminate toil, accelerate delivery, and drive measurable business impact."
+  - Dual CTAs: "Explore Impact" (scrolls to #impact anchor) + "Contact" (opens modal)
+- **How I Drive Value Section**:
+  - Updated intro: "Platforms win only when engineers choose them—adoption is earned, not mandated."
+  - Renamed "Engineering Velocity" card to "Delivery Systems"
+- **Impact at Scale Section**:
+  - Added anchor id="impact" for smooth scroll navigation
+  - Refactored to 2x2 grid layout with large centered statistics (5xl-6xl font size)
+  - Stats: "100+", "15+", "20+", "$11B+"
+  - Updated quote attribution
+- **Use Cases Section**: Removed entirely from homepage (StrategicCapabilities component no longer used)
+- **Organizations Section**:
+  - Moved to appear after DirectorSummary (before Career Trajectory)
+  - Updated subtitle: "Through direct leadership roles and large-scale platform initiatives."
+- **Career Trajectory Section**:
+  - Accordion expand functionality: shows first 2 bullets by default
+  - "Show more"/"Show less" toggle with chevron icon
+  - Case study button only appears when card is expanded
+  - Section id changed from "impact" to "career" to avoid duplicate anchors
+- **Footer CTA**: New FooterCTA component added above footer with Calendar and Email buttons
+
+## Previous Changes (December 11, 2025)
 
 ### v1 Final Enhancements (December 11, 2025)
 - **Custom Brand Logo**: "Steven Washington" text logo in bold white—professional, clean, executive-level
@@ -80,14 +105,14 @@ Modern, executive-focused portfolio showcasing Steven Washington as a Principal/
 ### Frontend (React + TypeScript + Vite)
 - **Pages**: `client/src/pages/Home.tsx` - main landing page
 - **Components**:
-  - `Hero.tsx` - Identity-first hero section with portrait and gradient tagline
-  - `DirectorSummary.tsx` - Combined "What I Solve For" + "Scope of Ownership" sidebar layout
-  - `ImpactTimeline.tsx` - Career timeline with STAR-format case studies and executive alignment examples
-  - `LeadershipPhilosophy.tsx` - Flippable principle cards with proof statements
-  - `StrategicCapabilities.tsx` - Scroll-driven progressive reveal of capabilities
+  - `Hero.tsx` - Identity-first hero section with portrait, gradient tagline, and dual CTAs
+  - `DirectorSummary.tsx` - "How I Drive Value" cards + "Impact at Scale" 2x2 grid with id="impact"
+  - `OrganizationsLogoStrip.tsx` - Animated logo strip with company logos
+  - `ImpactTimeline.tsx` - Career Trajectory with accordion expand and STAR-format case study modals
+  - `FooterCTA.tsx` - CTA block with Calendar and Email buttons
   - `Header.tsx` - Navigation with custom icon, social links, contact modal trigger
   - `ContactForm.tsx` - Modal form with validation (react-hook-form + zod)
-  - `Footer.tsx` - Footer with social links
+  - `Footer.tsx` - Footer with social links and Privacy Policy link
 - **Styling**: Tailwind CSS with custom design in `client/src/index.css`
 - **State Management**: React Query for server state, React hooks for local state
 

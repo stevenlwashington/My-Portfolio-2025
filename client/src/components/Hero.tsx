@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Linkedin, Github, ArrowDown, Mail } from "lucide-react";
 import portraitImage from "@assets/generated_images/steven_portrait.png";
 
 interface HeroProps {
   onContactClick?: () => void;
+}
+
+function scrollToImpact() {
+  const element = document.getElementById("impact");
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 export default function Hero({ onContactClick }: HeroProps) {
@@ -82,21 +89,33 @@ export default function Hero({ onContactClick }: HeroProps) {
 
           {/* Two-line hierarchy */}
           <div className="space-y-6 mt-4">
-            <h1 className="text-2xl md:text-3xl font-semibold text-white leading-snug">
-              Hi, I'm Steven. I lead platform and internal product organizations.
+            <h1 className="text-xl md:text-2xl font-medium text-white/80 leading-relaxed max-w-xl">
+              I build internal platforms and AI-enabled systems that eliminate toil, accelerate delivery, and drive measurable business impact.
             </h1>
           </div>
 
-          {/* Single CTA - Contact Me with gradient border */}
-          <div className="gradient-border rounded-full mt-4">
+          {/* Dual CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
+            <div className="gradient-border rounded-full">
+              <Button 
+                size="lg" 
+                onClick={scrollToImpact}
+                className="w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold gap-3 bg-slate-900/90 hover:bg-slate-800 text-white shadow-[0_0_25px_rgba(99,102,241,0.3)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] transition-all"
+                data-testid="button-explore-impact"
+              >
+                <ArrowDown className="h-5 w-5" />
+                Explore Impact
+              </Button>
+            </div>
             <Button 
               size="lg" 
+              variant="outline"
               onClick={onContactClick}
-              className="rounded-full px-10 py-6 text-lg font-semibold gap-3 bg-slate-900/90 hover:bg-slate-800 text-white shadow-[0_0_25px_rgba(99,102,241,0.3)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] transition-all"
+              className="w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold gap-3 border-white/20 text-white hover:bg-white/10 transition-all"
               data-testid="button-contact-hero"
             >
               <Mail className="h-5 w-5" />
-              Contact Me
+              Contact
             </Button>
           </div>
         </div>

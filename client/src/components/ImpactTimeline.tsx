@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Users, Building2, TrendingUp, ChevronRight } from "lucide-react";
+import { Users, Building2, TrendingUp, ChevronRight, ChevronDown } from "lucide-react";
 
 interface CaseStudy {
   problem: string;
@@ -143,9 +143,22 @@ const experiences: Experience[] = [
 
 export default function ImpactTimeline() {
   const [selectedCase, setSelectedCase] = useState<Experience | null>(null);
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+
+  const toggleExpand = (index: number) => {
+    setExpandedCards(prev => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+  };
 
   return (
-    <section className="py-24 md:py-32" id="impact">
+    <section className="py-24 md:py-32" id="career">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-20">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cyan-400">Career Trajectory & Impact</h2>
@@ -207,16 +220,30 @@ export default function ImpactTimeline() {
                           Key Outcomes
                         </p>
                         <ul className="space-y-2">
-                          {exp.outcomes.map((outcome, i) => (
+                          {exp.outcomes.slice(0, expandedCards.has(index) ? undefined : 2).map((outcome, i) => (
                             <li key={i} className="flex gap-3 text-white/80">
                               <span className="text-cyan-400 mt-1.5 flex-shrink-0">•</span>
                               <span>{outcome}</span>
                             </li>
                           ))}
                         </ul>
+                        {exp.outcomes.length > 2 && (
+                          <button
+                            onClick={() => toggleExpand(index)}
+                            aria-expanded={expandedCards.has(index)}
+                            className="mt-3 text-sm text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1"
+                            data-testid={`button-expand-${index}`}
+                          >
+                            {expandedCards.has(index) ? (
+                              <>Show less <ChevronDown className="h-4 w-4 rotate-180" /></>
+                            ) : (
+                              <>Show more <ChevronDown className="h-4 w-4" /></>
+                            )}
+                          </button>
+                        )}
                       </div>
                       
-                      {exp.caseStudy && (
+                      {exp.caseStudy && expandedCards.has(index) && (
                         <Button
                           variant="outline"
                           size="sm"

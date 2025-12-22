@@ -1,0 +1,111 @@
+You are working in my React + Vite + Tailwind portfolio site on Replit (dark theme). Implement the following UI/UX and content updates with clean, production-ready code. Keep styling consistent with existing components and do not introduce new design systems.
+
+GOALS
+1) Make the hero outcome explicit and improve CTA hierarchy.
+2) Update “How I Drive Value” with an opinionated adoption-first platform statement + improved “Engineering Velocity” card copy.
+3) Strengthen the “Impact at Scale” section as a proof wall (4 stat cards + improved quote).
+4) Remove the homepage “Use Cases” section entirely (for now).
+5) Compress Career Trajectory/Experience entries to 2 bullet highlights by default with an accessible inline accordion expand.
+6) Add a clear footer CTA block (Schedule a call + Email me).
+7) Fix alignment consistency: Hero can remain centered, all sections below are left-aligned within a consistent max-width container.
+
+A) HERO
+- Set the hero subheadline to EXACTLY:
+  “I build internal platforms and AI-enabled systems that eliminate toil, accelerate delivery, and drive measurable business impact.”
+- Replace hero CTAs with two buttons:
+  Primary (solid): “Explore Impact”
+  Secondary (outline/ghost): “Contact”
+- “Explore Impact” should scroll to the “Impact at Scale” section via an anchor id (e.g., #impact).
+- Desktop: buttons side-by-side. Mobile: stacked full-width with spacing.
+
+B) HOW I DRIVE VALUE
+- Replace the section intro line with EXACTLY:
+  “Platforms win only when engineers choose them—adoption is earned, not mandated.”
+- Keep the rest of the section unchanged.
+- Update the “Engineering Velocity” card copy to be more strategic and holistic:
+  - Update the card description to EXACTLY:
+    “Accelerating delivery through self-service developer systems and platform automation.”
+  - If the card title currently says “Engineering Velocity” or mentions “CI/CD” too prominently, adjust the title to be more strategic (keep it short) without making it feel like a new concept. Prefer something like:
+    “Delivery Systems”
+  - Ensure any remaining description text does not over-index on CI/CD tooling; emphasize systems, automation, and operational excellence.
+
+C) IMPACT AT SCALE (PROOF WALL)
+- Add an anchor id of “impact” to this section so the hero CTA scrolls here.
+- Refactor to a 2x2 grid of stat cards on desktop; single column on mobile.
+- Use these stats (same values):
+  1) 100+ — Engineers Unlocked
+  2) 15+ — Orgs Aligned
+  3) 20+ — Enterprise Systems Consolidated
+  4) $11B+ — Revenue Pipeline Impact
+- Make the stat numbers significantly larger with a clear hierarchy:
+  - Numbers: text-5xl on mobile, text-6xl on md+ with leading-none.
+  - Labels: text-sm on mobile, text-base on md+.
+- Keep the quote as a supporting element below the grid (less visually dominant than the stats).
+- Replace the quote with this smoother version (EXACT):
+  “Steven solved the cross-org constraints that limit velocity—aligning engineering systems, implementing AI and automation, and bringing execution rigor so teams shipped faster without trading off reliability.”
+  — Senior Engineering Leader
+
+D) USE CASES
+- Remove the entire “Use Cases” section from the homepage for now.
+- IMPORTANT: Do NOT create a new “Case Studies” section to replace it.
+- If any nav links or anchors reference Use Cases / Case Studies, remove or repoint them so the homepage flow is clean and no CTA points to a missing section.
+
+E) CAREER TRAJECTORY / EXPERIENCE
+- For each role card:
+  - Show role title, company, dates
+  - Show ONLY the first 2 bullets by default
+  - Add an accessible “Show more” accordion toggle to expand inline and reveal remaining bullets/details.
+  - Toggle must use a button element and include aria-expanded.
+- For any existing “View Case Study” link on the role cards, keep it, but ensure it is not duplicative/confusing with the accordion. If necessary, only show the “View Case Study” CTA inside the expanded area.
+- Keep AWS logo behavior unchanged elsewhere (do not modify AWS logo assets/logic).
+
+F) FOOTER CTA
+- Add a CTA block above the final footer area:
+  Headline: “Want to talk platforms, scale, or AI-driven systems?”
+  Subtext: “If you’re hiring or exploring a partnership, I’m happy to share how I work and what I’ve shipped.”
+  Buttons:
+    Primary: “Schedule a call” (link placeholder; I’ll add Calendly later)
+    Secondary: “Email me” (mailto link)
+- Keep styling consistent with the dark theme, left-aligned.
+
+G) ALIGNMENT CONSISTENCY
+- Hero remains centered.
+- All sections below use a consistent left-aligned container (same max-width).
+- Normalize vertical spacing between sections.
+
+OUTPUT
+- Implement changes in code and ensure the app builds/runs without errors.
+- Briefly list which files you changed and where I can edit the hero/section copy later (constants or component props).
+
+Also — I need you to RELOCATE an existing section and update only one line of microcopy, while preserving all existing functionality, styling, spacing, logo rendering, monochrome/contrast look, and any animations.
+
+Goal:
+1) Move the existing section currently titled: "Organizations I've Worked With" so it appears immediately AFTER the "Impact at Scale" section on the homepage (same page).
+2) Update the subtitle/microcopy under "Organizations I've Worked With" to exactly:
+   "Through direct leadership roles and large-scale platform initiatives."
+3) Do NOT change anything else about that section:
+   - Keep all current logo sources and mappings (including any special-cased logo like AWS).
+   - Keep the same layout, spacing, sizing, opacity/contrast, monochrome/gray styling, hover states, and responsiveness.
+   - Keep any current accessibility attributes (alt text, aria-labels), and keep any existing scroll/animation behavior.
+   - Do not refetch or replace logos; do not change file names; do not modify the folder structure for logos.
+
+Implementation constraints:
+- Only move the section in the render order of the homepage.
+- Avoid rewriting/refactoring the section component; reuse the existing component as-is.
+- If the section is inlined in a single page file, cut/paste the block without altering internal markup/classes (except the single subtitle text change).
+- If the section is a separate component, move its invocation/location in the page layout without modifying internal component code (except the subtitle string prop/content change).
+- Ensure the build passes with no TypeScript/ESLint errors.
+
+Steps:
+A) Locate the homepage file that composes these sections (likely src/pages/Home.tsx, src/pages/index.tsx, or similar).
+B) Identify the component/block for "Impact at Scale" and the component/block for "Organizations I've Worked With".
+C) Move the Organizations section to render immediately after Impact at Scale.
+D) Update the subtitle line to the exact new copy.
+E) Verify no visual regressions:
+   - logos still render as monochrome/gray on the dark background
+   - spacing remains consistent with the current layout
+   - any responsive behavior remains the same
+F) Provide a short summary of exactly what files you changed and what lines were updated.
+
+
+

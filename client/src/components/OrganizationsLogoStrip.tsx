@@ -97,7 +97,7 @@ export default function OrganizationsLogoStrip() {
             </Tooltip>
           </div>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Through direct roles, platform partnerships, and enterprise initiatives.
+            Through direct leadership roles and large-scale platform initiatives.
           </p>
         </motion.div>
       </div>

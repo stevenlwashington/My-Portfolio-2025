@@ -2,9 +2,9 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import DirectorSummary from "@/components/DirectorSummary";
-import StrategicCapabilities from "@/components/StrategicCapabilities";
 import OrganizationsLogoStrip from "@/components/OrganizationsLogoStrip";
 import ImpactTimeline from "@/components/ImpactTimeline";
+import FooterCTA from "@/components/FooterCTA";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -26,16 +26,13 @@ export default function Home() {
         
         <div className="gradient-divider mx-auto max-w-4xl" />
         
-        <StrategicCapabilities />
-        
-        <div className="gradient-divider mx-auto max-w-4xl" />
-        
         <OrganizationsLogoStrip />
         
         <div className="gradient-divider mx-auto max-w-4xl" />
         
         <ImpactTimeline />
       </main>
+      <FooterCTA />
       <Footer />
 
       {/* Contact Modal - fix mobile scroll: entire content area scrollable */}
