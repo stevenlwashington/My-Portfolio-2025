@@ -330,3 +330,24 @@
     inset: -1px;
   }
 }
+
+/* Responsive Impact Grid Container */
+.impact-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1023px) {
+  .impact-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .impact-grid-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

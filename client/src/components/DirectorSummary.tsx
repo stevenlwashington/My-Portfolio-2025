@@ -5,7 +5,7 @@ import { Zap, GitBranch, Database, DollarSign, Shield, Quote } from "lucide-reac
 const problemDomains = [
   {
     icon: Zap,
-    title: "Delivery Systems",
+    title: "Engineering Velocity",
     description: "Accelerating delivery through self-service developer systems and platform automation."
   },
   {
@@ -82,10 +82,12 @@ export default function DirectorSummary() {
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-cyan-400">Impact at Scale</h3>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+          <div className="impact-grid-container grid gap-6 mb-12" style={{
+            gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
+          }}>
             {[
               { value: "100+", label: "Engineers Unlocked" },
-              { value: "15+", label: "Orgs Aligned" },
+              { value: "30+", label: "Orgs Aligned" },
               { value: "20+", label: "Enterprise Systems Consolidated" },
               { value: "$11B+", label: "Revenue Pipeline Impact" }
             ].map((stat, index) => (
@@ -97,7 +99,7 @@ export default function DirectorSummary() {
               >
                 <Card className="border-cyan-500/20 bg-slate-800/50 backdrop-blur-sm shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                   <CardContent className="p-6 text-center">
-                    <div className="text-5xl md:text-6xl font-bold text-cyan-400 font-mono leading-none mb-2" data-testid={`stat-value-${index}`}>
+                    <div className="text-5xl sm:text-6xl font-bold text-cyan-400 font-mono leading-none mb-2" data-testid={`stat-value-${index}`}>
                       {stat.value}
                     </div>
                     <div className="text-sm md:text-base text-white/70" data-testid={`stat-label-${index}`}>
@@ -107,26 +109,26 @@ export default function DirectorSummary() {
                 </Card>
               </motion.div>
             ))}
-          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="max-w-3xl"
-          >
-            <div className="relative px-6 py-6 rounded-lg bg-slate-800/30 border border-cyan-500/10">
-              <Quote className="w-6 h-6 text-cyan-500/30 absolute top-4 left-4" />
-              <blockquote className="pl-8">
-                <p className="text-white/80 italic text-sm md:text-base leading-relaxed mb-3">
-                  "Steven solved the cross-org constraints that limit velocity—aligning engineering systems, implementing AI and automation, and bringing execution rigor so teams shipped faster without trading off reliability."
-                </p>
-                <footer className="text-xs text-white/50">
-                  — Senior Engineering Leader
-                </footer>
-              </blockquote>
-            </div>
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              style={{ gridColumn: '1 / -1' }}
+            >
+              <div className="relative px-4 sm:px-6 py-6 rounded-lg bg-slate-800/30 border border-cyan-500/10">
+                <Quote className="w-6 h-6 text-cyan-500/30 absolute top-4 left-4" />
+                <blockquote className="pl-8">
+                  <p className="text-white/80 italic text-xs sm:text-sm md:text-base leading-relaxed mb-3 max-w-[48ch]">
+                    "Steven solved the cross-org constraints that limit velocity—aligning engineering systems, implementing AI and automation, and bringing execution rigor so teams shipped faster without trading off reliability."
+                  </p>
+                  <footer className="text-xs text-white/50">
+                    — Senior Engineering Leader
+                  </footer>
+                </blockquote>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
