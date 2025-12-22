@@ -32,7 +32,7 @@ export default function Home() {
         
         <ImpactTimeline />
       </main>
-      <FooterCTA />
+      <FooterCTA onContactClick={() => setIsContactOpen(true)} />
       <Footer />
 
       {/* Contact Modal - fix mobile scroll: entire content area scrollable */}

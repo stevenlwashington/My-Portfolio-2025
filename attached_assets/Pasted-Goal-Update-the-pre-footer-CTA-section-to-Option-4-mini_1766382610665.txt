@@ -1,0 +1,44 @@
+Goal: Update the pre-footer CTA section to Option 4 (minimalist), replace “Email me” with “Send a note” that scrolls/opens the existing Contact Form section, and remove the email icon/link from the footer so users can’t email directly. Keep styling consistent with the current dark theme and button system.
+
+Instructions:
+	1.	Update the pre-footer CTA copy + buttons (Option 4)
+
+	•	Locate the pre-footer CTA block/component (the one currently showing:
+	•	“Want to talk platforms, scale, or AI-driven systems?”
+	•	Buttons: “Schedule a call” and “Email me”)
+	•	Replace the text with:
+Headline: Interested in how I approach platform engineering?
+Subtext: (remove subtext entirely — keep this section minimal)
+	•	Keep two CTAs, but update the second:
+	•	Primary button: keep existing “Schedule a call” behavior (no change to link/handler)
+	•	Secondary button:
+	•	Change label from “Email me” to “Send a note”
+	•	Change click behavior to open the Contact Form (not email)
+
+	2.	Implement “Send a note” behavior
+
+	•	If the contact form is on the same page:
+	•	Make the “Send a note” button scroll smoothly to the contact form section.
+	•	Add an id="contact" (or similar) to the contact form container if missing.
+	•	Button should link to /#contact (or #contact) and/or call document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" }).
+	•	If the contact form is on a separate route (e.g., /contact):
+	•	Navigate to that route instead (use existing router navigation pattern).
+
+	3.	Remove email icon/link from footer
+
+	•	Locate the footer social/icon links (where the email icon currently appears).
+	•	Remove the email icon entirely (and any mailto: link).
+	•	Ensure there is no visible email address anywhere in the footer.
+	•	Keep other footer icons/links unchanged.
+
+	4.	Sanity checks
+
+	•	Confirm:
+	•	No mailto: links remain in the codebase.
+	•	Footer no longer shows the email icon.
+	•	“Send a note” reliably brings the user to the contact form (desktop + mobile).
+	•	The CTA layout remains responsive and visually consistent.
+
+	5.	Deliverable
+
+	•	Provide a summary of files changed and what was updated (CTA copy, button action, footer icon removal).
