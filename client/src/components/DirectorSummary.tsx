@@ -82,9 +82,7 @@ export default function DirectorSummary() {
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-cyan-400">Impact at Scale</h3>
           </motion.div>
 
-          <div className="impact-grid-container grid gap-6 mb-12" style={{
-            gridTemplateColumns: 'repeat(auto-fit, minmax(0, 1fr))',
-          }}>
+          <div className="impact-grid-container mb-12">
             {[
               { value: "100+", label: "Engineers Unlocked" },
               { value: "30+", label: "Orgs Aligned" },
