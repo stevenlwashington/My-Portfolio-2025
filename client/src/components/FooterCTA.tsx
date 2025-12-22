@@ -1,11 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MessageSquare } from "lucide-react";
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 interface FooterCTAProps {
   onContactClick?: () => void;
 }
 
 export default function FooterCTA({ onContactClick }: FooterCTAProps) {
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/stevenwashington/introduction"
+      });
+    } else {
+      const checkCalendly = setInterval(() => {
+        if (window.Calendly) {
+          clearInterval(checkCalendly);
+          window.Calendly.initPopupWidget({
+            url: "https://calendly.com/stevenwashington/introduction"
+          });
+        }
+      }, 100);
+      setTimeout(() => clearInterval(checkCalendly), 5000);
+    }
+  };
+
   return (
     <section className="py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-6">
@@ -18,12 +44,10 @@ export default function FooterCTA({ onContactClick }: FooterCTAProps) {
               size="lg"
               className="gap-2"
               data-testid="button-schedule-call"
-              asChild
+              onClick={openCalendly}
             >
-              <a href="#" onClick={(e) => e.preventDefault()}>
-                <Calendar className="h-5 w-5" />
-                Schedule a call
-              </a>
+              <Calendar className="h-5 w-5" />
+              Schedule a call
             </Button>
             <Button 
               size="lg"
