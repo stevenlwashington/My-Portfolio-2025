@@ -373,6 +373,7 @@
 /* Outer ring: blur effect for atmospheric quality */
 .hero-ring-outer {
   filter: blur(0.5px);
+  z-index: -1;
 }
 
 /* Fade gradient overlay: attenuates ring visibility toward headline */
@@ -383,7 +384,7 @@
   /* Gradient from transparent (top) to full opacity (bottom 30%) to prevent ring bleed */
   background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(13, 27, 42, 0.4) 100%);
   border-radius: 50%;
-  z-index: 5;
+  z-index: -1;
 }
 
 @media (max-width: 640px) {
