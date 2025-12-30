@@ -244,7 +244,7 @@ export default function ImpactTimeline() {
                   {/* Timeline dot */}
                   <div className="absolute left-0 md:left-6 top-6 w-4 h-4 rounded-full bg-cyan-500 border-4 border-background" />
 
-                  <Card className="hover-elevate transition-all duration-300 border-cyan-500/20 bg-slate-800/50">
+                  <Card className="group hover-elevate transition-all duration-300 border-cyan-500/20 bg-slate-800/50">
                     <CardHeader>
                       <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
                         <div className="flex-1">
@@ -302,7 +302,7 @@ export default function ImpactTimeline() {
                           onClick={() => toggleExpand(index, exp)}
                           aria-expanded={isExpanded}
                           aria-controls={outcomesId}
-                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all duration-200 group py-2 rounded-md hover:bg-cyan-500/10 px-2 -ml-2"
+                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all duration-200 py-2 rounded-md hover:bg-cyan-500/10 px-2 -ml-2"
                           data-testid={`button-toggle-outcomes-${index}`}
                           data-cta="reveal-outcomes"
                           data-role={exp.slug}
@@ -311,7 +311,7 @@ export default function ImpactTimeline() {
                           <ChevronDown 
                             className={`h-4 w-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
                           />
-                          {/* Mobile: always visible | Desktop: hidden by default, visible on hover or when expanded */}
+                          {/* Mobile: always visible | Desktop: hidden by default, visible on card hover or when expanded */}
                           <span className={`text-sm font-medium transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 ${isExpanded ? 'md:opacity-100' : ''}`}>
                             {isExpanded ? "Hide outcomes" : "Show outcomes"}
                           </span>
