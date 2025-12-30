@@ -1,0 +1,60 @@
+You are working in my stevenwa.com codebase (React + Vite). I need you to standardize alignment and layout so the homepage feels cohesive and professional on BOTH desktop and mobile.
+
+GOAL
+- All section headers and text content should be LEFT-aligned consistently across the entire homepage.
+- Center alignment is allowed only for decorative visuals (hero rings/avatar background accents), not for readable text blocks.
+- Ensure the layout is responsive and consistent in spacing and container widths.
+- This needs to be production-ready (no regressions).
+
+SCOPE
+Homepage only (the main landing page). Do not change routing or copy unless required for alignment/layout.
+
+REQUIREMENTS
+1) Global layout container consistency
+- Ensure all major sections share a consistent container width + horizontal padding:
+  - Use a shared wrapper such as: max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8
+- If the project already has a layout/container component or utility class, reuse it rather than inventing a new pattern.
+
+2) Standardize section headers
+- Implement a consistent SectionHeader pattern for all major sections:
+  - Title (h2) left-aligned
+  - Optional subtitle left-aligned
+  - Optional CTA row left-aligned
+- Normalize spacing:
+  - Consistent top margin before header
+  - Consistent gap between header and content
+
+3) Eliminate mixed alignment
+- Audit the homepage sections and remove any "text-center" or centered alignment applied to:
+  - section titles
+  - subtitles
+  - paragraph blocks
+  - lists
+  - card content
+  - metrics blocks
+- Keep ONLY visual elements centered where appropriate (hero graphics, background flourishes).
+
+4) Responsive behavior
+- Ensure sections that use grids switch cleanly:
+  - Desktop/tablet: multi-column
+  - Mobile: single-column
+- Maintain the same left edge alignment for text at all breakpoints.
+- Ensure CTAs do not center on mobile; they should remain left-aligned or start-aligned.
+
+5) Specific items to verify after changes
+- Hero: headline/subhead left-aligned; decorative rings/avatar can remain visually centered.
+- Impact at Scale: header left-aligned; metric grid aligned to container; quote band aligned to same container and left-aligned with constrained text width.
+- Organizations I’ve Worked With: header/subhead left-aligned; logo strip remains as-is (monochrome/spacing preserved).
+- Career Trajectory & Impact: section header + cards left-aligned; card internals left-aligned.
+- Pre-footer CTA: left-aligned content and buttons.
+
+6) Quality bar
+- No visual regressions (spacing, typography, contrast, animation behavior).
+- No TypeScript errors; build must pass.
+- Test in Replit Preview at widths: ~390px, 768px, 1024px, 1440px.
+
+DELIVERABLE
+- Implement the alignment standardization in the minimal set of files.
+- Provide a concise list of files changed and what alignment classes/styles were updated.
+
+Proceed now.

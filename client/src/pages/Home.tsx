@@ -20,15 +20,15 @@ export default function Home() {
         <Hero onContactClick={() => setIsContactOpen(true)} />
         
         {/* Gradient divider */}
-        <div className="gradient-divider mx-auto max-w-4xl" />
+        <div className="gradient-divider mx-auto max-w-5xl" />
         
         <DirectorSummary />
         
-        <div className="gradient-divider mx-auto max-w-4xl" />
+        <div className="gradient-divider mx-auto max-w-5xl" />
         
         <OrganizationsLogoStrip />
         
-        <div className="gradient-divider mx-auto max-w-4xl" />
+        <div className="gradient-divider mx-auto max-w-5xl" />
         
         <ImpactTimeline />
       </main>

@@ -20,19 +20,17 @@ export default function Hero({ onContactClick }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,189,248,0.05),rgba(0,0,0,0))]" />
       
-      <div className="relative w-full max-w-2xl mx-auto px-6">
-        <div className="flex flex-col items-center text-center">
-          {/* Hero Visual System: Avatar + Rings + Headline */}
-          <div className="hero-visual-system flex flex-col items-center">
+      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-16">
+          {/* Hero Visual System: Avatar + Rings (centered decorative element) */}
+          <div className="hero-visual-system flex flex-col items-center mb-8 md:mb-0 md:flex-shrink-0">
             {/* Portrait with social links */}
-            <div className="relative w-full flex justify-center items-center">
+            <div className="relative flex justify-center items-center">
               {/* Concentric circles background - atmospheric subordinate rings */}
-              {/* Inner ring: crisp, more visible */}
               <div className="absolute w-72 h-72 rounded-full border border-primary/12 sm:border-primary/14" />
-              {/* Outer ring: blurred for atmospheric effect, very subtle */}
               <div className="absolute w-80 h-80 rounded-full border border-primary/7 sm:border-primary/9 hero-ring-outer" />
               
-              {/* Gradient fade overlay: prevents rings from competing with headline */}
+              {/* Gradient fade overlay */}
               <div className="hero-rings-fade" />
               
               {/* Portrait */}
@@ -81,9 +79,12 @@ export default function Hero({ onContactClick }: HeroProps) {
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Main tagline - tightly coupled to visual */}
-            <div className="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight">
+          {/* Text content - left-aligned */}
+          <div className="flex flex-col text-center md:text-left">
+            {/* Main tagline */}
+            <div className="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight mb-6 sm:mb-8">
               <span className="block gradient-text">
                 Product thinking.
               </span>
@@ -91,38 +92,36 @@ export default function Hero({ onContactClick }: HeroProps) {
                 Engineering execution.
               </span>
             </div>
-          </div>
 
-          {/* Two-line hierarchy */}
-          <div className="mt-6 sm:mt-8">
-            <h1 className="text-xl md:text-2xl font-medium text-white/80 leading-relaxed max-w-xl">
+            {/* Subheadline */}
+            <h1 className="text-xl md:text-2xl font-medium text-white/80 leading-relaxed max-w-xl mb-6">
               I build internal platforms and AI-enabled systems that eliminate toil, accelerate delivery, and drive measurable business impact.
             </h1>
-          </div>
 
-          {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto">
-            <div className="gradient-border rounded-full">
+            {/* Dual CTAs - left-aligned on desktop */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="gradient-border rounded-full">
+                <Button 
+                  size="lg" 
+                  onClick={scrollToImpact}
+                  className="w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold gap-3 bg-slate-900/90 hover:bg-slate-800 text-white shadow-[0_0_25px_rgba(99,102,241,0.3)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] transition-all"
+                  data-testid="button-explore-impact"
+                >
+                  <ArrowDown className="h-5 w-5" />
+                  Explore Impact
+                </Button>
+              </div>
               <Button 
                 size="lg" 
-                onClick={scrollToImpact}
-                className="w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold gap-3 bg-slate-900/90 hover:bg-slate-800 text-white shadow-[0_0_25px_rgba(99,102,241,0.3)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] transition-all"
-                data-testid="button-explore-impact"
+                variant="outline"
+                onClick={onContactClick}
+                className="w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold gap-3 border-white/20 text-white hover:bg-white/10 transition-all"
+                data-testid="button-contact-hero"
               >
-                <ArrowDown className="h-5 w-5" />
-                Explore Impact
+                <Mail className="h-5 w-5" />
+                Contact
               </Button>
             </div>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={onContactClick}
-              className="w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold gap-3 border-white/20 text-white hover:bg-white/10 transition-all"
-              data-testid="button-contact-hero"
-            >
-              <Mail className="h-5 w-5" />
-              Contact
-            </Button>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ const problemDomains = [
 export default function DirectorSummary() {
   return (
     <section className="py-24 md:py-32" id="director-summary">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ export default function DirectorSummary() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="border-cyan-500/20 bg-slate-800/50 backdrop-blur-sm shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                  <CardContent className="p-6 text-center">
+                  <CardContent className="p-6">
                     <div className="text-5xl sm:text-6xl font-bold text-cyan-400 font-mono leading-none mb-2" data-testid={`stat-value-${index}`}>
                       {stat.value}
                     </div>

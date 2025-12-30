@@ -71,14 +71,13 @@ export default function OrganizationsLogoStrip() {
 
   return (
     <section className="py-16 md:py-24 overflow-hidden" id="organizations">
-      <div className="max-w-7xl mx-auto px-6 mb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-4">
             <h2 className="text-3xl md:text-4xl font-bold text-cyan-400">
               Organizations I've Worked With
             </h2>
@@ -96,7 +95,7 @@ export default function OrganizationsLogoStrip() {
               </TooltipContent>
             </Tooltip>
           </div>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl">
             Through direct leadership roles and large-scale platform initiatives.
           </p>
         </motion.div>

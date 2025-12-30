@@ -34,7 +34,7 @@ export default function FooterCTA({ onContactClick }: FooterCTAProps) {
 
   return (
     <section className="py-16 md:py-24">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 md:p-12 rounded-lg bg-slate-800/50 border border-cyan-500/20">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
             Interested in how I approach platform engineering?
