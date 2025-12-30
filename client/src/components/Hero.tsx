@@ -20,10 +20,10 @@ export default function Hero({ onContactClick }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,189,248,0.05),rgba(0,0,0,0))]" />
       
-      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-16">
+      <div className="relative w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
           {/* Hero Visual System: Avatar + Rings (centered decorative element) */}
-          <div className="hero-visual-system flex flex-col items-center mb-8 md:mb-0 md:flex-shrink-0">
+          <div className="hero-visual-system flex flex-col items-center mb-8 lg:mb-0 lg:flex-shrink-0">
             {/* Portrait with social links */}
             <div className="relative flex justify-center items-center">
               {/* Concentric circles background - atmospheric subordinate rings */}
@@ -81,8 +81,8 @@ export default function Hero({ onContactClick }: HeroProps) {
             </div>
           </div>
 
-          {/* Text content - left-aligned */}
-          <div className="flex flex-col text-center md:text-left">
+          {/* Text content - centered on mobile/tablet, left-aligned on desktop */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Main tagline */}
             <div className="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight mb-6 sm:mb-8">
               <span className="block gradient-text">
@@ -98,8 +98,8 @@ export default function Hero({ onContactClick }: HeroProps) {
               I build internal platforms and AI-enabled systems that eliminate toil, accelerate delivery, and drive measurable business impact.
             </h1>
 
-            {/* Dual CTAs - left-aligned on desktop */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Dual CTAs - centered on mobile/tablet, left-aligned on desktop */}
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto sm:justify-center lg:justify-start">
               <div className="gradient-border rounded-full">
                 <Button 
                   size="lg" 
