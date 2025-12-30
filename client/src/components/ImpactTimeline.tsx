@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,8 @@ interface Experience {
   company: string;
   role: string;
   period: string;
+  slug: string;
+  questions: string[];
   outcomes: string[];
   scope?: {
     teamSize?: string;
@@ -30,11 +32,18 @@ const experiences: Experience[] = [
     company: "Zillow",
     role: "Platform Product Lead, Revenue Engineering and AI Platforms",
     period: "2023-Present",
+    slug: "zillow-platform-product-lead",
     scope: {
       teamSize: "100+ Eng.",
       users: "Cross-Functional (DevOps/AI/GTM)",
       revenue: "$450K Annual Savings"
     },
+    questions: [
+      "How do we remove the biggest constraints that slow engineering down across teams?",
+      "What would 'self-service delivery' look like end-to-end for internal GTM engineering?",
+      "Where are the highest-leverage automation opportunities in our developer workflow?",
+      "How do we measure 'speed' in a way leadership and engineers both trust?"
+    ],
     outcomes: [
       "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes, enabling GTM teams to ship features 80% faster",
       "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450K/yr in annual savings while enabling responsible AI governance at scale"
@@ -55,11 +64,18 @@ const experiences: Experience[] = [
     company: "Zillow",
     role: "Sr. Salesforce Product Manager, Frontline Engineering",
     period: "2020-2023",
+    slug: "zillow-sr-salesforce-pm",
     scope: {
       teamSize: "Led cross-functional product and engineering workstreams across 30+ contributors (Salesforce engineers, Security, Finance)",
       users: "2,500+ sales & service reps",
       revenue: "$1.5B+ annual revenue"
     },
+    questions: [
+      "What should we optimize for in platform TCO: cost, reliability, or team throughput—and when?",
+      "What governance is essential for scale, and what governance creates drag?",
+      "How do we enable responsible AI adoption without blocking teams from shipping?",
+      "What is the cost of moving fast without governance—and the cost of governing too early?"
+    ],
     outcomes: [
       "Owned multi-year platform consolidation strategy unifying 4 legacy orgs into a single GTM platform supporting $1.5B+ in annual revenue; secured executive buy-in through business case development and ROI modeling",
       "Built product analytics capability from 0 to 1—implemented platform telemetry across Salesforce to drive data-informed roadmap decisions and improve platform observability",
@@ -81,11 +97,18 @@ const experiences: Experience[] = [
     company: "T-Mobile",
     role: "Sr. Product Manager, Product & Technology",
     period: "2019-2020",
+    slug: "tmobile-sr-product-manager",
     scope: {
       teamSize: "Multi-vendor platform teams",
       users: "15,000+ frontline staff",
       revenue: "Enterprise GTM platform"
     },
+    questions: [
+      "What are the highest-friction moments in the frontline user experience—and what would 'fast' feel like?",
+      "How do we reduce page load times without a full platform rewrite?",
+      "Where is complexity adding cost without adding value?",
+      "What platform investments would unlock the biggest gains in rep productivity?"
+    ],
     outcomes: [
       "Modernized T-Mobile's Salesforce Sales and Service Clouds for 15k+ frontline users",
       "Cut page load times by 50% through architectural optimization and platform modernization",
@@ -107,11 +130,18 @@ const experiences: Experience[] = [
     company: "Amazon Web Services (AWS)",
     role: "Product Manager, Global Business Operations",
     period: "2016-2019",
+    slug: "aws-product-manager",
     scope: {
       teamSize: "Global ops & engineering",
       users: "Enterprise sales teams",
       revenue: "$20B+ private pricing programs"
     },
+    questions: [
+      "How do we scale a $20B pricing program without adding headcount proportionally?",
+      "What parts of quote-to-cash are manual today that shouldn't be?",
+      "How do we expand into 18 new EU markets while maintaining compliance integrity?",
+      "Where does friction in the deal cycle cost us velocity—or trust?"
+    ],
     outcomes: [
       "Owned global pricing and billing infrastructure for AWS's $20B+ Enterprise Discount Program",
       "Modernized quote-to-cash systems",
@@ -133,6 +163,13 @@ const experiences: Experience[] = [
     company: "Microsoft (Merkle), LivingSocial, San Diego Padres",
     role: "Career Foundations",
     period: "2008–2015",
+    slug: "career-foundations",
+    questions: [
+      "What does 'good data' look like for a sales team trying to forecast accurately?",
+      "How do operational insights translate into better customer experiences?",
+      "Where does process create value—and where does it just create overhead?",
+      "What do frontline teams actually need from the platforms they use every day?"
+    ],
     outcomes: [
       "Roles across product analytics, sales operations, and customer experience",
       "Provided early experience in revenue operations, data insights, forecasting, and frontline customer engagement",
@@ -141,21 +178,47 @@ const experiences: Experience[] = [
   }
 ];
 
+// Fire Clarity event if available
+function fireClarityEvent(eventName: string, data: { role: string; company: string }) {
+  try {
+    if (typeof window !== 'undefined' && (window as any).clarity) {
+      (window as any).clarity('event', eventName, data);
+    }
+  } catch {
+    // Fail silently
+  }
+}
+
 export default function ImpactTimeline() {
   const [selectedCase, setSelectedCase] = useState<Experience | null>(null);
-  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const outcomesRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const toggleExpand = (index: number) => {
-    setExpandedCards(prev => {
-      const next = new Set(prev);
-      if (next.has(index)) {
-        next.delete(index);
-      } else {
-        next.add(index);
+  const toggleExpand = (index: number, exp: Experience) => {
+    const isCurrentlyExpanded = expandedCard === index;
+    
+    if (isCurrentlyExpanded) {
+      // Closing
+      fireClarityEvent('reveal_outcomes_close', { role: exp.slug, company: exp.company });
+      setExpandedCard(null);
+    } else {
+      // Opening (accordion: close previous, open new)
+      if (expandedCard !== null) {
+        const prevExp = experiences[expandedCard];
+        fireClarityEvent('reveal_outcomes_close', { role: prevExp.slug, company: prevExp.company });
       }
-      return next;
-    });
+      fireClarityEvent('reveal_outcomes_open', { role: exp.slug, company: exp.company });
+      setExpandedCard(index);
+    }
   };
+
+  // Focus management for accessibility
+  useEffect(() => {
+    if (expandedCard !== null && outcomesRefs.current[expandedCard]) {
+      // Optional: move focus to outcomes region when expanded
+      outcomesRefs.current[expandedCard]?.focus();
+    }
+  }, [expandedCard]);
 
   return (
     <section className="py-24 md:py-32" id="career">
@@ -172,94 +235,130 @@ export default function ImpactTimeline() {
           <div className="absolute left-0 md:left-8 top-0 bottom-0 w-0.5 bg-border" />
 
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-8 md:pl-20" data-testid={`card-experience-${index}`}>
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-6 top-6 w-4 h-4 rounded-full bg-cyan-500 border-4 border-background" />
+            {experiences.map((exp, index) => {
+              const isExpanded = expandedCard === index;
+              const outcomesId = `outcomes-${exp.slug}`;
 
-                <Card className="hover-elevate transition-all duration-300 border-cyan-500/20 bg-slate-800/50">
-                  <CardHeader>
-                    <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
-                      <div className="flex-1">
-                        <CardTitle className="text-lg sm:text-xl md:text-2xl mb-2 text-white leading-tight">{exp.role}</CardTitle>
-                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
-                          <span className="text-base sm:text-lg font-semibold text-cyan-400">{exp.company}</span>
-                          <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20 text-xs sm:text-sm">{exp.period}</Badge>
+              return (
+                <div key={index} className="relative pl-8 md:pl-20" data-testid={`card-experience-${index}`}>
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 md:left-6 top-6 w-4 h-4 rounded-full bg-cyan-500 border-4 border-background" />
+
+                  <Card className="hover-elevate transition-all duration-300 border-cyan-500/20 bg-slate-800/50">
+                    <CardHeader>
+                      <div className="flex flex-wrap items-start justify-between gap-4 mb-2">
+                        <div className="flex-1">
+                          <CardTitle className="text-lg sm:text-xl md:text-2xl mb-2 text-white leading-tight">{exp.role}</CardTitle>
+                          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
+                            <span className="text-base sm:text-lg font-semibold text-cyan-400">{exp.company}</span>
+                            <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20 text-xs sm:text-sm">{exp.period}</Badge>
+                          </div>
+                          
+                          {/* Scope indicators */}
+                          {exp.scope && (
+                            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                              {exp.scope.teamSize && (
+                                <div className="flex items-center gap-1.5">
+                                  <Users className="h-3.5 w-3.5" />
+                                  <span>{exp.scope.teamSize}</span>
+                                </div>
+                              )}
+                              {exp.scope.users && (
+                                <div className="flex items-center gap-1.5">
+                                  <Building2 className="h-3.5 w-3.5" />
+                                  <span>{exp.scope.users}</span>
+                                </div>
+                              )}
+                              {exp.scope.revenue && (
+                                <div className="flex items-center gap-1.5">
+                                  <TrendingUp className="h-3.5 w-3.5" />
+                                  <span>{exp.scope.revenue}</span>
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
-                        
-                        {/* Scope indicators */}
-                        {exp.scope && (
-                          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                            {exp.scope.teamSize && (
-                              <div className="flex items-center gap-1.5">
-                                <Users className="h-3.5 w-3.5" />
-                                <span>{exp.scope.teamSize}</span>
-                              </div>
-                            )}
-                            {exp.scope.users && (
-                              <div className="flex items-center gap-1.5">
-                                <Building2 className="h-3.5 w-3.5" />
-                                <span>{exp.scope.users}</span>
-                              </div>
-                            )}
-                            {exp.scope.revenue && (
-                              <div className="flex items-center gap-1.5">
-                                <TrendingUp className="h-3.5 w-3.5" />
-                                <span>{exp.scope.revenue}</span>
-                              </div>
-                            )}
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-6">
+                        {/* Strategic Questions (always visible) */}
+                        <div>
+                          <p className="text-sm font-semibold text-white/60 uppercase tracking-wide mb-4">
+                            Strategic Questions I Asked
+                          </p>
+                          <ol className="space-y-3">
+                            {exp.questions.map((question, i) => (
+                              <li key={i} className="flex gap-3 text-white/90">
+                                <span className="text-cyan-400 font-mono text-sm mt-0.5 flex-shrink-0 w-5">{i + 1}.</span>
+                                <span className="text-base leading-relaxed">{question}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+
+                        {/* Show/Hide Outcomes Toggle */}
+                        <button
+                          onClick={() => toggleExpand(index, exp)}
+                          aria-expanded={isExpanded}
+                          aria-controls={outcomesId}
+                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors group w-full py-2"
+                          data-testid={`button-toggle-outcomes-${index}`}
+                          data-cta="reveal-outcomes"
+                          data-role={exp.slug}
+                          data-company={exp.company}
+                        >
+                          <span className="text-sm font-medium">
+                            {isExpanded ? "Hide outcomes" : "Show outcomes"}
+                          </span>
+                          <ChevronDown 
+                            className={`h-4 w-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
+                          />
+                        </button>
+
+                        {/* Outcomes Section (conditionally rendered) */}
+                        {isExpanded && (
+                          <div
+                            id={outcomesId}
+                            ref={(el) => { outcomesRefs.current[index] = el; }}
+                            tabIndex={-1}
+                            className="animate-in fade-in slide-in-from-top-2 duration-300"
+                            data-testid={`outcomes-section-${index}`}
+                          >
+                            <div className="pt-2 pb-4 border-t border-cyan-500/10">
+                              <p className="text-sm font-semibold text-white/60 uppercase tracking-wide mb-4 mt-4">
+                                Outcomes Delivered
+                              </p>
+                              <ul className="space-y-3">
+                                {exp.outcomes.map((outcome, i) => (
+                                  <li key={i} className="flex gap-3 text-white/80">
+                                    <span className="text-cyan-400 mt-1.5 flex-shrink-0">•</span>
+                                    <span className="leading-relaxed">{outcome}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              
+                              {exp.caseStudy && (
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => setSelectedCase(exp)}
+                                  className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 mt-6"
+                                  data-testid={`button-case-study-${index}`}
+                                >
+                                  View Case Study
+                                  <ChevronRight className="ml-2 h-4 w-4" />
+                                </Button>
+                              )}
+                            </div>
                           </div>
                         )}
                       </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-sm font-semibold text-white/60 uppercase tracking-wide mb-2">
-                          Key Outcomes
-                        </p>
-                        <ul className="space-y-2">
-                          {exp.outcomes.slice(0, expandedCards.has(index) ? undefined : 2).map((outcome, i) => (
-                            <li key={i} className="flex gap-3 text-white/80">
-                              <span className="text-cyan-400 mt-1.5 flex-shrink-0">•</span>
-                              <span>{outcome}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {exp.outcomes.length > 2 && (
-                          <button
-                            onClick={() => toggleExpand(index)}
-                            aria-expanded={expandedCards.has(index)}
-                            className="mt-3 text-sm text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1"
-                            data-testid={`button-expand-${index}`}
-                          >
-                            {expandedCards.has(index) ? (
-                              <>Show less <ChevronDown className="h-4 w-4 rotate-180" /></>
-                            ) : (
-                              <>Show more <ChevronDown className="h-4 w-4" /></>
-                            )}
-                          </button>
-                        )}
-                      </div>
-                      
-                      {exp.caseStudy && expandedCards.has(index) && (
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => setSelectedCase(exp)}
-                          className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10"
-                          data-testid={`button-case-study-${index}`}
-                        >
-                          View Case Study
-                          <ChevronRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,0 +1,86 @@
+You are working in my stevenwa.com codebase (React). I want to redesign the “Career Trajectory & Impact” section cards so that:
+
+GOAL
+- Default view: show ONLY “Strategic Questions I asked” (questions-first), for scannability + credibility.
+- Outcomes are hidden by default and revealed on user action (click/tap).
+- Interaction must feel premium and consistent with the site (dark background, subtle borders, soft glow on hover).
+- Must be responsive and accessible (keyboard + screen readers).
+- Must preserve existing content and routing; only restructure the Career Trajectory cards.
+- Must support my existing analytics stack (Cloudflare Web Analytics + Microsoft Clarity). Do NOT add new analytics vendors.
+
+REQUIREMENTS
+1) Card Structure (per role)
+- Header row: Role title, Company name, Date range badge (keep existing).
+- “Key outcomes” bullets should NOT show by default.
+- Replace the two bullets with a section titled “Strategic questions I asked” containing 4 questions (from my chosen list below).
+- Add a single “Show outcomes” control at bottom of the questions list that reveals the hidden outcomes section.
+- When expanded, the control changes to “Hide outcomes”.
+- Expanded section title: “Outcomes delivered” and show the existing bullet outcomes exactly as written today.
+
+2) Interaction & UX (Option B)
+- Desktop: card hover elevates slightly with subtle shadow/glow.
+- Mobile: tap states feel responsive (no hover dependency).
+- Expand/collapse must animate smoothly (height/opacity) and not cause layout jumpiness.
+- Only one card expanded at a time (accordion behavior). Expanding a new one collapses the previous.
+- Provide a “Expand all” / “Collapse all” toggle ABOVE the list (optional, only if it looks clean; otherwise skip).
+
+3) Accessibility
+- “Show outcomes” must be a <button> with aria-expanded, aria-controls.
+- Outcomes region must have an id and be focusable when opened (optional but nice: move focus to the region).
+- Keyboard: Enter/Space toggles; focus states visible.
+
+4) Analytics-friendly instrumentation (NO new vendors)
+- Add semantic data attributes to each toggle button:
+  data-cta="reveal-outcomes"
+  data-role="<slug>"   (e.g., zillow-platform-product-lead)
+  data-company="<company>" (e.g., Zillow)
+- On toggle open/close, fire a lightweight custom event IF window.clarity exists:
+  window.clarity('event', 'reveal_outcomes_open', { role: slug, company })
+  window.clarity('event', 'reveal_outcomes_close', { role: slug, company })
+- If Clarity is not present, fail silently (no errors).
+- Do NOT store cookies or add anything beyond this.
+
+5) Content mapping (for the Zillow card shown in my screenshot)
+- Replace Bullet #1 with these questions (use 4 total):
+  1) How do we remove the biggest constraints that slow engineering down across teams?
+  2) What would “self-service delivery” look like end-to-end for internal GTM engineering?
+  3) Where are the highest-leverage automation opportunities in our developer workflow?
+  4) How do we measure “speed” in a way leadership and engineers both trust?
+- Replace Bullet #2 with these questions (use 4 total):
+  1) What should we optimize for in platform TCO: cost, reliability, or team throughput—and when?
+  2) What governance is essential for scale, and what governance creates drag?
+  3) How do we enable responsible AI adoption without blocking teams from shipping?
+  4) What is the cost of moving fast without governance—and the cost of governing too early?
+- Keep the existing outcomes bullets available in the hidden “Outcomes delivered” section (unchanged text).
+
+6) Visual design
+- Keep the existing card styling language: dark surface, rounded corners, subtle border.
+- The “Strategic questions” list should be highly readable:
+  - slightly larger than body copy
+  - good line-height
+  - subtle numbering or bullet style that feels “product/strategy” (not bloggy)
+- “Show outcomes →” should look like an inline CTA row at bottom:
+  - not a giant button
+  - include a chevron/arrow that rotates when expanded
+  - entire row is clickable
+
+IMPLEMENTATION STEPS
+A) Locate the Career Trajectory & Impact section component(s) and the data model that powers these cards.
+B) Refactor the card to support:
+   - questions array (new)
+   - outcomes array (existing bullets)
+   - expanded state controlled by parent (accordion)
+C) Implement animations using CSS (preferred) or a minimal helper; do not add heavy libraries.
+D) Add the data-attributes + Clarity event firing on toggle.
+E) Ensure it works on mobile preview and desktop.
+
+DELIVERABLES
+- Provide the code changes with file paths and a brief summary.
+- Confirm the accordion behavior and Clarity event names.
+
+DO NOT CHANGE
+- Other sections of the homepage
+- Global nav, hero, organizations logos, or contact form
+- Existing outcomes bullet text
+
+Proceed now.
