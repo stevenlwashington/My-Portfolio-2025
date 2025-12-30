@@ -3,7 +3,16 @@
 ## Overview
 Modern, executive-focused portfolio showcasing Steven Washington as a Principal/Director-level Platform & AI Product Leader. Features identity-first hero with dual CTAs, Impact at Scale 2x2 grid, accordion-expandable Career Trajectory cards with STAR-format case study modals, organizations logo strip, footer CTA, and contact form modal with Turnstile bot protection.
 
-## Recent Changes (December 22, 2025)
+## Recent Changes (December 30, 2025)
+
+### Hero & Layout Refinements
+- **Hero gradient text fix**: Added `width: fit-content` to `.gradient-text` class to ensure gradient colors render consistently on desktop (previously the gradient stretched across full container width on desktop, causing color distribution issues)
+- **Hero background gradient**: Updated to dark slate gradient with subtle cyan radial overlay matching published design
+- **Floating social icons removed**: LinkedIn/GitHub icons removed from hero portrait area (remain in header navigation)
+- **Section header standardization**: All H2 headers now use consistent `text-3xl md:text-4xl` sizing
+- **Organization logos reordered**: Priority order is AWS, Microsoft, Salesforce, Zillow, Palantir, CrowdStrike, T-Mobile, GitLab first
+
+## Previous Changes (December 22, 2025)
 
 ### Major UI/UX Redesign
 - **Hero Section**:
