@@ -50,7 +50,7 @@ export default function Hero({ onContactClick }: HeroProps) {
           {/* Text content - centered on mobile/tablet, left-aligned on desktop */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Main tagline */}
-            <div className="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight mb-6 sm:mb-8">
+            <div className="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold font-serif leading-tight mb-6 sm:mb-8 flex flex-col items-center lg:items-start">
               <span className="block gradient-text">
                 Product thinking.
               </span>
