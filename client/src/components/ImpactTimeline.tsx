@@ -302,18 +302,19 @@ export default function ImpactTimeline() {
                           onClick={() => toggleExpand(index, exp)}
                           aria-expanded={isExpanded}
                           aria-controls={outcomesId}
-                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors group w-full py-2"
+                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-all duration-200 group py-2 rounded-md hover:bg-cyan-500/10 px-2 -ml-2"
                           data-testid={`button-toggle-outcomes-${index}`}
                           data-cta="reveal-outcomes"
                           data-role={exp.slug}
                           data-company={exp.company}
                         >
-                          <span className="text-sm font-medium">
-                            {isExpanded ? "Hide outcomes" : "Show outcomes"}
-                          </span>
                           <ChevronDown 
                             className={`h-4 w-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
                           />
+                          {/* Mobile: always visible | Desktop: hidden by default, visible on hover or when expanded */}
+                          <span className={`text-sm font-medium transition-opacity duration-200 md:opacity-0 md:group-hover:opacity-100 ${isExpanded ? 'md:opacity-100' : ''}`}>
+                            {isExpanded ? "Hide outcomes" : "Show outcomes"}
+                          </span>
                         </button>
 
                         {/* Outcomes Section (conditionally rendered) */}
