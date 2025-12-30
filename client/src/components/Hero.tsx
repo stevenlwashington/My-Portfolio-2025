@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Linkedin, Github, ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 import portraitImage from "@assets/generated_images/steven_portrait.png";
 
 interface HeroProps {
@@ -16,9 +16,9 @@ function scrollToImpact() {
 export default function Hero({ onContactClick }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(56,189,248,0.05),rgba(0,0,0,0))]" />
+      {/* Background gradient - dark slate with subtle cyan radial */}
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,hsl(210,25%,8%)_0%,hsl(215,20%,10%)_50%,hsl(210,25%,8%)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(34,211,238,0.06),transparent_70%)]" />
       
       <div className="relative w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
@@ -43,40 +43,6 @@ export default function Hero({ onContactClick }: HeroProps) {
                   />
                 </div>
                 
-                {/* Social media connectors */}
-                <div className="absolute w-96 h-32 flex items-center justify-between -top-12">
-                  <div className="flex items-center gap-2">
-                    <div className="w-1 h-1 rounded-full bg-primary/30 absolute -right-2" />
-                    <div className="w-2 h-2 rounded-full bg-primary/20 absolute -right-6" />
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      asChild
-                      className="w-12 h-12 rounded-full bg-[#0077b5] hover:bg-[#006699] text-white"
-                      data-testid="button-linkedin-hero"
-                    >
-                      <a href="https://www.linkedin.com/in/stevenlwashington/" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    </Button>
-                  </div>
-                  
-                  <div className="flex items-center gap-2">
-                    <div className="w-1 h-1 rounded-full bg-primary/30 absolute -left-2" />
-                    <div className="w-2 h-2 rounded-full bg-primary/20 absolute -left-6" />
-                    <Button
-                      size="icon"
-                      variant="ghost"
-                      asChild
-                      className="w-12 h-12 rounded-full bg-zinc-700 hover:bg-zinc-600 text-white"
-                      data-testid="button-github-hero"
-                    >
-                      <a href="https://github.com/stevenlwashington" target="_blank" rel="noopener noreferrer">
-                        <Github className="w-5 h-5" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

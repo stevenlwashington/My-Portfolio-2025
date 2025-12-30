@@ -24,19 +24,21 @@ interface Organization {
 }
 
 const organizations: Organization[] = [
+  // Priority logos (appear first in scroll)
   { name: "Amazon Web Services", alt: "Amazon Web Services logo — prior organization", icon: SiAmazonwebservices },
   { name: "Microsoft", alt: "Microsoft logo — prior organization", logoPath: microsoftLogo },
   { name: "Salesforce", alt: "Salesforce logo — platform partnership", logoPath: salesforceLogo, size: "xlarge" },
   { name: "Zillow", alt: "Zillow logo — prior organization", logoPath: zillowLogo },
+  { name: "Palantir", alt: "Palantir logo — enterprise initiative", logoPath: palantirLogo },
+  { name: "CrowdStrike", alt: "CrowdStrike logo — enterprise initiative", logoPath: crowdstrikeLogo },
   { name: "T-Mobile", alt: "T-Mobile logo — prior organization", logoPath: tmobileLogo },
-  { name: "LivingSocial", alt: "LivingSocial logo — prior organization", logoPath: livingsocialLogo },
-  { name: "Zendesk", alt: "Zendesk logo — platform partnership", logoPath: zendeskLogo, size: "large" },
   { name: "GitLab", alt: "GitLab logo — platform partnership", logoPath: gitlabLogo },
+  // Additional logos
+  { name: "Zendesk", alt: "Zendesk logo — platform partnership", logoPath: zendeskLogo, size: "large" },
+  { name: "LivingSocial", alt: "LivingSocial logo — prior organization", logoPath: livingsocialLogo },
   { name: "Functionize", alt: "Functionize logo — prior organization", logoPath: functionizeLogo },
   { name: "Windsurf", alt: "Windsurf logo — platform partnership", logoPath: windsurfLogo },
   { name: "Pendo", alt: "Pendo logo — platform partnership", logoPath: pendoLogo },
-  { name: "CrowdStrike", alt: "CrowdStrike logo — enterprise initiative", logoPath: crowdstrikeLogo },
-  { name: "Palantir", alt: "Palantir logo — enterprise initiative", logoPath: palantirLogo },
 ];
 
 function LogoItem({ org }: { org: Organization }) {
