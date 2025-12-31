@@ -1,0 +1,87 @@
+Goal:
+Add tasteful, high-end micro-interactions to the footer CTA module (“Interested in how I approach platform engineering?”) so it feels more responsive and premium—without being flashy.
+
+Scope
+
+Only update the footer CTA module (the container + the two buttons).
+
+Do not change existing copy, spacing, colors, or CTA hierarchy.
+
+Keep motion subtle, consistent with the site’s dark/blue theme.
+
+Motion + Interaction Requirements
+1) CTA container hover (desktop only)
+
+When the user hovers anywhere on the CTA card/container:
+
+Slight lift: translateY(-2px)
+
+Soft shadow increase (or glow increase) using existing brand blue tone
+
+Border highlight becomes a touch brighter
+
+Transition: ~180–220ms, ease-out
+
+Mobile: no hover effects, but keep transitions intact (tap should still feel snappy).
+
+2) Primary button (“Schedule a call”) hover + active
+
+On hover (desktop):
+
+Slight lift: translateY(-1px)
+
+Slight brightness increase (or background lighten by ~3–5%)
+
+Add a subtle focus ring/glow (very soft)
+
+If there is an icon, nudge it right by 2px or rotate 0°→2° (optional)
+
+On active (mouse down / tap):
+
+Press down: translateY(0px) or translateY(1px)
+
+Reduce shadow slightly
+
+3) Secondary button (“Send a note”) hover + active
+
+On hover:
+
+Background fills very lightly (e.g., translucent white/blue overlay)
+
+Border becomes slightly brighter
+
+Tiny lift: translateY(-1px) (optional)
+
+On active:
+
+Press down translateY(0px) or translateY(1px)
+
+4) Visible focus states (keyboard accessibility)
+
+For both buttons:
+
+Add :focus-visible ring using your accent cyan/blue
+
+Should be clear but not thick
+
+Avoid removing outlines without replacement
+
+5) Respect reduced motion
+
+Add a prefers-reduced-motion guard:
+
+Disable transforms and animated transitions
+
+Keep basic color changes
+
+Implementation Notes (What to change)
+
+Locate the component / section that renders the footer CTA module (likely a FooterCTA, CallToAction, or similar).
+
+Add a class to the CTA container (e.g., .footer-cta-card) and to buttons (e.g., .cta-primary, .cta-secondary) if not already present.
+
+Implement styles using your current styling approach:
+
+If Tailwind: use transition, duration-200, ease-out, hover:-translate-y-[1px], etc.
+
+If CSS modules / global CSS: add the hover/focus rules in the appropriate stylesheet.
