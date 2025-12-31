@@ -47,27 +47,30 @@ export default function FooterCTA({ onContactClick }: FooterCTAProps) {
   };
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="footer-cta-card p-10 md:p-16 rounded-lg bg-slate-800/50 border border-cyan-500/20 transition-all duration-200 ease-out md:hover:-translate-y-0.5 md:hover:shadow-lg md:hover:shadow-cyan-500/10 md:hover:border-cyan-500/40 motion-reduce:transform-none motion-reduce:transition-none">
+        <div className="border-t border-white/10 pt-12 md:pt-16">
           <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-10">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Interested in how I approach platform engineering?
             </h2>
-            <div className="flex flex-col sm:flex-row items-center md:items-start gap-4">
+            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl">
+              If you're curious how I think about scale, adoption, and engineering systems, I'm happy to compare notes.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 sm:gap-4">
               <Button 
                 size="lg"
-                className="gap-2 min-w-[180px] transition-all duration-200 ease-out md:hover:-translate-y-px md:hover:brightness-110 md:hover:shadow-md md:hover:shadow-primary/20 active:translate-y-px active:shadow-sm focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 motion-reduce:transform-none motion-reduce:transition-colors group"
+                className="w-full sm:w-auto gap-2 min-w-[180px] transition-all duration-150 ease-out md:hover:-translate-y-px md:hover:brightness-110 md:hover:shadow-md md:hover:shadow-primary/20 active:scale-[0.99] active:translate-y-0 focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 motion-reduce:transform-none motion-reduce:transition-colors group"
                 data-testid="button-schedule-call"
                 onClick={openCalendly}
               >
-                <Calendar className="h-5 w-5 transition-transform duration-200 ease-out md:group-hover:translate-x-0.5 motion-reduce:transform-none" />
+                <Calendar className="h-5 w-5 transition-transform duration-150 ease-out md:group-hover:translate-x-0.5 motion-reduce:transform-none" />
                 Schedule a call
               </Button>
               <Button 
                 size="lg"
-                variant="ghost"
-                className="gap-2 text-muted-foreground transition-all duration-200 ease-out md:hover:text-foreground md:hover:bg-white/5 md:hover:-translate-y-px md:hover:border-cyan-500/30 active:translate-y-px focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 motion-reduce:transform-none motion-reduce:transition-colors border border-transparent"
+                variant="outline"
+                className="w-full sm:w-auto gap-2 text-muted-foreground transition-all duration-150 ease-out md:hover:text-foreground md:hover:bg-white/5 md:hover:-translate-y-px md:hover:border-cyan-500/40 active:scale-[0.99] active:translate-y-0 focus-visible:ring-2 focus-visible:ring-cyan-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 motion-reduce:transform-none motion-reduce:transition-colors"
                 data-testid="button-send-note"
                 onClick={handleContactClick}
               >

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, MessageSquare } from "lucide-react";
 import portraitImage from "@assets/generated_images/steven_portrait.png";
 
 interface HeroProps {
@@ -84,7 +84,7 @@ export default function Hero({ onContactClick }: HeroProps) {
                 className="w-full sm:w-auto rounded-full px-8 py-6 text-lg font-semibold gap-3 border-white/20 text-white hover:bg-white/10 transition-all"
                 data-testid="button-contact-hero"
               >
-                <Mail className="h-5 w-5" />
+                <MessageSquare className="h-5 w-5" />
                 Contact
               </Button>
             </div>

@@ -1,0 +1,67 @@
+Goal: Update the homepage “closure / footer CTA” area so it no longer looks like a modular card panel. Make it feel like a clean, integrated end-of-page section. Primary CTA is “Schedule a call” (Calendly). Secondary CTA is “Send a note” (opens contact form). Add subtle hover/motion affordances. Preserve existing dark theme, typography, spacing system, and button styling language.
+
+Scope:
+- Homepage only (the closure CTA block above the footer).
+- Preserve existing functionality and routing:
+  - “Schedule a call” opens the existing Calendly experience/link currently used in the site.
+  - “Send a note” opens the existing Contact Form (same action as current “Contact” CTA).
+- Do NOT expose or reintroduce an email address anywhere.
+- Do NOT add an email icon anywhere. If an email icon exists in the footer or elsewhere, remove it.
+
+1) Remove the modular / card treatment (critical)
+- Identify the closure CTA block that currently renders as a large rounded “card/panel” (distinct background rectangle, border, shadow, modular container feel).
+- Refactor it into an integrated section:
+  - Remove the outer card container border and heavy shadow.
+  - Remove any “boxed” background that makes it look like a separate module.
+  - Replace with:
+    - A subtle top divider (1px hairline or gradient rule) that spans the content width (aligned to site max-width grid), not full viewport.
+    - Optional ultra-subtle background wash behind the section (2–4% opacity) that does NOT read as a card.
+
+2) Final copy (use exactly this)
+- Heading: “Interested in how I approach platform engineering?”
+- Subheading: “If you’re curious how I think about scale, adoption, and engineering systems, I’m happy to compare notes.”
+
+3) CTA hierarchy (do not deviate)
+- Primary button (filled / accent / most prominent): “Schedule a call”
+  - Action: open existing Calendly scheduling flow/link (same behavior used elsewhere on the site).
+- Secondary button (outline/ghost / less prominent): “Send a note”
+  - Action: open the existing Contact Form (same behavior as “Contact”).
+- Ensure labels are consistent site-wide:
+  - If another CTA uses “Contact,” keep it there; for this closure area specifically, use “Send a note” (secondary) and wire it to the same contact form action.
+
+4) Layout + responsiveness
+- Desktop:
+  - Left-align heading/subheading.
+  - Buttons inline, primary first, spacing gap 12–16px.
+  - Match max-width and section padding to other main sections.
+- Mobile:
+  - Center-align text.
+  - Stack buttons vertically (primary “Schedule a call” on top, secondary beneath).
+  - Buttons should be full-width or near-full width with comfortable spacing.
+
+5) Subtle motion / hover affordances (respect reduced motion)
+- Buttons:
+  - Hover: slight lift (translateY(-1px)) + subtle glow/border emphasis consistent with your accent color
+  - Active: return to translateY(0) with a very subtle press effect (scale 0.99)
+  - Transition: 150–200ms ease
+- Focus states:
+  - Visible focus ring for keyboard navigation (don’t rely on color alone).
+- prefers-reduced-motion:
+  - Disable transforms; use only opacity/border/brightness changes.
+
+6) Visual polish + “closure” feel
+- Reduce vertical bulk so the section feels like the final beat before the footer (not another content card).
+- Use typography hierarchy:
+  - Heading high-contrast
+  - Subheading subdued and shorter line-length for readability
+- Ensure the section visually flows into the footer without a hard container edge.
+
+Acceptance checks:
+- The closure CTA no longer appears as a boxed card/panel.
+- Primary CTA is clearly “Schedule a call” and opens Calendly.
+- Secondary CTA is “Send a note” and opens the Contact Form.
+- Desktop left-aligned; mobile centered + stacked.
+- Hover/focus interactions work and reduced-motion is respected.
+- No email icon or email address is exposed anywhere on the page.
+
+
