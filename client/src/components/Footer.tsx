@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Connect */}
           <div>
             <h3 className="font-semibold text-sm mb-4">Connect</h3>
-            <div className="flex gap-2">
+            <div className="flex gap-2 -ml-2.5">
               <Button size="icon" variant="ghost" asChild data-testid="button-linkedin-footer">
                 <a href="https://www.linkedin.com/in/stevenlwashington/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-4 w-4" />
