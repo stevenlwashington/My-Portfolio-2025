@@ -1,0 +1,40 @@
+You are working in the stevenwa.com codebase. Update ONLY the mobile experience (<= 640px) for the footer/closure areas shown at the bottom of the home page.
+
+GOALS (mobile only):
+- Improve alignment and vertical rhythm so the CTA block feels anchored to the copy above and visually connected to the footer identity below.
+- Reduce “floaty” spacing above and below the CTA stack.
+- Preserve a calm, integrated, enterprise-grade feel (no cards, no boxes, no new containers that look modular).
+- Keep primary CTA = “Schedule a call” (Calendly) and secondary CTA = “Send a note” (contact form). DO NOT change this hierarchy.
+- Keep subtle motion only; respect reduced-motion.
+- Do NOT expose any email addresses. Do NOT add any floating badges or email icons.
+- Do NOT break existing analytics tracking for CTA clicks and footer interactions (do not change event names/ids; keep existing handlers intact).
+
+SCOPE:
+- Only adjust spacing, alignment, divider treatment (if present), and minor typographic rhythm on mobile.
+- Desktop/tablet must remain visually unchanged.
+
+IMPLEMENTATION REQUIREMENTS:
+1) Create a mobile-only CSS change using an existing breakpoint system (e.g., @media (max-width: 640px)) that:
+   - Reduces the vertical gap between the footer/closure copy and the CTA stack by ~12–20px.
+   - Reduces the vertical gap between the CTA stack and the footer identity block by ~16–24px (about ~20% less than current).
+   - Slightly softens any divider line(s) near this region on mobile (lower opacity or reduce margin) OR removes ONE redundant divider if there are multiple adjacent separators, while keeping the section integrated.
+   - Ensures the CTA stack remains centered and full-width with consistent side padding.
+   - Keeps button sizes accessible (minimum 44px height), and preserves existing visual hierarchy (primary is more prominent).
+
+2) Add only subtle hover/focus affordances that already exist on desktop; on mobile ensure:
+   - Focus states are visible (keyboard accessibility).
+   - Transition durations are short and restrained.
+   - If reduced motion is enabled, disable transforms/animations.
+
+3) IMPORTANT: Do not introduce a new “card-like” wrapper, background panel, border box, or shadow around the CTA stack. The section must remain integrated with the page background.
+
+4) Validate:
+   - No layout shift/jank.
+   - No overlap with the “back to top” button.
+   - CTA click tracking still fires (do not rename ids/classes used by analytics).
+
+DELIVERABLE:
+- Make the changes and provide:
+  a) The specific files modified
+  b) The exact CSS you added/changed
+  c) A short explanation of the mobile spacing adjustments (what changed and why)
