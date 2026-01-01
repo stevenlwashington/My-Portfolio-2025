@@ -17,6 +17,7 @@ interface Experience {
   role: string;
   period: string;
   slug: string;
+  thesis?: string;
   questions: string[];
   outcomes: string[];
   scope?: {
@@ -30,23 +31,25 @@ interface Experience {
 const experiences: Experience[] = [
   {
     company: "Zillow",
-    role: "Platform Product Lead, Revenue Engineering and AI Platforms",
+    role: "Platform Product Lead, Revenue Engineering & AI Platforms",
     period: "2023-Present",
     slug: "zillow-platform-product-lead",
+    thesis: "Removed systemic delivery friction across GTM engineering by standardizing self-service delivery, measurement, and governance at platform scale.",
     scope: {
       teamSize: "100+ Eng.",
       users: "Cross-Functional (DevOps/AI/GTM)",
       revenue: "$450K Annual Savings"
     },
     questions: [
-      "How do we remove the biggest constraints that slow engineering down across teams?",
-      "What would 'self-service delivery' look like end-to-end for internal GTM engineering?",
-      "Where are the highest-leverage automation opportunities in our developer workflow?",
-      "How do we measure 'speed' in a way leadership and engineers both trust?"
+      "How do we operationalize AI automation so it's auditable, secure, and trusted?",
+      "Which delivery and data capabilities must be standardized to drive adoption across teams?",
+      "How do we design governance that increases velocity without constraining teams?"
     ],
     outcomes: [
-      "Defined multi-year platform vision and drove architectural shift toward self-service CI/CD—reducing release cycles from days to minutes, enabling GTM teams to ship features 80% faster",
-      "Owned platform TCO strategy including data storage optimization and infrastructure cost efficiency decisions, delivering $450K/yr in annual savings while enabling responsible AI governance at scale"
+      "Enabled secure, auditable AI/LLM workflows across CRM and analytics systems",
+      "Standardized CI/CD and data pipelines, driving adoption across Salesforce engineering",
+      "Reduced release cycles from days to minutes, improving delivery velocity by ~80%",
+      "Delivered $450K annual savings through infrastructure consolidation and data optimization"
     ],
     caseStudy: {
       problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Fragmented enterprise data across systems made it difficult to leverage for AI/ML initiatives.",
@@ -62,24 +65,25 @@ const experiences: Experience[] = [
   },
   {
     company: "Zillow",
-    role: "Sr. Salesforce Product Manager, Frontline Engineering",
+    role: "Senior Product Manager, Frontline Enterprise Technology (CRM & Workflow)",
     period: "2020-2023",
     slug: "zillow-sr-salesforce-pm",
+    thesis: "Unified fragmented CRM systems into a governed enterprise platform to improve reliability, data integrity, and operational efficiency.",
     scope: {
       teamSize: "Led cross-functional product and engineering workstreams across 30+ contributors (Salesforce engineers, Security, Finance)",
       users: "2,500+ sales & service reps",
       revenue: "$1.5B+ annual revenue"
     },
     questions: [
-      "What should we optimize for in platform TCO: cost, reliability, or team throughput—and when?",
-      "What governance is essential for scale, and what governance creates drag?",
-      "How do we enable responsible AI adoption without blocking teams from shipping?",
-      "What is the cost of moving fast without governance—and the cost of governing too early?"
+      "How do we evolve CRM capabilities to support shifting strategies under market pressure?",
+      "Which workflows must be automated or redesigned to reduce cost while preserving service quality?",
+      "How do we instrument the platform so leaders can measure adoption, efficiency, and ROI?"
     ],
     outcomes: [
-      "Owned multi-year platform consolidation strategy unifying 4 legacy orgs into a single GTM platform supporting $1.5B+ in annual revenue; secured executive buy-in through business case development and ROI modeling",
-      "Built product analytics capability from 0 to 1—implemented platform telemetry across Salesforce to drive data-informed roadmap decisions and improve platform observability",
-      "Led TCO optimization across platform: negotiated Salesforce licensing consolidation, eliminated redundant tools, and drove vendor consolidation resulting in significant cost efficiency while maintaining reliability"
+      "Unified 4 CRM platforms to support evolving GTM strategy during housing headwinds",
+      "Reduced manual work by 40% and platform costs by $2M",
+      "Built shared product analytics/telemetry, increasing adoption by 30% and roadmap confidence by 50%",
+      "Embedded TCPA/CPRA compliance into core workflows, achieving 100% audit success"
     ],
     caseStudy: {
       problem: "Zillow operated 4 separate Salesforce orgs due to acquisitions and organic growth, creating data silos, duplicate workflows, and compliance gaps. GTM teams struggled with fragmented customer data, and regulatory risk (TCPA/CPRA) was difficult to manage across disconnected systems. There was no unified view of the customer journey or consistent platform telemetry to inform product decisions.",
@@ -95,24 +99,25 @@ const experiences: Experience[] = [
   },
   {
     company: "T-Mobile",
-    role: "Sr. Product Manager, Product & Technology",
+    role: "Senior Product Manager, Product & Technology",
     period: "2019-2020",
     slug: "tmobile-sr-product-manager",
+    thesis: "Strengthened Salesforce platform reliability and performance to support high-volume seller and service workflows at national scale.",
     scope: {
       teamSize: "Multi-vendor platform teams",
       users: "15,000+ frontline staff",
       revenue: "Enterprise GTM platform"
     },
     questions: [
-      "What are the highest-friction moments in the frontline user experience—and what would 'fast' feel like?",
-      "How do we reduce page load times without a full platform rewrite?",
-      "Where is complexity adding cost without adding value?",
-      "What platform investments would unlock the biggest gains in rep productivity?"
+      "Where does platform instability most directly reduce seller productivity?",
+      "Which performance bottlenecks most materially impact service operations?",
+      "How can resilience improvements reduce incident volume and speed recovery?"
     ],
     outcomes: [
-      "Modernized T-Mobile's Salesforce Sales and Service Clouds for 15k+ frontline users",
-      "Cut page load times by 50% through architectural optimization and platform modernization",
-      "Owned platform TCO strategy including vendor consolidation and redundant tool elimination, delivering $5M+ in annual cost savings while improving platform reliability"
+      "Cut latency by 50% through targeted performance modernization",
+      "Reduced incidents by 30% and MTTR by 40%",
+      "Improved reliability for 15K+ internal users",
+      "Delivered $5M+ in annual operational savings"
     ],
     caseStudy: {
       problem: "T-Mobile's Salesforce platform served 15,000+ frontline users across sales and service, but years of technical debt resulted in slow page loads (8-12 seconds), poor user experience, and high operational costs from manual workarounds. Reps were frustrated, productivity suffered, and the platform couldn't scale to support business growth.",
@@ -131,49 +136,50 @@ const experiences: Experience[] = [
     role: "Product Manager, Global Business Operations",
     period: "2016-2019",
     slug: "aws-product-manager",
+    thesis: "Scaled mission-critical revenue infrastructure by standardizing pricing, contract, and billing systems to improve accuracy, compliance, and global velocity.",
     scope: {
       teamSize: "Global ops & engineering",
-      users: "Enterprise sales teams",
-      revenue: "$20B+ private pricing programs"
+      users: "50K+ global sellers",
+      revenue: "$120B+ annual cloud revenue"
     },
     questions: [
-      "How do we scale a $20B pricing program without adding headcount proportionally?",
-      "What parts of quote-to-cash are manual today that shouldn't be?",
-      "How do we expand into 18 new EU markets while maintaining compliance integrity?",
-      "Where does friction in the deal cycle cost us velocity—or trust?"
+      "How might we unlock a $100B+ enterprise opportunity through scalable private pricing infrastructure?",
+      "Which systems must be globally standardized to support private pricing at AWS scale?",
+      "How do we balance governance, accuracy, and speed across global seller operations?"
     ],
     outcomes: [
-      "Owned global pricing and billing infrastructure for AWS's $20B+ Enterprise Discount Program",
-      "Modernized quote-to-cash systems",
-      "Expanded seller-of-record capabilities into 18 EU markets"
+      "Enabled $120B+ in annual cloud revenue through private pricing and enterprise discount programs",
+      "Automated pricing and contract workflows for 50K+ global sellers",
+      "Launched enterprise pricing infrastructure across 18 EU markets, improving payment accuracy by 40%",
+      "Reduced operational costs by 15% via build-vs-buy evaluation and system consolidation"
     ],
     caseStudy: {
       problem: "AWS's Enterprise Discount Program managed $20B+ in customer commitments, but legacy quote-to-cash systems created friction in pricing, contracting, and billing. Global expansion into EU markets required new seller-of-record capabilities with complex tax and compliance requirements. Manual processes couldn't scale with AWS's growth.",
       action: "I owned the end-to-end product strategy for pricing and billing infrastructure modernization. This included redesigning quote-to-cash workflows, automating manual processes, and building new capabilities for EU market expansion. I worked across finance, legal, engineering, and sales to ensure systems met both business and regulatory requirements.",
       result: "Successfully modernized quote-to-cash systems, enabling faster deal cycles and better pricing accuracy. Expanded seller-of-record capabilities into 18 EU markets, unlocking new revenue opportunities while maintaining tax and compliance integrity. The platform scaled to support AWS's continued hypergrowth.",
       metrics: [
-        "Program value: $20B+",
+        "Annual revenue enabled: $120B+",
         "EU markets: 18 new",
-        "Quote-to-cash: modernized",
-        "Deal cycle: faster"
+        "Global sellers: 50K+",
+        "Payment accuracy: +40%"
       ]
     }
   },
   {
-    company: "Microsoft (Merkle), LivingSocial, San Diego Padres",
-    role: "Career Foundations",
-    period: "2008–2015",
-    slug: "career-foundations",
+    company: "Microsoft (Merkle)",
+    role: "Product Analyst, Global Marketing Strategy",
+    period: "2015-2016",
+    slug: "microsoft-merkle",
+    thesis: "Used data and experimentation to improve digital engagement and inform global marketing strategy.",
     questions: [
-      "What does 'good data' look like for a sales team trying to forecast accurately?",
-      "How do operational insights translate into better customer experiences?",
-      "Where does process create value—and where does it just create overhead?",
-      "What do frontline teams actually need from the platforms they use every day?"
+      "Which engagement signals best predict conversion across global markets?",
+      "How do we measure marketing effectiveness across diverse channels?",
+      "Where can experimentation improve campaign performance at scale?"
     ],
     outcomes: [
-      "Roles across product analytics, sales operations, and customer experience",
-      "Provided early experience in revenue operations, data insights, forecasting, and frontline customer engagement",
-      "Foundational context I draw on when building platforms for sellers and service teams"
+      "Analyzed engagement data to inform global marketing strategy",
+      "Supported experimentation frameworks to optimize digital campaigns",
+      "Provided foundational experience in product analytics and data-driven decision making"
     ]
   }
 ];
@@ -282,10 +288,17 @@ export default function ImpactTimeline() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-6">
+                        {/* Leadership Thesis */}
+                        {exp.thesis && (
+                          <div className="border-l-2 border-cyan-500/40 pl-4">
+                            <p className="text-white/90 italic leading-relaxed">"{exp.thesis}"</p>
+                          </div>
+                        )}
+
                         {/* Strategic Questions (always visible) */}
                         <div>
                           <p className="text-sm font-semibold text-white/60 uppercase tracking-wide mb-4">
-                            Strategic Questions I Asked
+                            Strategic Questions That Guided My Work
                           </p>
                           <ol className="space-y-3">
                             {exp.questions.map((question, i) => (

@@ -1,0 +1,80 @@
+You are working in the stevenwa.com codebase. Implement the updated Career section copy in a LOWER environment (staging/dev), without changing the established design system decisions.
+
+SCOPE
+- Update text content ONLY for the Career cards:
+  - Leadership Thesis (1 sentence)
+  - Section label (locked): "Strategic Questions That Guided My Work"
+  - Three role-specific strategic questions per card
+  - Outcomes (shown on expand/reveal)
+- Do NOT change layout structure, card styling, spacing, or the expand/collapse interaction patterns.
+- Do NOT introduce modular/boxed UI treatments beyond what exists today.
+- Do NOT change CTA hierarchy anywhere on the site.
+- Do NOT expose any email addresses.
+
+ANALYTICS + INTERACTION (CRITICAL)
+- Preserve existing analytics tracking:
+  - Do not rename element ids, data attributes, event names, or handler functions.
+  - Keep the same click targets for expand/collapse and any “View case study” links if present.
+- Ensure expand/reveal behavior remains lightweight and deliberate (no new animations).
+- Respect reduced-motion preferences (no new transforms/animations).
+
+CONTENT TO APPLY
+Replace the Career section content with the following exact text blocks:
+
+1) Zillow — Platform Product Lead, Revenue Engineering & AI Platforms (2023–Present)
+Thesis:
+"Removed systemic delivery friction across GTM engineering by standardizing self-service delivery, measurement, and governance at platform scale."
+Questions:
+- "How do we operationalize AI automation so it’s auditable, secure, and trusted?"
+- "Which delivery and data capabilities must be standardized to drive adoption across teams?"
+- "How do we design governance that increases velocity without constraining teams?"
+Outcomes:
+- "Enabled secure, auditable AI/LLM workflows across CRM and analytics systems"
+- "Standardized CI/CD and data pipelines, driving adoption across Salesforce engineering"
+- "Reduced release cycles from days to minutes, improving delivery velocity by ~80%"
+- "Delivered $450K annual savings through infrastructure consolidation and data optimization"
+
+2) Zillow — Senior Product Manager, Frontline Enterprise Technology (CRM & Workflow) (2020–2023)
+Thesis:
+"Unified fragmented CRM systems into a governed enterprise platform to improve reliability, data integrity, and operational efficiency."
+Questions:
+- "How do we evolve CRM capabilities to support shifting strategies under market pressure?"
+- "Which workflows must be automated or redesigned to reduce cost while preserving service quality?"
+- "How do we instrument the platform so leaders can measure adoption, efficiency, and ROI?"
+Outcomes:
+- "Unified 4 CRM platforms to support evolving GTM strategy during housing headwinds"
+- "Reduced manual work by 40% and platform costs by $2M"
+- "Built shared product analytics/telemetry, increasing adoption by 30% and roadmap confidence by 50%"
+- "Embedded TCPA/CPRA compliance into core workflows, achieving 100% audit success"
+
+3) T-Mobile — Senior Product Manager, Product & Technology (2019–2020)
+Thesis:
+"Strengthened Salesforce platform reliability and performance to support high-volume seller and service workflows at national scale."
+Questions:
+- "Where does platform instability most directly reduce seller productivity?"
+- "Which performance bottlenecks most materially impact service operations?"
+- "How can resilience improvements reduce incident volume and speed recovery?"
+Outcomes:
+- "Cut latency by 50% through targeted performance modernization"
+- "Reduced incidents by 30% and MTTR by 40%"
+- "Improved reliability for 15K+ internal users"
+- "Delivered $5M+ in annual operational savings"
+
+4) AWS — Product Manager, Global Business Operations (2016–2019)
+Thesis:
+"Scaled mission-critical revenue infrastructure by standardizing pricing, contract, and billing systems to improve accuracy, compliance, and global velocity."
+Questions:
+- "How might we unlock a $100B+ enterprise opportunity through scalable private pricing infrastructure?"
+- "Which systems must be globally standardized to support private pricing at AWS scale?"
+- "How do we balance governance, accuracy, and speed across global seller operations?"
+Outcomes:
+- "Enabled $120B+ in annual cloud revenue through private pricing and enterprise discount programs"
+- "Automated pricing and contract workflows for 50K+ global sellers"
+- "Launched enterprise pricing infrastructure across 18 EU markets, improving payment accuracy by 40%"
+- "Reduced operational costs by 15% via build-vs-buy evaluation and system consolidation"
+
+5) Microsoft (Merkle) — Product Analyst, Global Marketing Strategy (2015–2016)
+Thesis:
+"Used data and experimentation to improve digital engagement and inform global marketing strategy."
+Questions:
+- "Which engagement signals best
