@@ -1,0 +1,38 @@
+You are working in the stevenwa.com codebase. Implement Phase 1: remove the “View Case Study” deep-dive CTA from every Career card, in the LOWER (staging/dev) environment.
+
+GOAL
+- Remove the “View Case Study” button/link from all Career cards so the expanded in-place content (Strategic Questions + Outcomes + any modal/detail view you already have) becomes the canonical deep dive.
+- The Career card should end cleanly after Outcomes/Key Metrics, without any additional deep-dive CTA.
+
+SCOPE
+- Career section only (all roles/cards).
+- UI change is limited to removing this CTA and any related spacing; do NOT redesign the card layout.
+- Do NOT add replacement CTAs (no “Learn more,” no “Read more,” no external links).
+
+ANALYTICS (CRITICAL)
+- Do NOT break the existing analytics stack.
+- Keep existing expand/collapse tracking intact (questions/outcomes toggles).
+- If there is a tracked event for “View Case Study,” remove the clickable element but do NOT modify shared analytics utilities or global event handlers.
+  - If the event handler is specific to the removed CTA, delete only that handler wiring for the Career section to prevent dead listeners.
+  - Do NOT change ids/data attributes used elsewhere.
+
+ACCESSIBILITY + BEHAVIOR
+- Ensure keyboard navigation/focus order remains correct after removing the CTA.
+- No new animations; preserve reduced-motion behavior.
+
+IMPLEMENTATION STEPS
+1. Locate the Career card component(s) responsible for rendering the “View Case Study” CTA (button/link).
+2. Remove rendering of that CTA for all cards (not just Zillow).
+3. Remove any unused imports, props, or config entries that exist only to support “View Case Study.”
+4. Adjust any bottom padding/margins so the card footer area looks intentional after CTA removal (minimal spacing only; keep design consistent).
+5. Verify:
+   - Career cards render without the CTA in both collapsed and expanded states
+   - No console errors from missing handlers
+   - Expand/collapse interactions still work and remain tracked
+   - No other section of the site is impacted
+
+DELIVERABLES
+- List the files changed.
+- Confirm the CTA is removed across all cards.
+- Confirm expand/collapse tracking remains unchanged.
+- Provide the staging/dev preview link or confirm the lower-environment deploy succeeded.

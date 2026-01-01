@@ -1,16 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { ChevronRight, ChevronDown } from "lucide-react";
-
-interface CaseStudy {
-  problem: string;
-  action: string;
-  result: string;
-  metrics: string[];
-}
+import { ChevronDown } from "lucide-react";
 
 interface Experience {
   company: string;
@@ -20,7 +11,6 @@ interface Experience {
   subheading?: string;
   questions: string[];
   outcomes: string[];
-  caseStudy?: CaseStudy;
 }
 
 const experiences: Experience[] = [
@@ -40,18 +30,7 @@ const experiences: Experience[] = [
       "Standardized CI/CD and data pipelines, driving adoption across Salesforce engineering",
       "Reduced release cycles from days to minutes, improving delivery velocity by ~80%",
       "Delivered $450K annual savings through infrastructure consolidation and data optimization"
-    ],
-    caseStudy: {
-      problem: "Zillow's Salesforce engineering teams faced 2-3 day release cycles due to manual deployment processes and lack of CI/CD infrastructure. This created deployment bottlenecks, increased risk, and prevented rapid iteration on revenue-critical GTM features. Fragmented enterprise data across systems made it difficult to leverage for AI/ML initiatives.",
-      action: "I defined the multi-year platform vision and initiated an org-wide architectural shift toward self-service CI/CD. I led the design and implementation of an on-demand CI/CD platform with automated testing pipelines, validation gates, and self-service deployment capabilities. Partnered with principal architects on target-state data architecture and architected enterprise data consolidation pipelines that unified historical data into a clean, AI-ready format with proper governance and audit trails.",
-      result: "Release cycles dropped from days to minutes, enabling GTM teams to ship features 80% faster. The CI/CD platform became the standard across all Salesforce engineering. Data consolidation enabled new AI training initiatives while reducing data storage costs by $450K annually. Secured executive buy-in for multi-year platform roadmap through demonstrated business velocity acceleration and financial impact.",
-      metrics: [
-        "Release cycle: days → minutes",
-        "GTM velocity: +80%",
-        "Annual savings: $450K",
-        "100+ engineers enabled"
-      ]
-    }
+    ]
   },
   {
     company: "Zillow",
@@ -69,18 +48,7 @@ const experiences: Experience[] = [
       "Reduced manual work by 40% and platform costs by $2M",
       "Built shared product analytics/telemetry, increasing adoption by 30% and roadmap confidence by 50%",
       "Embedded TCPA/CPRA compliance into core workflows, achieving 100% audit success"
-    ],
-    caseStudy: {
-      problem: "Zillow operated 4 separate Salesforce orgs due to acquisitions and organic growth, creating data silos, duplicate workflows, and compliance gaps. GTM teams struggled with fragmented customer data, and regulatory risk (TCPA/CPRA) was difficult to manage across disconnected systems. There was no unified view of the customer journey or consistent platform telemetry to inform product decisions.",
-      action: "I owned the multi-year platform consolidation strategy and led a team-of-teams initiative across Salesforce engineering, Security, and Finance to unify all 4 orgs into a single instance. I directed technical design reviews and architectural decisions on data migration, workflow standardization, and system integration. Built product analytics capability from scratch, implementing telemetry and dashboards to make the platform observable. Owned TCO strategy: negotiated Salesforce licensing terms to reflect consolidated footprint and eliminated duplicate tool subscriptions across orgs. Embedded compliance controls directly into the platform (policy-as-code for TCPA/CPRA) rather than relying on manual processes.",
-      result: "Successfully unified 4 orgs into a single platform supporting $1.5B+ in revenue. Compliance became automated rather than manual, mitigating over $1B in potential regulatory risk. New product analytics capability enabled data-informed decisions, improving roadmap prioritization. GTM teams gained a unified customer view that improved sales efficiency, service quality, and team alignment. Platform became the source of truth for all GTM operations.",
-      metrics: [
-        "4 orgs → 1 unified platform",
-        "Revenue supported: $1.5B+",
-        "Regulatory risk mitigated: $1B+",
-        "2,500+ users enabled"
-      ]
-    }
+    ]
   },
   {
     company: "T-Mobile",
@@ -98,18 +66,7 @@ const experiences: Experience[] = [
       "Reduced incidents by 30% and MTTR by 40%",
       "Improved reliability for 15K+ internal users",
       "Delivered $5M+ in annual operational savings"
-    ],
-    caseStudy: {
-      problem: "T-Mobile's Salesforce platform served 15,000+ frontline users across sales and service, but years of technical debt resulted in slow page loads (8-12 seconds), poor user experience, and high operational costs from manual workarounds. Reps were frustrated, productivity suffered, and the platform couldn't scale to support business growth.",
-      action: "I led a platform modernization initiative focused on performance, UX, and cost reduction. This included architectural cleanup, Lightning migration, workflow optimization, and eliminating redundant integrations. I negotiated vendor contracts and managed TCO decisions around tool consolidation, eliminating duplicate subscriptions and licensing. I worked with multi-vendor teams to rationalize the platform stack, consolidate tools, automate manual processes, and redesign the user experience around frontline workflows.",
-      result: "Page load times dropped by 50%, dramatically improving rep productivity and satisfaction. Operational costs decreased by $5M+ annually through automation and tool consolidation. The modernized platform became a competitive advantage, enabling faster customer service and better sales execution at scale.",
-      metrics: [
-        "Page load time: -50%",
-        "Annual cost savings: $5M+",
-        "Users served: 15,000+",
-        "Platform scalability: ✓"
-      ]
-    }
+    ]
   },
   {
     company: "Amazon Web Services (AWS)",
@@ -127,18 +84,7 @@ const experiences: Experience[] = [
       "Automated pricing and contract workflows for 50K+ global sellers",
       "Launched enterprise pricing infrastructure across 18 EU markets, improving payment accuracy by 40%",
       "Reduced operational costs by 15% via build-vs-buy evaluation and system consolidation"
-    ],
-    caseStudy: {
-      problem: "AWS's Enterprise Discount Program managed $20B+ in customer commitments, but legacy quote-to-cash systems created friction in pricing, contracting, and billing. Global expansion into EU markets required new seller-of-record capabilities with complex tax and compliance requirements. Manual processes couldn't scale with AWS's growth.",
-      action: "I owned the end-to-end product strategy for pricing and billing infrastructure modernization. This included redesigning quote-to-cash workflows, automating manual processes, and building new capabilities for EU market expansion. I worked across finance, legal, engineering, and sales to ensure systems met both business and regulatory requirements.",
-      result: "Successfully modernized quote-to-cash systems, enabling faster deal cycles and better pricing accuracy. Expanded seller-of-record capabilities into 18 EU markets, unlocking new revenue opportunities while maintaining tax and compliance integrity. The platform scaled to support AWS's continued hypergrowth.",
-      metrics: [
-        "Annual revenue enabled: $120B+",
-        "EU markets: 18 new",
-        "Global sellers: 50K+",
-        "Payment accuracy: +40%"
-      ]
-    }
+    ]
   },
   {
     company: "Microsoft (Merkle)",
@@ -171,7 +117,6 @@ function fireClarityEvent(eventName: string, data: { role: string; company: stri
 }
 
 export default function ImpactTimeline() {
-  const [selectedCase, setSelectedCase] = useState<Experience | null>(null);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const outcomesRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -302,19 +247,6 @@ export default function ImpactTimeline() {
                                   </li>
                                 ))}
                               </ul>
-                              
-                              {exp.caseStudy && (
-                                <Button
-                                  variant="outline"
-                                  size="sm"
-                                  onClick={() => setSelectedCase(exp)}
-                                  className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 mt-6"
-                                  data-testid={`button-case-study-${index}`}
-                                >
-                                  View Case Study
-                                  <ChevronRight className="ml-2 h-4 w-4" />
-                                </Button>
-                              )}
                             </div>
                           </div>
                         )}
@@ -327,76 +259,6 @@ export default function ImpactTimeline() {
           </div>
         </div>
       </div>
-
-      {/* Case Study Modal */}
-      <Dialog open={!!selectedCase} onOpenChange={() => setSelectedCase(null)}>
-        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-2xl">{selectedCase?.role}</DialogTitle>
-            <DialogDescription className="text-base">
-              {selectedCase?.company} • {selectedCase?.period}
-            </DialogDescription>
-          </DialogHeader>
-          
-          {selectedCase?.caseStudy && (
-            <div className="space-y-6 pt-4">
-              {/* Problem */}
-              <div>
-                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-md bg-destructive/10 flex items-center justify-center text-destructive font-bold">
-                    P
-                  </div>
-                  Problem
-                </h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {selectedCase.caseStudy.problem}
-                </p>
-              </div>
-
-              {/* Action */}
-              <div>
-                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-md bg-primary/10 flex items-center justify-center text-primary font-bold">
-                    A
-                  </div>
-                  Action
-                </h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {selectedCase.caseStudy.action}
-                </p>
-              </div>
-
-              {/* Result */}
-              <div>
-                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-md bg-chart-2/10 flex items-center justify-center text-chart-2 font-bold">
-                    R
-                  </div>
-                  Result
-                </h4>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  {selectedCase.caseStudy.result}
-                </p>
-                
-                {/* Metrics */}
-                <Card className="bg-muted/30">
-                  <CardContent className="pt-6">
-                    <p className="text-sm font-semibold mb-3">Key Metrics</p>
-                    <div className="grid grid-cols-2 gap-3">
-                      {selectedCase.caseStudy.metrics.map((metric, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm">
-                          <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                          <span className="font-mono">{metric}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
