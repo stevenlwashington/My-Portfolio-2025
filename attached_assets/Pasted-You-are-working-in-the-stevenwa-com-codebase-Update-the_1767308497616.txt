@@ -1,0 +1,49 @@
+You are working in the stevenwa.com codebase. Update the Career section cards in a LOWER (staging/dev) environment to consolidate metadata and thesis copy into a single subheading per card, with the following corrected revenue figures.
+
+GOALS
+- Replace icon-based metadata rows and quoted thesis blocks with ONE unified subheading per card.
+- Improve scanability and executive readability while preserving all informational content.
+- Apply the same subheading pattern consistently across all Career cards.
+- Do NOT change overall layout, card structure, spacing, or interaction behavior.
+
+SCOPE
+- Career section only.
+- Content and light structural adjustment only (no visual redesign).
+- Desktop and mobile behavior must remain consistent with existing design rules.
+
+IMPLEMENTATION DETAILS
+1. For each Career card:
+   - Remove or hide:
+     - Icon-based metadata rows (team size, users, revenue, savings, etc.)
+     - Quoted thesis block styling
+   - Insert a single subheading text block directly under the role/title.
+
+2. Subheading rules:
+   - One paragraph (no bullets, no icons, no quotation marks).
+   - Sentence case.
+   - Slightly muted text color relative to the role title.
+   - Same max-width and alignment as existing card body content.
+   - No new borders, cards, or background treatments.
+
+3. Preserve:
+   - Existing expand/collapse behavior for “Strategic Questions That Guided My Work” and Outcomes.
+   - All analytics tracking (do not rename ids, data attributes, or event handlers).
+   - Accessibility and reduced-motion preferences.
+
+CONTENT TO APPLY
+
+Zillow — Platform Product Lead, Revenue Engineering & AI Platforms
+Subheading:
+"Led cross-functional product and engineering workstreams across DevOps, AI, and GTM systems, enabling secure self-service delivery and governed automation for revenue-critical platforms serving thousands of internal users and $1B+ in annual revenue."
+
+Zillow — Senior Product Manager, Frontline Enterprise Technology (CRM & Workflow)
+Subheading:
+"Owned enterprise CRM and workflow platforms supporting 2,500+ sales and service reps and $1B+ in annual revenue, unifying fragmented systems to improve reliability, data integrity, and operational efficiency during shifting market conditions."
+
+T-Mobile — Senior Product Manager, Product & Technology
+Subheading:
+"Led Salesforce platform modernization supporting 15,000+ frontline staff across multi-vendor teams, improving performance, reliability, and incident response for national-scale sales and service operations."
+
+Amazon Web Services — Product Manager, Global Business Operations
+Subheading:
+"Owned global pricing, contract, and billing infrastructure supporting 50,000+ sellers and $20B+ in annual cloud revenue, scaling pri

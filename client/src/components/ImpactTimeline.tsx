@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Users, Building2, TrendingUp, ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronRight, ChevronDown } from "lucide-react";
 
 interface CaseStudy {
   problem: string;
@@ -17,14 +17,9 @@ interface Experience {
   role: string;
   period: string;
   slug: string;
-  thesis?: string;
+  subheading?: string;
   questions: string[];
   outcomes: string[];
-  scope?: {
-    teamSize?: string;
-    users?: string;
-    revenue?: string;
-  };
   caseStudy?: CaseStudy;
 }
 
@@ -34,12 +29,7 @@ const experiences: Experience[] = [
     role: "Platform Product Lead, Revenue Engineering & AI Platforms",
     period: "2023-Present",
     slug: "zillow-platform-product-lead",
-    thesis: "Removed systemic delivery friction across GTM engineering by standardizing self-service delivery, measurement, and governance at platform scale.",
-    scope: {
-      teamSize: "100+ Eng.",
-      users: "Cross-Functional (DevOps/AI/GTM)",
-      revenue: "$450K Annual Savings"
-    },
+    subheading: "Led cross-functional product and engineering workstreams across DevOps, AI, and GTM systems, enabling secure self-service delivery and governed automation for revenue-critical platforms serving thousands of internal users and $1B+ in annual revenue.",
     questions: [
       "How do we operationalize AI automation so it's auditable, secure, and trusted?",
       "Which delivery and data capabilities must be standardized to drive adoption across teams?",
@@ -68,12 +58,7 @@ const experiences: Experience[] = [
     role: "Senior Product Manager, Frontline Enterprise Technology (CRM & Workflow)",
     period: "2020-2023",
     slug: "zillow-sr-salesforce-pm",
-    thesis: "Unified fragmented CRM systems into a governed enterprise platform to improve reliability, data integrity, and operational efficiency.",
-    scope: {
-      teamSize: "Led cross-functional product and engineering workstreams across 30+ contributors (Salesforce engineers, Security, Finance)",
-      users: "2,500+ sales & service reps",
-      revenue: "$1.5B+ annual revenue"
-    },
+    subheading: "Owned enterprise CRM and workflow platforms supporting 2,500+ sales and service reps and $1B+ in annual revenue, unifying fragmented systems to improve reliability, data integrity, and operational efficiency during shifting market conditions.",
     questions: [
       "How do we evolve CRM capabilities to support shifting strategies under market pressure?",
       "Which workflows must be automated or redesigned to reduce cost while preserving service quality?",
@@ -102,12 +87,7 @@ const experiences: Experience[] = [
     role: "Senior Product Manager, Product & Technology",
     period: "2019-2020",
     slug: "tmobile-sr-product-manager",
-    thesis: "Strengthened Salesforce platform reliability and performance to support high-volume seller and service workflows at national scale.",
-    scope: {
-      teamSize: "Multi-vendor platform teams",
-      users: "15,000+ frontline staff",
-      revenue: "Enterprise GTM platform"
-    },
+    subheading: "Led Salesforce platform modernization supporting 15,000+ frontline staff across multi-vendor teams, improving performance, reliability, and incident response for national-scale sales and service operations.",
     questions: [
       "Where does platform instability most directly reduce seller productivity?",
       "Which performance bottlenecks most materially impact service operations?",
@@ -136,12 +116,7 @@ const experiences: Experience[] = [
     role: "Product Manager, Global Business Operations",
     period: "2016-2019",
     slug: "aws-product-manager",
-    thesis: "Scaled mission-critical revenue infrastructure by standardizing pricing, contract, and billing systems to improve accuracy, compliance, and global velocity.",
-    scope: {
-      teamSize: "Global ops & engineering",
-      users: "50K+ global sellers",
-      revenue: "$120B+ annual cloud revenue"
-    },
+    subheading: "Owned global pricing, contract, and billing infrastructure supporting 50,000+ sellers and $20B+ in annual cloud revenue, scaling private pricing and enterprise discount programs across 18 EU markets.",
     questions: [
       "How might we unlock a $100B+ enterprise opportunity through scalable private pricing infrastructure?",
       "Which systems must be globally standardized to support private pricing at AWS scale?",
@@ -170,7 +145,7 @@ const experiences: Experience[] = [
     role: "Product Analyst, Global Marketing Strategy",
     period: "2015-2016",
     slug: "microsoft-merkle",
-    thesis: "Used data and experimentation to improve digital engagement and inform global marketing strategy.",
+    subheading: "Supported global marketing strategy through data analysis and experimentation, building foundational skills in product analytics and data-driven decision making.",
     questions: [
       "Which engagement signals best predict conversion across global markets?",
       "How do we measure marketing effectiveness across diverse channels?",
@@ -260,41 +235,17 @@ export default function ImpactTimeline() {
                             <Badge variant="secondary" className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20 text-xs sm:text-sm">{exp.period}</Badge>
                           </div>
                           
-                          {/* Scope indicators */}
-                          {exp.scope && (
-                            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                              {exp.scope.teamSize && (
-                                <div className="flex items-center gap-1.5">
-                                  <Users className="h-3.5 w-3.5" />
-                                  <span>{exp.scope.teamSize}</span>
-                                </div>
-                              )}
-                              {exp.scope.users && (
-                                <div className="flex items-center gap-1.5">
-                                  <Building2 className="h-3.5 w-3.5" />
-                                  <span>{exp.scope.users}</span>
-                                </div>
-                              )}
-                              {exp.scope.revenue && (
-                                <div className="flex items-center gap-1.5">
-                                  <TrendingUp className="h-3.5 w-3.5" />
-                                  <span>{exp.scope.revenue}</span>
-                                </div>
-                              )}
-                            </div>
+                          {/* Unified subheading */}
+                          {exp.subheading && (
+                            <p className="text-white/70 leading-relaxed text-sm sm:text-base">
+                              {exp.subheading}
+                            </p>
                           )}
                         </div>
                       </div>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-6">
-                        {/* Leadership Thesis */}
-                        {exp.thesis && (
-                          <div className="border-l-2 border-cyan-500/40 pl-4">
-                            <p className="text-white/90 italic leading-relaxed">"{exp.thesis}"</p>
-                          </div>
-                        )}
-
                         {/* Strategic Questions (always visible) */}
                         <div>
                           <p className="text-sm font-semibold text-white/60 uppercase tracking-wide mb-4">
