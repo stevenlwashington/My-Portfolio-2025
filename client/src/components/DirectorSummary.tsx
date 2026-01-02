@@ -82,7 +82,7 @@ export default function DirectorSummary() {
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">Impact at Scale</h3>
           </motion.div>
 
-          <div className="impact-grid-container mb-12">
+          <div className="impact-grid-container mb-8">
             {[
               { value: "100+", label: "Engineers Unlocked" },
               { value: "30+", label: "Orgs Aligned" },
@@ -107,29 +107,28 @@ export default function DirectorSummary() {
                 </Card>
               </motion.div>
             ))}
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              style={{ gridColumn: '1 / -1' }}
-              className="impact-quote-band"
-            >
-              <div className="impact-quote-inner">
-                <div className="impact-quote-icon">
-                  <Quote className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div className="impact-quote-content">
-                  <blockquote className="impact-quote-text">
-                    "Steven consistently solved cross-organizational constraints that limited velocity—aligning scalable, secure engineering systems, implementing AI and automation responsibly, and bringing execution rigor so teams shipped faster without sacrificing reliability."
-                  </blockquote>
-                  <div className="impact-quote-attribution">
-                    — Senior Engineering Leader
-                  </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="impact-quote-band mb-12"
+          >
+            <div className="impact-quote-inner">
+              <div className="impact-quote-icon">
+                <Quote className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+              <div className="impact-quote-content">
+                <blockquote className="impact-quote-text">
+                  "Steven consistently solved cross-organizational constraints that limited velocity—aligning scalable, secure engineering systems, implementing AI and automation responsibly, and bringing execution rigor so teams shipped faster without sacrificing reliability."
+                </blockquote>
+                <div className="impact-quote-attribution">
+                  — Senior Engineering Leader
                 </div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

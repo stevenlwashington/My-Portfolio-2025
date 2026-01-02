@@ -404,11 +404,18 @@
 /* Impact Quote Band - Editorial pull-quote style */
 .impact-quote-band {
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   padding: 1.25rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.02));
+}
+
+/* Desktop: constrain quote width to align with metrics grid */
+@media (min-width: 1024px) {
+  .impact-quote-band {
+    max-width: calc(50% + 0.75rem);
+  }
 }
 
 .impact-quote-inner {

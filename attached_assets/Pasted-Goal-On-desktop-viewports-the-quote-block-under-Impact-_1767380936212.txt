@@ -1,0 +1,97 @@
+Goal
+On desktop viewports, the quote block under Impact at Scale should no longer span the full section width. Instead, it should align to the same content column / grid width as the metrics cards, so the quote feels intentionally anchored and avoids excessive empty space. Mobile layout should remain unchanged.
+
+Requirements (Do Not Deviate)
+
+Mobile stays the same (stacked, full-width quote is OK).
+
+Do not add new cards or modular wrappers.
+
+Keep existing typography, colors, and quote icon styling unless required for alignment.
+
+Respect prefers-reduced-motion (no new animations in this change).
+
+Do not break analytics/event tracking.
+
+Implementation Steps
+1) Locate the Impact section and quote markup
+
+Find the section with heading “Impact at Scale”
+
+Inside it, identify:
+
+the metrics grid wrapper (likely a 2x2 grid)
+
+the quote/testimonial wrapper directly below it
+
+2) Create a shared “content column” wrapper for desktop
+
+Wrap the metrics grid + quote in a shared container that constrains width on desktop.
+
+This wrapper should:
+
+be width: 100% always
+
+have a desktop-only max-width matching the metrics grid width
+
+align with the left edge of the content column (or centered if your section is centered—match the metrics alignment)
+
+If the metrics grid is already constrained, reuse that same container for the quote rather than introducing a second constraint.
+
+3) Desktop-only CSS: constrain quote width to match the grid
+
+On desktop breakpoints (e.g., min-width: 1024px or your existing lg: breakpoint):
+
+Ensure the quote container uses the same width constraint as the metrics grid.
+
+Remove any full-bleed behavior causing the quote to span the section width.
+
+On mobile/tablet:
+
+Leave quote full width as it is today.
+
+4) Spacing and rhythm
+
+Keep the current vertical spacing between:
+
+metrics grid → quote
+
+quote → next section
+
+If the quote now feels too “floating,” add a very subtle top margin adjustment only (e.g., reduce by ~8–12px) so it feels integrated.
+
+5) Verify behavior
+
+Desktop (1440px): quote block aligns visually with metric cards; no excessive empty space.
+
+Tablet (768px): no regressions.
+
+Mobile (iPhone): no change.
+
+Concrete Guidance (Use This Approach)
+
+If you’re using Tailwind:
+
+Create a wrapper like div className="mx-auto w-full max-w-[1100px]" (or whatever your metrics grid uses)
+
+Put both the grid and the quote inside it
+
+Ensure the outer section background still spans full width (do not constrain the entire section—only the content)
+
+If CSS modules:
+
+Add a .contentColumn class with desktop max-width + margin: 0 auto;
+
+Apply it to the wrapper around grid + quote
+
+Important: Match the grid’s existing max-width. Do not invent a new width if one already exists.
+
+Acceptance Criteria
+
+On desktop, the quote block’s left/right edges align with the metrics grid edges.
+
+The quote container no longer spans the entire section width.
+
+Mobile appearance is unchanged.
+
+No new “card” look is introduced—this remains integrated and calm.
