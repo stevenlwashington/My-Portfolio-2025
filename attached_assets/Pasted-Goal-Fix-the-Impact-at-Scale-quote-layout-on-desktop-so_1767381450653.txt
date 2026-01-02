@@ -1,0 +1,93 @@
+Goal
+Fix the “Impact at Scale” quote layout on desktop so it no longer feels like a left-column orphan. The quote container should span the same full width as the metrics grid, but the quote text should be constrained to a readable measure (not full-line length). Mobile should remain stacked and natural.
+
+Requirements (Locked)
+
+Do not center the entire section or change overall page rhythm.
+
+No new cards, no flashy treatments, no new CTAs.
+
+Preserve existing colors, borders, shadows, and quote icon styling unless needed for spacing.
+
+Mobile UI should remain effectively unchanged (quote remains full width).
+
+No changes that break analytics tracking.
+
+Implementation Instructions
+1) Locate the “Impact at Scale” section
+
+Find the component/markup that renders:
+
+Heading: Impact at Scale
+
+Metrics grid (4 metric tiles)
+
+Quote/testimonial block underneath
+
+2) Make the quote container span the same width as the metrics grid
+
+Ensure the quote block wrapper uses the same container as the metrics grid.
+
+The quote wrapper should be w-full within that container (i.e., it spans the grid width).
+
+Important: The container should remain consistent with the section’s existing max-width (don’t invent a new outer container if one already exists).
+
+3) Constrain the quote text measure inside the full-width quote container (desktop only)
+
+Inside the quote block:
+
+Add an inner wrapper around the quote text (and attribution) that constrains line length on desktop.
+
+Target behavior
+
+Desktop: text measure is ~68–74ch (readable, executive memo feel)
+
+Mobile: text uses full width naturally (no harsh constraint)
+
+Tailwind example approach
+
+Quote container: w-full
+
+Inner text wrapper: max-w-[72ch] on desktop only (e.g., lg:max-w-[72ch]), with w-full
+
+4) Subtle desktop typography increase (quote only)
+
+On desktop breakpoints only (e.g., lg:):
+
+Increase quote font size by one step (subtle), e.g.:
+
+from text-base → lg:text-lg (or equivalent in your system)
+
+Adjust line height slightly if needed (e.g., lg:leading-relaxed) to keep it calm and readable
+
+Do not change heading sizes or metric tile sizes.
+
+5) Keep left alignment (do not center the quote block)
+
+The full-width quote block stays aligned with the section content.
+
+The inner text wrapper should be left-aligned within the quote container (default), not centered.
+
+6) Spacing and rhythm
+
+Maintain the current spacing between metrics grid and quote.
+
+If the quote feels too separated, reduce the top margin slightly on desktop only (e.g., lg:mt-8 instead of lg:mt-10), but keep changes minimal.
+
+Acceptance Criteria
+
+Desktop: quote block spans the same width as the metrics grid; no “half-width orphan” appearance.
+
+Desktop: quote text reads comfortably (not too wide), with a subtle presence increase.
+
+Mobile: layout looks essentially the same as today.
+
+Overall section feels integrated and composed, not card-heavy or marketing-y.
+
+Notes for the Agent
+
+Prefer reusing the existing container that wraps the metrics grid.
+
+Implement the text measure constraint via an inner wrapper (not by shrinking the entire quote container).
+
+Verify at 1440px+ and mobile iPhone viewport.
