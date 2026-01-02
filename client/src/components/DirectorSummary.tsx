@@ -121,7 +121,7 @@ export default function DirectorSummary() {
                 </div>
                 <div className="impact-quote-content">
                   <blockquote className="impact-quote-text">
-                    "Steven solved the cross-org constraints that limit velocity—aligning engineering systems, implementing AI and automation, and bringing execution rigor so teams shipped faster without trading off reliability."
+                    "Steven consistently solved cross-organizational constraints that limited velocity—aligning scalable, secure engineering systems, implementing AI and automation responsibly, and bringing execution rigor so teams shipped faster without sacrificing reliability."
                   </blockquote>
                   <div className="impact-quote-attribution">
                     — Senior Engineering Leader
