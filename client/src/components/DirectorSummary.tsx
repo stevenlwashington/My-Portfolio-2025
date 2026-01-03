@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Zap, GitBranch, Database, DollarSign, Shield, Quote } from "lucide-react";
+import { Zap, GitBranch, Database, DollarSign, Shield } from "lucide-react";
 
 const problemDomains = [
   {
@@ -113,20 +113,13 @@ export default function DirectorSummary() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="impact-quote-band mb-12"
+            className="editorial-breather"
           >
-            <div className="impact-quote-inner">
-              <div className="impact-quote-icon">
-                <Quote className="w-5 h-5 sm:w-6 sm:h-6" />
-              </div>
-              <div className="impact-quote-content">
-                <blockquote className="impact-quote-text">
-                  "Steven consistently solved cross-organizational constraints that limited velocity—aligning scalable, secure engineering systems, implementing AI and automation responsibly, and bringing execution rigor so teams shipped faster without sacrificing reliability."
-                </blockquote>
-                <div className="impact-quote-attribution">
-                  — Senior Engineering Leader
-                </div>
-              </div>
+            <blockquote className="editorial-quote">
+              "Steven consistently solved cross-organizational constraints that limited velocity—aligning scalable, secure engineering systems, implementing AI and automation responsibly, and bringing execution rigor so teams shipped faster without sacrificing reliability."
+            </blockquote>
+            <div className="editorial-attribution">
+              — Senior Engineering Leader
             </div>
           </motion.div>
         </div>

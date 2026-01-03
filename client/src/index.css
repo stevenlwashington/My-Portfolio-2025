@@ -401,73 +401,51 @@
   }
 }
 
-/* Impact Quote Band - Editorial pull-quote style */
-.impact-quote-band {
+/* Editorial Breather - High-end pull-quote style */
+.editorial-breather {
   width: 100%;
-  margin-top: 0.5rem;
-  padding: 1.25rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.02));
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem 0;
+  text-align: center;
 }
 
-.impact-quote-inner {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+.editorial-quote {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+  margin: 0;
 }
 
-.impact-quote-icon {
-  flex-shrink: 0;
-  color: rgba(6, 182, 212, 0.4);
-}
-
-.impact-quote-content {
-  width: 100%;
-  max-width: 72ch;
-}
-
-.impact-quote-text {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
-  font-style: normal;
-}
-
-/* Desktop: subtle typography increase for quote */
-@media (min-width: 1024px) {
-  .impact-quote-text {
-    font-size: 1.125rem;
-    line-height: 1.75;
-  }
-}
-
-.impact-quote-attribution {
-  margin-top: 0.75rem;
+.editorial-attribution {
+  margin-top: 1.5rem;
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-sans);
+  letter-spacing: 0.025em;
+}
+
+/* Desktop: larger quote typography */
+@media (min-width: 1024px) {
+  .editorial-quote {
+    font-size: 1.875rem;
+    line-height: 1.5;
+  }
+  
+  .editorial-attribution {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 640px) {
-  .impact-quote-band {
-    padding: 1rem 0;
+  .editorial-breather {
+    padding: 3rem 0;
   }
 
-  .impact-quote-inner {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .impact-quote-content {
-    max-width: 100%;
-  }
-
-  .impact-quote-text {
-    font-size: 0.9375rem;
+  .editorial-quote {
+    font-size: 1.25rem;
     line-height: 1.6;
-  }
-
-  .impact-quote-attribution {
-    font-size: 0.8125rem;
   }
 }
