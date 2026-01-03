@@ -150,7 +150,7 @@ export default function ImpactTimeline() {
     <section className="py-20 md:py-28" id="career">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-cyan-400">Career Trajectory & Impact</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">Career Trajectory & Impact</h2>
           <p className="text-lg text-white/80 leading-relaxed">
             Progressive scope and responsibility across platform engineering, AI governance, and revenue systems development.
           </p>

@@ -51,10 +51,10 @@ export default function FooterCTA({ onContactClick }: FooterCTAProps) {
       <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="border-t border-white/[0.06] sm:border-white/10 pt-8 sm:pt-12 md:pt-16">
           <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Interested in how I approach platform engineering?
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto md:mx-0">
+            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">
               If you're curious how I think about scale, adoption, and engineering systems, I'm happy to compare notes.
             </p>
             <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 sm:gap-4">

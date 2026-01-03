@@ -40,7 +40,7 @@ export default function DirectorSummary() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-cyan-400">How I Drive Value</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cyan-400">How I Drive Value</h2>
           <p className="text-white/80 max-w-3xl leading-relaxed">
             Platforms win only when engineers choose them—adoption is earned, not mandated.
           </p>
