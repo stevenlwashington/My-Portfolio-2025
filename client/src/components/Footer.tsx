@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/[0.06] sm:border-border bg-card/30 mt-12 sm:mt-20">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="flex flex-col md:flex-row md:justify-between gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* About */}
           <div>
             <h3 className="font-semibold text-base mb-4">Steven Washington</h3>
