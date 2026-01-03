@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Connect */}
           <div>
             <h3 className="font-semibold text-base mb-4">Connect</h3>
-            <div className="flex gap-3">
+            <div className="flex items-center gap-3 h-5">
               <a 
                 href="https://www.linkedin.com/in/stevenlwashington/" 
                 target="_blank" 
