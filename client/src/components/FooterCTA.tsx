@@ -47,7 +47,7 @@ export default function FooterCTA({ onContactClick }: FooterCTAProps) {
   };
 
   return (
-    <section className="py-10 sm:py-16 md:py-20">
+    <section className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="border-t border-white/[0.06] sm:border-white/10 pt-8 sm:pt-12 md:pt-16">
           <div className="text-center md:text-left">

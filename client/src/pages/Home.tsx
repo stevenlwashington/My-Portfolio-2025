@@ -31,6 +31,8 @@ export default function Home() {
         <div className="gradient-divider mx-auto max-w-5xl" />
         
         <ImpactTimeline />
+        
+        <div className="gradient-divider mx-auto max-w-5xl" />
       </main>
       <FooterCTA onContactClick={() => setIsContactOpen(true)} />
       <Footer />

@@ -72,7 +72,7 @@ export default function OrganizationsLogoStrip() {
   const duplicatedOrgs = [...organizations, ...organizations, ...organizations];
 
   return (
-    <section className="py-16 md:py-24 overflow-hidden" id="organizations">
+    <section className="py-20 md:py-28 overflow-hidden" id="organizations">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

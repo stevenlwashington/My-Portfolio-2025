@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Steven Washington</h3>
+            <h3 className="font-semibold text-base mb-4">Steven Washington</h3>
             <p className="text-sm text-muted-foreground">
               Product thinking. Engineering execution.
             </p>
@@ -16,7 +16,7 @@ export default function Footer() {
 
           {/* Blog */}
           <div>
-            <h3 className="font-semibold text-sm mb-4">Explore</h3>
+            <h3 className="font-semibold text-base mb-4">Explore</h3>
             <div className="flex flex-col gap-2">
               <a href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Blog
@@ -26,7 +26,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="font-semibold text-sm mb-4">Connect</h3>
+            <h3 className="font-semibold text-base mb-4">Connect</h3>
             <div className="flex gap-2 -ml-2.5">
               <Button size="icon" variant="ghost" asChild data-testid="button-linkedin-footer">
                 <a href="https://www.linkedin.com/in/stevenlwashington/" target="_blank" rel="noopener noreferrer">
