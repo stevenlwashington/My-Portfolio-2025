@@ -34,7 +34,7 @@ const experiences: Experience[] = [
   },
   {
     company: "Zillow",
-    role: "Senior Product Manager, Frontline Enterprise Technology (CRM & Workflow)",
+    role: "Senior Product Manager, Frontline Enterprise Technology",
     period: "2020-2023",
     slug: "zillow-sr-salesforce-pm",
     subheading: "Owned enterprise CRM and workflow platforms supporting 2,500+ sales and service reps and $1B+ in annual revenue, unifying fragmented systems to improve reliability, data integrity, and operational efficiency during shifting market conditions.",
