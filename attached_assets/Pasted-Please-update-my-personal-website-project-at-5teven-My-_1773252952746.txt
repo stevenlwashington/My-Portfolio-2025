@@ -1,0 +1,128 @@
+Please update my personal website project at /@5teven/My-Personal-Site.
+
+Important constraints:
+- Preserve the existing visual style, spacing, typography, color system, and component hierarchy exactly as-is.
+- Do NOT redesign the site.
+- Only modify content and minimal structure necessary to support the longer career timeline.
+- Maintain the current layout, animation, and styling patterns.
+
+----------------------------------------------------
+SECTION 1: HERO SUBTEXT UPDATE
+----------------------------------------------------
+
+Do NOT change the hero image or the main headline.
+
+Update the hero subtext to the following:
+
+AI Product Leader designing AI-native CRM systems and agentic workflows for enterprise sales.  
+Currently leading AI product initiatives at Salesforce transforming how global revenue teams operate.
+
+Formatting guidance:
+- Preserve the existing typography and spacing.
+- If the hero supports two lines, keep it split into two lines exactly as written.
+- Do not add additional text.
+
+----------------------------------------------------
+SECTION 2: HOW I DRIVE VALUE
+----------------------------------------------------
+
+Leave the "How I Drive Value" section unchanged.
+
+This section represents long-term operating philosophy and should not be updated until meaningful Salesforce outcomes exist.
+
+Do not rewrite or reframe this section.
+
+----------------------------------------------------
+SECTION 3: IMPACT AT SCALE
+----------------------------------------------------
+
+Enhance the "Impact at Scale" section to reflect the scope of the Salesforce role.
+
+Add or update one tile with the following:
+
+Stat:
+25,000+ sellers
+
+Supporting text:
+Delivering AI for a global seller ecosystem of 25,000+
+
+Tone guidance:
+- Keep consistent with existing tiles
+- Maintain concise executive language
+- Do not add additional speculative metrics
+
+Leave other tiles unchanged unless needed for layout consistency.
+
+----------------------------------------------------
+SECTION 4: CAREER TRAJECTORY & IMPACT
+----------------------------------------------------
+
+This is the primary update.
+
+Add a new entry at the top of the career timeline.
+
+Title:
+Director, Product Management
+
+Company:
+Salesforce
+
+Dates:
+2026–Present
+
+Organization:
+Digital Enterprise Technology
+
+Role Description:
+
+Leading product initiatives within Salesforce’s Digital Enterprise Technology organization to transform seller productivity through agentic AI. Responsible for defining AI-native sales workflows that support global revenue teams at Salesforce across core platforms including Salesforce CRM, Data 360, Slack, Agentforce, and supporting GTM systems.
+
+The work focuses on reimagining the lead-to-cash lifecycle through AI agents that augment decision-making, streamline operational workflows, and improve how enterprise sales systems operate at scale. Salesforce operates as Customer Zero for this transformation, creating a blueprint for how organizations can implement AI in their own industries.
+
+Include a final differentiation sentence if the layout allows:
+
+Bringing a background in platform engineering, DevOps, and operational excellence to the design of production-grade AI systems for enterprise sales.
+
+Formatting rules:
+- Keep the same card/timeline styling as other roles.
+- Do not introduce new visual components.
+
+----------------------------------------------------
+SECTION 5: EXISTING TIMELINE UPDATE
+----------------------------------------------------
+
+Shift all existing roles down one position.
+
+Update the Zillow role titled:
+
+Platform Product Lead, Revenue Engineering & AI Platforms
+
+Change the date range to:
+
+2023–2025
+
+Do not change the rest of the Zillow description.
+
+All earlier roles remain unchanged.
+
+----------------------------------------------------
+SECTION 6: SEO / META DESCRIPTION
+----------------------------------------------------
+
+Update the site's meta description to reflect current positioning.
+
+Suggested direction:
+
+Steven Washington is an AI product leader building enterprise sales transformation systems at Salesforce, with expertise in CRM modernization, agentic AI, and platform engineering.
+
+Ensure the meta description remains concise and search-friendly.
+
+----------------------------------------------------
+FINAL IMPLEMENTATION NOTES
+----------------------------------------------------
+
+- Preserve existing design system and layout.
+- Maintain the same typography hierarchy.
+- Maintain the existing spacing and responsive behavior.
+- Only update the content areas described above.
+- Ensure the site reads naturally from top to bottom after the Salesforce role is added.

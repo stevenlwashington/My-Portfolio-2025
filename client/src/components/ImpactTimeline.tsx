@@ -15,9 +15,27 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    company: "Salesforce",
+    role: "Director, Product Management",
+    period: "2026-Present",
+    slug: "salesforce-director-pm",
+    subheading: "Leading product initiatives within Salesforce's Digital Enterprise Technology organization to transform seller productivity through agentic AI. Defining AI-native sales workflows that support global revenue teams across Salesforce CRM, Data 360, Slack, Agentforce, and supporting GTM systems. Salesforce operates as Customer Zero for this transformation, creating a blueprint for how organizations can implement AI in their own industries.",
+    questions: [
+      "How do we reimagine the lead-to-cash lifecycle through AI agents that augment seller decision-making?",
+      "Which agentic workflows most directly improve how 25,000+ global revenue teams operate at scale?",
+      "How do we apply platform engineering rigor to production-grade AI systems for enterprise sales?"
+    ],
+    outcomes: [
+      "Delivering AI-native sales workflows for a global seller ecosystem of 25,000+",
+      "Defining agentic automation across core GTM platforms including CRM, Data 360, Slack, and Agentforce",
+      "Applying platform engineering and DevOps expertise to production-grade AI system design",
+      "Creating a Customer Zero blueprint for enterprise AI transformation at global scale"
+    ]
+  },
+  {
     company: "Zillow",
     role: "Platform Product Lead, Revenue Engineering & AI Platforms",
-    period: "2023-Present",
+    period: "2023-2025",
     slug: "zillow-platform-product-lead",
     subheading: "Led cross-functional product and engineering workstreams across DevOps, AI, and GTM systems, enabling secure self-service delivery and governed automation for revenue-critical platforms serving thousands of internal users and $1B+ in annual revenue.",
     questions: [

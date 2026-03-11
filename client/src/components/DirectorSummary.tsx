@@ -84,6 +84,7 @@ export default function DirectorSummary() {
 
           <div className="impact-grid-container mb-8">
             {[
+              { value: "25,000+", label: "Sellers in AI Ecosystem" },
               { value: "100+", label: "Engineers Unlocked" },
               { value: "30+", label: "Orgs Aligned" },
               { value: "20+", label: "Enterprise Systems Consolidated" },
