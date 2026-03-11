@@ -61,8 +61,8 @@ export default function Hero({ onContactClick }: HeroProps) {
 
             {/* Subheadline */}
             <h1 className="text-xl md:text-2xl font-medium text-white/80 leading-relaxed max-w-xl mb-6">
-              AI Product Leader designing AI-native CRM systems and agentic workflows for enterprise sales.<br className="hidden sm:block" />
-              <span className="block mt-2 sm:mt-0">Currently leading AI product initiatives at Salesforce transforming how global revenue teams operate.</span>
+              AI Product Leader building AI-native CRM systems and agentic sales workflows.<br className="hidden sm:block" />
+              <span className="block mt-2 sm:mt-0">Leading AI initiatives at Salesforce transforming global revenue teams.</span>
             </h1>
 
             {/* Dual CTAs - centered on mobile/tablet, left-aligned on desktop */}
